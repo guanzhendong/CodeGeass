@@ -9,7 +9,7 @@
 #import "ZDConsts.h"
 
 
-NSString * const HTTP_HOST = @"https://lite.workec.com/";
+NSString * const HTTP_HOST = @"";
 
 NSString * const IM_HOST = @"zd";
 
