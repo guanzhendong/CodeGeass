@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>CodeGeass.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>CodeGeassToday.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>34</integer>
+		</dict>
+		<key>Today.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>35</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4426D8441F3AD806004403C4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4426D8521F3AE8B8004403C4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>443DDEDA1E139BA2007A9096</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4446CAFC1F15F5CB00A77764</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4446CB121F15FAB700A77764</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,10 @@
+CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR/AXIndicatorView
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/AXIndicatorView" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/AXIndicatorView" "${PODS_ROOT}/Headers/Public/AXNavigationBackItemInjection" "${PODS_ROOT}/Headers/Public/AXPracticalHUD" "${PODS_ROOT}/Headers/Public/AXWebViewController" "${PODS_ROOT}/Headers/Public/Appirater" "${PODS_ROOT}/Headers/Public/Aspects" "${PODS_ROOT}/Headers/Public/AvoidCrash" "${PODS_ROOT}/Headers/Public/ChameleonFramework" "${PODS_ROOT}/Headers/Public/FMDB" "${PODS_ROOT}/Headers/Public/FSCalendar" "${PODS_ROOT}/Headers/Public/HexColors" "${PODS_ROOT}/Headers/Public/INTULocationManager" "${PODS_ROOT}/Headers/Public/IQKeyboardManager" "${PODS_ROOT}/Headers/Public/KVOController" "${PODS_ROOT}/Headers/Public/LCActionSheet" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/MJRefresh" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/NJKWebViewProgress" "${PODS_ROOT}/Headers/Public/Onboard" "${PODS_ROOT}/Headers/Public/PNChart" "${PODS_ROOT}/Headers/Public/RKNotificationHub" "${PODS_ROOT}/Headers/Public/SDAutoLayout" "${PODS_ROOT}/Headers/Public/SVProgressHUD" "${PODS_ROOT}/Headers/Public/TSMessages" "${PODS_ROOT}/Headers/Public/TWRDownloadManager" "${PODS_ROOT}/Headers/Public/UICountingLabel" "${PODS_ROOT}/Headers/Public/VTMagic" "${PODS_ROOT}/Headers/Public/XLForm" "${PODS_ROOT}/Headers/Public/YTKKeyValueStore" "${PODS_ROOT}/Headers/Public/YYKit"
+OTHER_LDFLAGS = -framework "Foundation" -framework "UIKit"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}
+PODS_TARGET_SRCROOT = ${PODS_ROOT}/AXIndicatorView
+PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
+SKIP_INSTALL = YES
