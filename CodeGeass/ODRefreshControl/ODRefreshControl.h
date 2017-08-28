@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-typedef NS_ENUM(NSUInteger, ODEndRefreshStyle) {// 官振东增加
+typedef NS_ENUM(NSUInteger, ODEndRefreshStyle) {// gzd增加
     ODEndRefreshStyleSuccess,// 刷新成功
     ODEndRefreshStyleFailure,// 刷新失败
 };
@@ -53,7 +53,7 @@ typedef NS_ENUM(NSUInteger, ODEndRefreshStyle) {// 官振东增加
 // Tells the control the refresh operation has ended
 - (void)endRefreshing;
 
-// 官振东增加，类似QQ显示“刷新成功”或者“刷新失败”
+// gzd增加，类似QQ显示“刷新成功”或者“刷新失败”
 - (void)endRefreshingWithStyle:(ODEndRefreshStyle)style;
 
 @end

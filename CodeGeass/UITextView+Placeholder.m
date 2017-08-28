@@ -103,7 +103,7 @@
                                                      name:UITextViewTextDidChangeNotification
                                                    object:self];
         
-        // 官振东注释掉，去掉此观察者和上面的swizzle dealloc，避免不必要的crash（在GitHub上看到可能导致崩溃）
+        // gzd注释掉，去掉此观察者和上面的swizzle dealloc，避免不必要的crash（在GitHub上看到可能导致崩溃）
 //        for (NSString *key in self.class.observingKeys) {
 //            [self addObserver:self forKeyPath:key options:NSKeyValueObservingOptionNew context:nil];
 //        }
