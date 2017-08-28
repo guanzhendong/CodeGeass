@@ -31,5 +31,10 @@ target "CodeGeass" do
     #pod 'BGFMDB'
     #pod 'MLeaksFinder'
     pod 'YTKKeyValueStore'
+    pod 'SDWebImage'
+    pod 'TPKeyboardAvoiding'
+    pod 'SDCycleScrollView'
+    pod 'HMSegmentedControl'
+    pod 'FCAlertView'
     
 end
