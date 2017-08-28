@@ -19,7 +19,7 @@
 //    CGFloat labelHeight = [self.titleLabel.text sizeWithFont:self.titleLabel.font].height;
 #pragma clang diagnostic pop
     
-    // GZD 修改 16.9.28
+    // gzd 修改 16.9.28
     CGSize  labelSize   = CGSizeZero;
     CGFloat labelWidth  = 0;
     CGFloat labelHeight = 0;

@@ -218,7 +218,7 @@ static DebugHelper *globalInstance = nil;
         globalInstance.debugLabel = label;
         
         
-        // ZD add
+        // gzd add
         YYFPSLabel *fpsLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(label.frame) + 2, CGRectGetMinY(label.frame), CGRectGetWidth(label.frame), CGRectGetHeight(label.frame))];
         fpsLabel.backgroundColor = [UIColor redColor];
         globalInstance.fpsLabel = fpsLabel;

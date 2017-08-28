@@ -82,7 +82,7 @@
         _jsonResponseSerializer = [AFJSONResponseSerializer serializer];
         _jsonResponseSerializer.acceptableStatusCodes = _allStatusCodes;
         
-        // ZD add，对返回数据序列化添加text/html，也可以在AFNetworking里面直接修改
+        // gzd add，对返回数据序列化添加text/html，也可以在AFNetworking里面直接修改
         NSMutableSet *mutableSet = [NSMutableSet setWithSet:_jsonResponseSerializer.acceptableContentTypes];
         [mutableSet addObject:@"text/html"];
         _jsonResponseSerializer.acceptableContentTypes = mutableSet;
@@ -172,7 +172,7 @@
     YTKRequestMethod method = [request requestMethod];
     NSString *url = [self buildRequestUrl:request];
     id param = request.requestArgument;
-    // ZD add
+    // gzd add
     NSLog(@"%@ request url:%@ \nparameter:%@",NSStringFromClass([request class]),url,param);
     // ---
     AFConstructingBlock constructingBlock = [request constructingBodyBlock];
@@ -343,7 +343,7 @@
         requestError = validationError;
     }
 
-    // ZD add
+    // gzd add
     NSLog(@"%@ response:%@",NSStringFromClass([request class]),(NSDictionary *)request.responseObject);
     // ---
     

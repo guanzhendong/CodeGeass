@@ -312,7 +312,7 @@
         [self addGestureRecognizer:pan];
         _panGesture = pan;
         
-        // ZD 解决bug
+        // gzd 解决bug
         pan.maximumNumberOfTouches = 1;
     }
     
