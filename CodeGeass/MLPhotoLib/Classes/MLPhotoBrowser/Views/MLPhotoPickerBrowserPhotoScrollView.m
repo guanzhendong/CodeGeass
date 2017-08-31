@@ -193,7 +193,7 @@
                 }
             }];
             // 网络URL
-            [_photoImageView sd_setImageWithURL:photo.originalImageUrl?:photo.thumbImageUrl placeholderImage:thumbImage options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+            [_photoImageView sd_setImageWithURL:photo.originalImageUrl?:photo.thumbImageUrl placeholderImage:thumbImage options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
                 [weakSelf setProgress:(double)receivedSize / expectedSize];
             } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 if (image) {

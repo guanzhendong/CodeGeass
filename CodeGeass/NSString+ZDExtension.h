@@ -57,6 +57,48 @@
 
  @return BOOL
  */
-- (BOOL)zd_isPureWhitespaceAndNewline;
+- (BOOL)zd_isBlank;
+
+/**
+ 是否有效
+
+ @return BOOL
+ */
+- (BOOL)zd_isValid;
+
+/**
+ 简单校验手机号格式：首位为1，长度为11
+
+ @return BOOL
+ */
+- (BOOL)zd_isValidSimpleMobile;
+
+/**
+ 中等校验手机号格式
+ 
+ @return BOOL
+ */
+- (BOOL)zd_isValidMediumMobile;
+
+/**
+ 复杂校验手机号格式
+ 
+ @return BOOL
+ */
+- (BOOL)zd_isValidComplicatedMobile;
+
+/**
+ 校验邮箱
+
+ @return BOOL
+ */
+- (BOOL)zd_isValidEmail;
+
+/**
+ 校验邮箱url
+
+ @return BOOL
+ */
+- (BOOL)zd_isValidUrl;
 
 @end
