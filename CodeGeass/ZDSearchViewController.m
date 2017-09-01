@@ -80,8 +80,9 @@
     [self.view addSubview:searchView];
     
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 46, searchView.bounds.size.height)];
-    _searchBar.placeholder = @"搜索";
     _searchBar.delegate = self;
+    _searchBar.placeholder = @"搜索";
+    _searchBar.tintColor = [UIColor zd_greenThemeColor];
     _searchBar.backgroundImage = [UIImage new];// 去除掉top、bottom的细线
     _searchBar.backgroundColor = [UIColor zd_backgroundColor];// 这两行顺序不能颠倒
     [searchView addSubview:_searchBar];

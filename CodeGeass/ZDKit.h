@@ -41,6 +41,8 @@
 //    #import "UINavigationBar+Awesome.h"
     #import "UIScrollView+ZDRefresh.h"
     #import "UIAlertController+ZDExtension.h"
+    #import "UIImageView+ZDAddForSDWebImage.h"
+    #import "UIImageView+ZDRoundCorner.h"
 
     #import "NSDate+TimeAgo.h"
     #import "NSDate+Extension.h"

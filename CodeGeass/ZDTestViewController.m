@@ -80,14 +80,15 @@
     // 测试8：YYWebImage的transform
     UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     [self.view addSubview:iv];
-    [iv setImageWithURL:[NSURL URLWithString:@"https:\/\/ec-web.staticec.com\/face\/21299\/cMbD1Y882373.png?x-oss-process=image\/resize,m_lfit,h_150,w_150&1477633373"]
-            placeholder:nil
-                options:YYWebImageOptionRefreshImageCache
-               progress:nil
-              transform:^UIImage * _Nullable(UIImage * _Nonnull image, NSURL * _Nonnull url) {
-                  return [image imageByRoundCornerRadius:image.size.width];
-              }
-             completion:nil];
+//    [iv setImageWithURL:[NSURL URLWithString:@"https:\/\/ec-web.staticec.com\/face\/21299\/cMbD1Y882373.png?x-oss-process=image\/resize,m_lfit,h_150,w_150&1477633373"]
+//            placeholder:nil
+//                options:YYWebImageOptionRefreshImageCache
+//               progress:nil
+//              transform:^UIImage * _Nullable(UIImage * _Nonnull image, NSURL * _Nonnull url) {
+//                  return [image imageByRoundCornerRadius:image.size.width];
+//              }
+//             completion:nil];
+    [iv sd_setImageWithURL:[NSURL URLWithString:@"https:\/\/ec-web.staticec.com\/face\/21299\/cMbD1Y882373.png?x-oss-process=image\/resize,m_lfit,h_150,w_150&1477633373"] cornerRadius:20 placeholderImage:nil options:SDWebImageRefreshCached progress:nil completed:nil];
     
     // 测试9：YYTextView
     YYTextView *tv = [[YYTextView alloc] initWithFrame:CGRectMake(100, 250, 200, 100)];

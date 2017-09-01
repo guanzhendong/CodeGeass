@@ -106,16 +106,19 @@
         CGCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"CGCommonTableViewCell1" forIndexPath:indexPath];
         ZDCrmModel *model = _tableData[indexPath.section][indexPath.row];;
         cell.topLabel.text = model.name;
-        [cell.leftImageView setImageWithURL:[NSURL URLWithString:model.face]
-                                placeholder:[UIImage zd_middleImageWithText:model.name]
-                                    options:0
-                                   progress:nil
-                                  transform:^UIImage * _Nullable(UIImage * _Nonnull image, NSURL * _Nonnull url) {
-                                      image = [image imageByResizeToSize:CGSizeMake(150, 150) contentMode:UIViewContentModeScaleAspectFill];
-                                      image = [image imageByRoundCornerRadius:image.size.width];// 不能只能调用这句，还要调用上句，image可能是长方形，当头像是长方形时，此句会返回椭圆形，这两句一起可以保证返回的图片是圆形
-                                      return image;
-                                  } completion:nil];
+//        [cell.leftImageView setImageWithURL:[NSURL URLWithString:model.face]
+//                                placeholder:[UIImage zd_middleImageWithText:model.name]
+//                                    options:0
+//                                   progress:nil
+//                                  transform:^UIImage * _Nullable(UIImage * _Nonnull image, NSURL * _Nonnull url) {
+//                                      image = [image imageByResizeToSize:CGSizeMake(150, 150) contentMode:UIViewContentModeScaleAspectFill];
+//                                      image = [image imageByRoundCornerRadius:image.size.width];// 不能只能调用这句，还要调用上句，image可能是长方形，当头像是长方形时，此句会返回椭圆形，这两句一起可以保证返回的图片是圆形
+//                                      return image;
+//                                  } completion:nil];
+        [cell.leftImageView sd_setImageWithURL:[NSURL URLWithString:model.face] placeholderImage:[UIImage zd_middleImageWithText:model.name]];
         cell.leftImageViewHeightConstraint.constant = 50;
+        cell.leftImageView.clipsToBounds = YES;
+        cell.leftImageView.layer.cornerRadius = cell.leftImageView.width / 2;
         cell.bottomLabel.text = model.position;
         return cell;
     } else {
