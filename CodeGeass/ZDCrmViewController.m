@@ -118,7 +118,7 @@
         [cell.leftImageView sd_setImageWithURL:[NSURL URLWithString:model.face] placeholderImage:[UIImage zd_middleImageWithText:model.name]];
         cell.leftImageViewHeightConstraint.constant = 50;
         cell.leftImageView.clipsToBounds = YES;
-        cell.leftImageView.layer.cornerRadius = cell.leftImageView.width / 2;
+        cell.leftImageView.layer.cornerRadius = 25;
         cell.bottomLabel.text = model.position;
         return cell;
     } else {

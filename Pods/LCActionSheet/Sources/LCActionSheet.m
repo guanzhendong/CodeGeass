@@ -29,6 +29,7 @@
 #import "LCActionSheetCell.h"
 #import "LCActionSheetViewController.h"
 #import "UIImage+LCActionSheet.h"
+#import "UIDevice+LCActionSheet.h"
 #import "Masonry.h"
 
 
@@ -278,7 +279,7 @@
     _titleEdgeInsets           = config.titleEdgeInsets;
     _separatorColor            = config.separatorColor;
     _autoHideWhenDeviceRotated = config.autoHideWhenDeviceRotated;
-    _titleLinesNumber          = config.titleLinesNumber;
+    _numberOfTitleLines        = config.numberOfTitleLines;
   
     return self;
 }
@@ -298,7 +299,7 @@
         CGFloat height =
         (self.title.length > 0 ? self.titleTextSize.height + 2.0f + (self.titleEdgeInsets.top + self.titleEdgeInsets.bottom) : 0) +
         (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) +
-        (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
+        (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0) + ([[UIDevice currentDevice] lc_isX] ? 34.0 : 0);
         
         make.height.equalTo(@(height));
         make.bottom.equalTo(self).offset(height);
@@ -308,7 +309,7 @@
     UIView *darkView                = [[UIView alloc] init];
     darkView.alpha                  = 0;
     darkView.userInteractionEnabled = NO;
-    darkView.backgroundColor        = LC_ACTION_SHEET_COLOR(46, 49, 50);
+    darkView.backgroundColor        = kLCActionSheetColor(46, 49, 50);
     [self addSubview:darkView];
     [darkView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
@@ -409,7 +410,7 @@
     [bottomView addSubview:cancelButton];
     [cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(bottomView);
-        make.bottom.equalTo(bottomView);
+        make.bottom.equalTo(bottomView).offset([[UIDevice currentDevice] lc_isX] ? -34.0 : 0);
         
         CGFloat height = self.cancelButtonTitle.length > 0 ? self.buttonHeight : 0;
         make.height.equalTo(@(height));
@@ -652,12 +653,12 @@
     [self.tableView reloadData];
 }
 
-- (void)setTitleLinesNumber:(NSInteger)titleLinesNumber {
-  _titleLinesNumber = titleLinesNumber;
-  
-  [self updateBottomView];
-  [self updateTitleLabel];
-  [self updateTableView];
+- (void)setNumberOfTitleLines:(NSInteger)numberOfTitleLines {
+    _numberOfTitleLines = numberOfTitleLines;
+    
+    [self updateBottomView];
+    [self updateTitleLabel];
+    [self updateTableView];
 }
 
 - (CGSize)titleTextSize {
@@ -676,9 +677,9 @@
                              options:opts
                           attributes:attrs
                              context:nil].size;
-    if (self.titleLinesNumber != 0) {
+    if (self.numberOfTitleLines != 0) {
       // with no attribute string use 'lineHeight' to acquire single line height.
-      _titleTextSize.height = MIN(_titleTextSize.height, self.titleFont.lineHeight * self.titleLinesNumber);
+      _titleTextSize.height = MIN(_titleTextSize.height, self.titleFont.lineHeight * self.numberOfTitleLines);
     }
     return _titleTextSize;
 }
@@ -697,7 +698,7 @@
 
 - (void)updateBottomView {
     [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
-        CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 2.0f + (self.titleEdgeInsets.top + self.titleEdgeInsets.bottom) : 0) + (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
+        CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 2.0f + (self.titleEdgeInsets.top + self.titleEdgeInsets.bottom) : 0) + (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0) + ([[UIDevice currentDevice] lc_isX] ? 34.0 : 0);
         make.height.equalTo(@(height));
     }];
 }

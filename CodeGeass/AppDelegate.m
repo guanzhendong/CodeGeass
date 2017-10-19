@@ -12,6 +12,7 @@
 #import <Bugly/Bugly.h>
 #import <IQKeyboardManager.h>
 #import <OnboardingViewController.h>
+#import <Aspects.h>
 
 #import "DebugHelper.h"
 #import "YTKNetworkConfig.h"
@@ -49,6 +50,7 @@
     [self setupBugly];
     //[[ZDRLMMigrationManager sharedManager] migration];
     [self setup3DTouch];
+    [self setupAspect];
     
     
     
@@ -83,6 +85,15 @@
 
 
     return YES;
+}
+
+- (void)setupAspect {
+//    [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo, BOOL animated) {
+//        NSLog(@"%@ will appear animated: %d", aspectInfo.instance, animated);
+//    } error:NULL];
+    [UIViewController aspect_hookSelector:@selector(didReceiveMemoryWarning) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+        NSLog(@"******************%@ didReceiveMemoryWarning******************", aspectInfo.instance);
+    } error:NULL];
 }
 
 - (void)setup3DTouch {
