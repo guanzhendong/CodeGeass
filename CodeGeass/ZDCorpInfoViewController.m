@@ -78,8 +78,10 @@ static CGFloat const kNavigationBarShowAtOffsetY = 64;
     _blurImageView = [[UIImageView alloc] initWithFrame:_headerView.frame];
     [[YYWebImageManager sharedManager] requestImageWithURL:[NSURL URLWithString:_employee.face] options:0 progress:nil transform:nil completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
         if (image) {
-            image = [image imageByResizeToSize:_blurImageView.frame.size contentMode:UIViewContentModeScaleAspectFill];
-            _blurImageView.image = [image imageByBlurRadius:20 tintColor:[[UIColor zd_blackThemeColor] colorWithAlphaComponent:0.3] tintMode:0 saturation:1 maskImage:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIImage *resizedImage = [image imageByResizeToSize:_blurImageView.frame.size contentMode:UIViewContentModeScaleAspectFill];
+                _blurImageView.image = [resizedImage imageByBlurRadius:20 tintColor:[[UIColor zd_blackThemeColor] colorWithAlphaComponent:0.3] tintMode:0 saturation:1 maskImage:nil];
+            });
         }
     }];
     [_headerView addSubview:_blurImageView];

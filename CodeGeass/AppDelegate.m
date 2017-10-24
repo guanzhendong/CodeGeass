@@ -42,7 +42,7 @@
 
     // 配置
     [self setupAvoidCrash];
-    [self setupAppirater];
+//    [self setupAppirater];
     [self setupSVProgressHUD];
     [self setupLCActionSheet];
     [self setupIQKeyboardManager];

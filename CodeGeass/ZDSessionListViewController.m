@@ -136,7 +136,7 @@
                                    @{@"title":@"写日报",@"imageName":@"popMenu_writeReport"},
                                    @{@"title":@"外勤签到",@"imageName":@"popMenu_signIn"}]
                            width:130
-                triangleLocation:CGPointMake([UIScreen mainScreen].bounds.size.width-30, 64+5)
+                triangleLocation:CGPointMake(SCREEN_WIDTH - 30, STATUS_AND_NAVIGATION_HEIGHT + 5)
                           action:^(NSInteger index) {
                               NSLog(@"点击了第%ld行",index);
                               switch (index) {

@@ -51,7 +51,9 @@
             // 请求权限
             [_store requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
                 if (granted) {
-                    [self initUI];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self initUI];
+                    });
                     [self fetchRequestContacts];
                 } else {
                     if (error) {

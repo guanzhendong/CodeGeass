@@ -75,7 +75,7 @@
 }
 
 - (void)initUI {
-    UIView *searchView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, NAVIGATION_BAR_HEIGHT)];
+    UIView *searchView = [[UIView alloc] initWithFrame:CGRectMake(0, STATUS_BAR_HEIGHT, SCREEN_WIDTH, NAVIGATION_BAR_HEIGHT)];
     searchView.backgroundColor = [UIColor zd_backgroundColor];
     [self.view addSubview:searchView];
     

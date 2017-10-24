@@ -152,21 +152,6 @@ UIAlertController *alertController = [UIAlertController alertControllerWithTitle
 #pragma mark -
 #pragma mark - Size
 
-/** 状态栏高度 */
-#define STATUS_BAR_HEIGHT 20
-
-/** 导航栏高度 */
-#define NAVIGATION_BAR_HEIGHT 44
-
-/** 状态栏＋导航栏 高度 */
-#define STATUS_AND_NAVIGATION_HEIGHT (STATUS_BAR_HEIGHT + NAVIGATION_BAR_HEIGHT)
-
-/** 标签栏高度 */
-#define TABBAR_HEIGHT 49
-
-/** 工具栏高度 */
-#define TOOLBAR_HEIGHT 49
-
 /** 屏幕尺寸 */
 #define SCREEN_BOUNDS ([UIScreen mainScreen].bounds)
 
@@ -176,8 +161,30 @@ UIAlertController *alertController = [UIAlertController alertControllerWithTitle
 /** 屏幕高度 */
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
+/** 判断iPhoneX */
+#define IS_iPhoneX (SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 812)
+
+/** 状态栏高度 */
+#define STATUS_BAR_HEIGHT (IS_iPhoneX ? 44 : 20)
+
+/** 导航栏高度 */
+#define NAVIGATION_BAR_HEIGHT 44
+
+/** 状态栏＋导航栏 高度 */
+#define STATUS_AND_NAVIGATION_HEIGHT (STATUS_BAR_HEIGHT + NAVIGATION_BAR_HEIGHT)
+
+/** 标签栏高度 */
+#define TABBAR_HEIGHT (IS_iPhoneX ? (49 + 34) : 49)
+
+/** 工具栏高度 */
+#define TOOLBAR_HEIGHT (IS_iPhoneX ? (49 + 34) : 49)
+
 /** 一般表视图内容高度 */
 #define CONTENT_HEIGHT (SCREEN_HEIGHT - NAVIGATION_BAR_HEIGHT - STATUS_BAR_HEIGHT)
+
+/** 标签栏底部空白高度（iPhoneX下为34）*/
+#define TabBarSafeBottomMargin (IS_iPhoneX ? 34 : 0)
+
 
 /** 黄金比例值 0.382+0.618=1   0.382/0.618=0.618   0.618/1=0.618 */
 #define GOLD_SCALE_LONG(x)  (x * 0.618)

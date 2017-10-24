@@ -129,6 +129,10 @@
 		446E20591F580A6300835D2F /* UIImageView+ZDAddForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 446E20581F580A6300835D2F /* UIImageView+ZDAddForSDWebImage.m */; };
 		4474386C1EC16BBC00B69765 /* ZDTranslucentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4474386B1EC16BBC00B69765 /* ZDTranslucentViewController.m */; };
 		4474386F1EC16C1C00B69765 /* ZDTranslucentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4474386E1EC16C1C00B69765 /* ZDTranslucentNavigationController.m */; };
+		447BF6DB1F9EE3BB006660C1 /* UIResponder+ZDRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 447BF6DA1F9EE3BB006660C1 /* UIResponder+ZDRouter.m */; };
+		447BF6DF1F9EE6EB006660C1 /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 447BF6DD1F9EE6EB006660C1 /* TestTableViewCell.m */; };
+		447BF6E01F9EE6EB006660C1 /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447BF6DE1F9EE6EB006660C1 /* TestTableViewCell.xib */; };
+		447BF6E31F9F2386006660C1 /* UITableView+ZDFitForIOS11.m in Sources */ = {isa = PBXBuildFile; fileRef = 447BF6E21F9F2386006660C1 /* UITableView+ZDFitForIOS11.m */; };
 		447DB84C1EDEC7440008E181 /* NSArray+ZDLogHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 447DB84B1EDEC7440008E181 /* NSArray+ZDLogHelper.m */; };
 		44860D9D1EC94B9000DC2458 /* ZDContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44860D9C1EC94B9000DC2458 /* ZDContactViewController.m */; };
 		448949B31E2DCB1C00A69848 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 448949B21E2DCB1C00A69848 /* YYFPSLabel.m */; };
@@ -459,6 +463,13 @@
 		4474386B1EC16BBC00B69765 /* ZDTranslucentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTranslucentViewController.m; sourceTree = "<group>"; };
 		4474386D1EC16C1C00B69765 /* ZDTranslucentNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTranslucentNavigationController.h; sourceTree = "<group>"; };
 		4474386E1EC16C1C00B69765 /* ZDTranslucentNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTranslucentNavigationController.m; sourceTree = "<group>"; };
+		447BF6D91F9EE3BB006660C1 /* UIResponder+ZDRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIResponder+ZDRouter.h"; sourceTree = "<group>"; };
+		447BF6DA1F9EE3BB006660C1 /* UIResponder+ZDRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+ZDRouter.m"; sourceTree = "<group>"; };
+		447BF6DC1F9EE6EA006660C1 /* TestTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
+		447BF6DD1F9EE6EB006660C1 /* TestTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewCell.m; sourceTree = "<group>"; };
+		447BF6DE1F9EE6EB006660C1 /* TestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
+		447BF6E11F9F2386006660C1 /* UITableView+ZDFitForIOS11.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+ZDFitForIOS11.h"; sourceTree = "<group>"; };
+		447BF6E21F9F2386006660C1 /* UITableView+ZDFitForIOS11.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ZDFitForIOS11.m"; sourceTree = "<group>"; };
 		447DB84A1EDEC7440008E181 /* NSArray+ZDLogHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ZDLogHelper.h"; sourceTree = "<group>"; };
 		447DB84B1EDEC7440008E181 /* NSArray+ZDLogHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ZDLogHelper.m"; sourceTree = "<group>"; };
 		44860D9B1EC94B9000DC2458 /* ZDContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDContactViewController.h; sourceTree = "<group>"; };
@@ -898,12 +909,16 @@
 				4449C7031E2C95D000C48943 /* UIButton+LXMImagePosition.m */,
 				441CB03E1E8F869700E78310 /* UITableView+ZDPlaceholder.h */,
 				441CB03F1E8F869700E78310 /* UITableView+ZDPlaceholder.m */,
+				447BF6E11F9F2386006660C1 /* UITableView+ZDFitForIOS11.h */,
+				447BF6E21F9F2386006660C1 /* UITableView+ZDFitForIOS11.m */,
 				444127141EAF2C250004A531 /* UINavigationBar+Awesome.h */,
 				444127151EAF2C250004A531 /* UINavigationBar+Awesome.m */,
 				44227FAB1EB30CF500A682C4 /* UIScrollView+ZDRefresh.h */,
 				44227FAC1EB30CF500A682C4 /* UIScrollView+ZDRefresh.m */,
 				44AE43661ED82E720021B8A3 /* UIAlertController+ZDExtension.h */,
 				44AE43671ED82E720021B8A3 /* UIAlertController+ZDExtension.m */,
+				447BF6D91F9EE3BB006660C1 /* UIResponder+ZDRouter.h */,
+				447BF6DA1F9EE3BB006660C1 /* UIResponder+ZDRouter.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -1029,6 +1044,9 @@
 				44E91CAE1E1B820D0068BF70 /* ZDSessionListViewController.m */,
 				4422E04E1E1CDE2A00682164 /* ZDTestViewController.h */,
 				4422E04F1E1CDE2A00682164 /* ZDTestViewController.m */,
+				447BF6DC1F9EE6EA006660C1 /* TestTableViewCell.h */,
+				447BF6DD1F9EE6EB006660C1 /* TestTableViewCell.m */,
+				447BF6DE1F9EE6EB006660C1 /* TestTableViewCell.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1730,6 +1748,7 @@
 				44A9C2131EB18EBB00EB29D6 /* NSDateTimeAgo.bundle in Resources */,
 				443AC6A41EB0436900CE191A /* imageHD.jpg in Resources */,
 				4461471F1E8CAD0B003EF473 /* CGCommonTableViewCell1.xib in Resources */,
+				447BF6E01F9EE6EB006660C1 /* TestTableViewCell.xib in Resources */,
 				44D19B5C1E83A6CB001072DA /* MLImagePickerCollectionViewCell.xib in Resources */,
 				446147251E8CAD0B003EF473 /* CGCommonTableViewCell4.xib in Resources */,
 			);
@@ -1851,6 +1870,7 @@
 				444127101EAEEEA20004A531 /* ZDNetworking.m in Sources */,
 				44D19B511E83A6CB001072DA /* MLPhotoRect.m in Sources */,
 				44D19B531E83A6CB001072DA /* MLPhotoBrowserViewController.m in Sources */,
+				447BF6E31F9F2386006660C1 /* UITableView+ZDFitForIOS11.m in Sources */,
 				44534B201EA854DF00159852 /* DiscussionGroupMemberListApi.m in Sources */,
 				449913851E1BA14B0080D75F /* DebugHelper.m in Sources */,
 				44D19B9A1E83A732001072DA /* TZPhotoPreviewController.m in Sources */,
@@ -1955,8 +1975,10 @@
 				44010F211EB97CA600093E54 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				44E91CB51E1B82650068BF70 /* ZDToolViewController.m in Sources */,
 				446147261E8CAD0B003EF473 /* ZDMassContentTableViewCell.m in Sources */,
+				447BF6DF1F9EE6EB006660C1 /* TestTableViewCell.m in Sources */,
 				446B93621EADD8E900239C5C /* UITextView+ZDKeyboard.m in Sources */,
 				4461473B1E8CEF7C003EF473 /* PYSearchViewController.m in Sources */,
+				447BF6DB1F9EE3BB006660C1 /* UIResponder+ZDRouter.m in Sources */,
 				4422E0501E1CDE2A00682164 /* ZDTestViewController.m in Sources */,
 				4416F9131E8E618700AAA580 /* TYAlertView.m in Sources */,
 				44534B261EA85D6000159852 /* YYImageCache+ZDGroupIconCache.m in Sources */,
