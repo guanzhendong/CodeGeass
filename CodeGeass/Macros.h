@@ -173,17 +173,18 @@ UIAlertController *alertController = [UIAlertController alertControllerWithTitle
 /** 状态栏＋导航栏 高度 */
 #define STATUS_AND_NAVIGATION_HEIGHT (STATUS_BAR_HEIGHT + NAVIGATION_BAR_HEIGHT)
 
+/** 标签栏底部空白高度（iPhoneX下为34）*/
+#define TABBAR_SAFEAREA_HEIGHT (IS_iPhoneX ? 34 : 0)
+
 /** 标签栏高度 */
-#define TABBAR_HEIGHT (IS_iPhoneX ? (49 + 34) : 49)
+#define TABBAR_HEIGHT 49
 
 /** 工具栏高度 */
-#define TOOLBAR_HEIGHT (IS_iPhoneX ? (49 + 34) : 49)
+#define TOOLBAR_HEIGHT 49
 
 /** 一般表视图内容高度 */
-#define CONTENT_HEIGHT (SCREEN_HEIGHT - NAVIGATION_BAR_HEIGHT - STATUS_BAR_HEIGHT)
+#define CONTENT_HEIGHT (SCREEN_HEIGHT - NAVIGATION_BAR_HEIGHT - STATUS_BAR_HEIGHT - TABBAR_SAFEAREA_HEIGHT)
 
-/** 标签栏底部空白高度（iPhoneX下为34）*/
-#define TabBarSafeBottomMargin (IS_iPhoneX ? 34 : 0)
 
 
 /** 黄金比例值 0.382+0.618=1   0.382/0.618=0.618   0.618/1=0.618 */

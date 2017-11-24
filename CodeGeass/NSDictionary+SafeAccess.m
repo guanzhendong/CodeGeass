@@ -205,7 +205,7 @@
     }
 }
 
-- (void)sa_removeObjectWithKey:(id)aKey {
+- (void)sa_removeObjectForKey:(id)aKey {
     if (aKey) {
         [self removeObjectForKey:aKey];
     }

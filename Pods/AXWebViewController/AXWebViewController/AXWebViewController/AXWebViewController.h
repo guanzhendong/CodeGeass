@@ -40,9 +40,9 @@
 #endif
 
 #ifndef AX_WEB_VIEW_CONTROLLER_AVAILABLITY
-#define AX_WEB_VIEW_CONTROLLER_AVAILABLITY BOOL AX_WEB_VIEW_CONTROLLER_iOS8_0_AVAILABLE();\
-                                           BOOL AX_WEB_VIEW_CONTROLLER_iOS9_0_AVAILABLE();\
-                                           BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE();
+#define AX_WEB_VIEW_CONTROLLER_AVAILABLITY BOOL AX_WEB_VIEW_CONTROLLER_iOS8_0_AVAILABLE(void);\
+                                           BOOL AX_WEB_VIEW_CONTROLLER_iOS9_0_AVAILABLE(void);\
+                                           BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE(void);
 #endif
 
 #import <UIKit/UIKit.h>
@@ -113,7 +113,7 @@ AX_WEB_VIEW_CONTROLLER_AVAILABLITY;
 
 #if AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
 typedef NSURLSessionAuthChallengeDisposition (^WKWebViewDidReceiveAuthenticationChallengeHandler)(WKWebView *webView, NSURLAuthenticationChallenge *challenge, NSURLCredential * _Nullable __autoreleasing * _Nullable credential);
-
+API_AVAILABLE(ios(8.0))
 @interface AXWebViewController : UIViewController <WKUIDelegate, WKNavigationDelegate>
 {
     @protected
@@ -121,6 +121,7 @@ typedef NSURLSessionAuthChallengeDisposition (^WKWebViewDidReceiveAuthentication
     NSURL *_URL;
 }
 #else
+API_AVAILABLE(ios(7.0))
 @interface AXWebViewController : UIViewController <UIWebViewDelegate>
 {
 @protected
@@ -149,14 +150,22 @@ typedef NSURLSessionAuthChallengeDisposition (^WKWebViewDidReceiveAuthentication
 @property(assign, nonatomic) NSTimeInterval timeoutInternal;
 /// Cache policy.
 @property(assign, nonatomic) NSURLRequestCachePolicy cachePolicy;
-/// Url.
+/// The based initialized url of the web view controller if any.
 @property(readonly, nonatomic) NSURL *URL;
-/// Shows tool bar.Default is YES.
+/// Shows tool bar. Default is YES.
 @property(assign, nonatomic) BOOL showsToolBar;
-/// Shows showsBackgroundLabel default YES.
+/// Shows background description label. Default is YES.
 @property(assign, nonatomic) BOOL showsBackgroundLabel;
+/// Shows navigation close bar button item. Default is YES.
+@property(assign, nonatomic) BOOL showsNavigationCloseBarButtonItem;
+/// Shows the title of navigation back bar button item. Default is YES.
+@property(assign, nonatomic) BOOL showsNavigationBackBarButtonItemTitle;
+/// Check url can open default YES, only work after iOS 8.
+@property(assign, nonatomic) BOOL checkUrlCanOpen API_AVAILABLE(ios(8.0));
 /// Navigation type.
 @property(assign, nonatomic) AXWebViewControllerNavigationType navigationType;
+/// Navigation close bar button item.
+@property(readwrite, nonatomic) UIBarButtonItem *navigationCloseItem;
 /// Get a instance of `AXWebViewController` by a url string.
 ///
 /// @param urlString a string of url to be loaded.
@@ -266,7 +275,7 @@ typedef NSURLSessionAuthChallengeDisposition (^WKWebViewDidReceiveAuthentication
 @property(copy, nonatomic, nullable) WKWebViewDidReceiveAuthenticationChallengeHandler challengeHandler;
 /// The security policy used by created session to evaluate server trust for secure connections.
 /// `AXWebViewController` uses the `defaultPolicy` unless otherwise specified.
-@property (strong, nonatomic, nullable) AXSecurityPolicy *securityPolicy;
+@property(readwrite, nonatomic, nullable) AXSecurityPolicy *securityPolicy;
 @end
 #endif
 NS_ASSUME_NONNULL_END

@@ -58,6 +58,6 @@
 
 - (void)sa_setObject:(id)anObject forKey:(id)aKey;
 
-- (void)sa_removeObjectWithKey:(id)aKey;
+- (void)sa_removeObjectForKey:(id)aKey;
 
 @end
