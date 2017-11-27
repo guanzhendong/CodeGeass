@@ -1,14 +1,14 @@
 //
-//  CGCommonCollectionViewCell1.m
+//  ZDCommonCollectionViewCell1.m
 //  ECLite
 //
 //  Created by ec on 2016/11/24.
 //  Copyright © 2016年 eclite. All rights reserved.
 //
 
-#import "CGCommonCollectionViewCell1.h"
+#import "ZDCommonCollectionViewCell1.h"
 
-@implementation CGCommonCollectionViewCell1
+@implementation ZDCommonCollectionViewCell1
 
 - (void)awakeFromNib {
     [super awakeFromNib];

@@ -47,8 +47,8 @@
     _tableView.dataSource = self;
     _tableView.rowHeight = 70;
     _tableView.backgroundColor = [UIColor clearColor];
-    _tableView.separatorColor = [UIColor zd_separatorColor];
-    [_tableView registerNib:[UINib nibWithNibName:@"CGCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"CGCommonTableViewCell1"];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [_tableView registerNib:[UINib nibWithNibName:@"ZDCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"ZDCommonTableViewCell1"];
     [self.view addSubview:_tableView];
     
     WEAKSELF
@@ -83,7 +83,7 @@
     _searchVC.placeholder = @"搜索客户名字、职位、手机号";
     _searchVC.tableView.tableFooterView = [UIView new];
     _searchVC.tableView.separatorColor = [UIColor zd_separatorColor];
-    [_searchVC.tableView registerNib:[UINib nibWithNibName:@"CGCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"CGCommonTableViewCell1Search"];
+    [_searchVC.tableView registerNib:[UINib nibWithNibName:@"ZDCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"ZDCommonTableViewCell1Search"];
     [_searchVC.view addSubview:_searchVC.tableView];
 }
 
@@ -103,7 +103,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == _tableView) {
-        CGCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"CGCommonTableViewCell1" forIndexPath:indexPath];
+        ZDCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDCommonTableViewCell1" forIndexPath:indexPath];
         ZDCrmModel *model = _tableData[indexPath.section][indexPath.row];;
         cell.topLabel.text = model.name;
 //        [cell.leftImageView setImageWithURL:[NSURL URLWithString:model.face]
@@ -122,7 +122,7 @@
         cell.bottomLabel.text = model.position;
         return cell;
     } else {
-        CGCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"CGCommonTableViewCell1Search" forIndexPath:indexPath];
+        ZDCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDCommonTableViewCell1Search" forIndexPath:indexPath];
         ZDEmployeeModel *model = _searchData[indexPath.row];
         cell.topLabel.text = model.name;
         [cell.leftImageView setImageWithURL:[NSURL URLWithString:model.face]

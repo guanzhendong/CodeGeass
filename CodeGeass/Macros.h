@@ -32,6 +32,14 @@ static inline NSString *StringFromObject(id object) {
 	}
 }
 
+static inline void dispatch_async_in_main_queue(void (^block)()) {
+    if (pthread_main_np()) {
+        block();
+    } else {
+        dispatch_async(dispatch_get_main_queue(), block);
+    }
+}
+
 
 
 #pragma mark -
@@ -46,6 +54,7 @@ static inline NSString *StringFromObject(id object) {
 #define IOS_8   IOS_VERSION_GREATER_THAN_OR_EQUAL_TO(8)
 #define IOS_9   IOS_VERSION_GREATER_THAN_OR_EQUAL_TO(9)
 #define IOS_10  IOS_VERSION_GREATER_THAN_OR_EQUAL_TO(10)
+#define IOS_11  IOS_VERSION_GREATER_THAN_OR_EQUAL_TO(11)
 
 
 
@@ -87,7 +96,7 @@ static inline NSString *StringFromObject(id object) {
 #pragma mark weakSelf strongSelf
 
 #define WEAKSELF __weak typeof(self) weakSelf = self;
-#define STRONGSELF __strong __typeof(weakSelf)strongSelf = weakSelf;
+#define STRONGSELF __strong __typeof(weakSelf) strongSelf = weakSelf;
 
 
 

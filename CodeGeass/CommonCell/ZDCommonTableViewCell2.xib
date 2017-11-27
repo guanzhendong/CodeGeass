@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="CGCommonTableViewCell2">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="ZDCommonTableViewCell2">
             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -30,13 +31,6 @@
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-P8-xdT">
-                        <rect key="frame" x="15" y="59" width="305" height="0.0"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="0.5" id="DwV-jV-RlD"/>
-                        </constraints>
-                    </view>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_arrow_right_gray" translatesAutoresizingMaskIntoConstraints="NO" id="uAo-IT-wgb">
                         <rect key="frame" x="295" y="22" width="15" height="15"/>
                         <constraints>
@@ -51,17 +45,12 @@
                     <constraint firstAttribute="trailing" secondItem="Vc1-Cy-6v1" secondAttribute="trailing" constant="15" id="6Qx-Rf-NCh"/>
                     <constraint firstItem="dBY-Am-TeA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JLZ-S0-HW5"/>
                     <constraint firstItem="uAo-IT-wgb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ldp-co-0Fk"/>
-                    <constraint firstAttribute="trailing" secondItem="5dr-P8-xdT" secondAttribute="trailing" id="m3q-RB-iWI"/>
                     <constraint firstItem="Vc1-Cy-6v1" firstAttribute="bottom" secondItem="dBY-Am-TeA" secondAttribute="bottom" id="m3z-WL-0kh"/>
                     <constraint firstAttribute="trailing" secondItem="uAo-IT-wgb" secondAttribute="trailing" constant="10" id="mGB-ci-rZt"/>
-                    <constraint firstItem="5dr-P8-xdT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="seC-B4-QyI"/>
-                    <constraint firstAttribute="bottom" secondItem="5dr-P8-xdT" secondAttribute="bottom" id="ztq-pE-PB4"/>
                     <constraint firstItem="Vc1-Cy-6v1" firstAttribute="leading" secondItem="dBY-Am-TeA" secondAttribute="trailing" constant="15" id="zxB-RE-ozl"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="bottomLineView" destination="5dr-P8-xdT" id="QCe-lb-fj2"/>
-                <outlet property="bottomLineViewLeftConstraint" destination="seC-B4-QyI" id="Q9f-64-F2j"/>
                 <outlet property="leftImageView" destination="dBY-Am-TeA" id="YdE-LD-5sk"/>
                 <outlet property="leftImageViewHeightConstraint" destination="WC9-IC-0Id" id="7oz-yh-LPY"/>
                 <outlet property="rightArrowImageView" destination="uAo-IT-wgb" id="lfv-LS-X4p"/>

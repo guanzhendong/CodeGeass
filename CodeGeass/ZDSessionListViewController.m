@@ -49,8 +49,8 @@
     _tableView.dataSource = self;
     _tableView.rowHeight = 70;
     _tableView.backgroundColor = [UIColor clearColor];
-    _tableView.separatorColor = [UIColor zd_separatorColor];
-    [_tableView registerNib:[UINib nibWithNibName:@"CGCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"CGCommonTableViewCell1"];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [_tableView registerNib:[UINib nibWithNibName:@"ZDCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"ZDCommonTableViewCell1"];
     [self.view addSubview:_tableView];
     
     
@@ -63,7 +63,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGCommonTableViewCell1 *cell = [_tableView dequeueReusableCellWithIdentifier:@"CGCommonTableViewCell1" forIndexPath:indexPath];
+    ZDCommonTableViewCell1 *cell = [_tableView dequeueReusableCellWithIdentifier:@"ZDCommonTableViewCell1" forIndexPath:indexPath];
     ZDSessionModel *model = _tableData[indexPath.row];
     NSString *title;
     NSString *content;
@@ -94,6 +94,11 @@
     cell.leftImageViewHeightConstraint.constant = 50;
     cell.topLabel.text = title;
     cell.bottomLabel.text = content;
+    if (indexPath.row == _tableData.count - 1) {
+        cell.showsSeparator = NO;
+    } else {
+        cell.showsSeparator = YES;
+    }
     return cell;
 }
 
@@ -106,8 +111,13 @@
         
     }];
     action2.backgroundColor = [UIColor orangeColor];
+    WEAKSELF
     UITableViewRowAction *action3 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-        
+        STRONGSELF
+        [strongSelf.tableView beginUpdates];
+        [strongSelf.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationTop];
+        [strongSelf.tableData sa_removeObjectAtIndex:indexPath.row];
+        [strongSelf.tableView endUpdates];
     }];
 //    action3.backgroundColor = [UIColor redColor];
     return @[action3,action2,action1];

@@ -1,14 +1,14 @@
 //
-//  CGCommonTableViewCell3.m
+//  ZDCommonTableViewCell4.m
 //  ECLite
 //
-//  Created by ec on 16/4/27.
+//  Created by ec on 2016/11/29.
 //  Copyright © 2016年 eclite. All rights reserved.
 //
 
-#import "CGCommonTableViewCell3.h"
+#import "ZDCommonTableViewCell4.h"
 
-@implementation CGCommonTableViewCell3
+@implementation ZDCommonTableViewCell4
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -16,7 +16,6 @@
     
     _leftLabel.textColor = [UIColor zd_mainTitleColor];
     _rightLabel.textColor = [UIColor zd_mainContentColor];
-    _bottomLineView.backgroundColor = [UIColor zd_separatorColor];
 }
 
 - (void)showRightArrow:(BOOL)show {

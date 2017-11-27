@@ -1,21 +1,20 @@
 //
-//  CGCommonTableViewCell2.m
+//  ZDCommonTableViewCell2.m
 //  ECLite
 //
 //  Created by ec on 16/4/27.
 //  Copyright © 2016年 eclite. All rights reserved.
 //
 
-#import "CGCommonTableViewCell2.h"
+#import "ZDCommonTableViewCell2.h"
 
-@implementation CGCommonTableViewCell2
+@implementation ZDCommonTableViewCell2
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
     
     _rightLabel.textColor = [UIColor zd_mainTitleColor];
-    _bottomLineView.backgroundColor = [UIColor zd_separatorColor];
 }
 
 - (void)showRightArrow:(BOOL)show {

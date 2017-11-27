@@ -59,10 +59,10 @@
     _tableView.dataSource = self;
     _tableView.rowHeight = 70;
     _tableView.backgroundColor = [UIColor clearColor];
-    _tableView.separatorColor = [UIColor zd_separatorColor];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.tableFooterView = [UIView new];
-    [_tableView registerNib:[UINib nibWithNibName:@"CGCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"CGCommonTableViewCell1"];
-    [_tableView registerNib:[UINib nibWithNibName:@"CGCommonTableViewCell3" bundle:nil] forCellReuseIdentifier:@"CGCommonTableViewCell3"];
+    [_tableView registerNib:[UINib nibWithNibName:@"ZDCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"ZDCommonTableViewCell1"];
+    [_tableView registerNib:[UINib nibWithNibName:@"ZDCommonTableViewCell3" bundle:nil] forCellReuseIdentifier:@"ZDCommonTableViewCell3"];
     [self.view addSubview:_tableView];
     
     
@@ -84,7 +84,7 @@
     _searchVC.placeholder = @"搜索同事名字、职位、手机号";
     _searchVC.tableView.tableFooterView = [UIView new];
     _searchVC.tableView.separatorColor = [UIColor zd_separatorColor];
-    [_searchVC.tableView registerNib:[UINib nibWithNibName:@"CGCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"CGCommonTableViewCell1Search"];
+    [_searchVC.tableView registerNib:[UINib nibWithNibName:@"ZDCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"ZDCommonTableViewCell1Search"];
     [_searchVC.view addSubview:_searchVC.tableView];
 }
 
@@ -104,7 +104,7 @@
     /*
      * 如果用这种写法（相同的cell复用ID）会导致搜索情形下tableView滑动有卡顿，所以对于normal和search两个状态下使用不同的cell复用ID
      *
-     CGCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"CGCommonTableViewCell1" forIndexPath:indexPath];
+     ZDCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDCommonTableViewCell1" forIndexPath:indexPath];
      ZDEmployeeModel *employee;
      if (tableView == _tableView) {
      employee = _tableData[indexPath.row];
@@ -126,7 +126,7 @@
     if (tableView == _tableView) {
         ZDEmployeeModel *employee = _tableData[indexPath.row];
         if (employee.type == ZDEmployeeTypeUser) {
-            CGCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"CGCommonTableViewCell1" forIndexPath:indexPath];
+            ZDCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDCommonTableViewCell1" forIndexPath:indexPath];
             cell.topLabel.text = employee.name;
             [cell.leftImageView setImageWithURL:[NSURL URLWithString:employee.face]
                                     placeholder:[UIImage zd_middleImageWithText:employee.name]
@@ -139,7 +139,7 @@
             cell.bottomLabel.text = employee.position;
             return cell;
         } else {
-            CGCommonTableViewCell3 *cell = [tableView dequeueReusableCellWithIdentifier:@"CGCommonTableViewCell3" forIndexPath:indexPath];
+            ZDCommonTableViewCell3 *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDCommonTableViewCell3" forIndexPath:indexPath];
             cell.leftLabel.text = employee.name;
             cell.leftImageView.image = [UIImage zd_middleImageWithText:employee.name];
             cell.leftImageViewHeightConstraint.constant = 50;
@@ -148,7 +148,7 @@
             return cell;
         }
     } else {
-        CGCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"CGCommonTableViewCell1Search" forIndexPath:indexPath];
+        ZDCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDCommonTableViewCell1Search" forIndexPath:indexPath];
         ZDEmployeeModel *employee = _searchData[indexPath.row];
         cell.topLabel.text = employee.name;
         [cell.leftImageView setImageWithURL:[NSURL URLWithString:employee.face]

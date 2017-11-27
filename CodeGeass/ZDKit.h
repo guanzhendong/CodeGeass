@@ -21,12 +21,12 @@
 
 
 
-    #import "CGCommonTableViewCell1.h"
-    #import "CGCommonTableViewCell2.h"
-    #import "CGCommonTableViewCell3.h"
-    #import "CGCommonTableViewCell4.h"
+    #import "ZDCommonTableViewCell1.h"
+    #import "ZDCommonTableViewCell2.h"
+    #import "ZDCommonTableViewCell3.h"
+    #import "ZDCommonTableViewCell4.h"
     #import "ZDMassContentTableViewCell.h"
-    #import "CGCommonCollectionViewCell1.h"
+    #import "ZDCommonCollectionViewCell1.h"
 
 
     #import "UITextView+Placeholder.h"

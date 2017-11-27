@@ -66,9 +66,9 @@ static CGFloat const kNavigationBarShowAtOffsetY = 64;
     _tableView.dataSource = self;
     _tableView.rowHeight = 70;
     _tableView.backgroundColor = [UIColor clearColor];
-    _tableView.separatorColor = [UIColor zd_separatorColor];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.tableFooterView = [UIView new];
-    [_tableView registerNib:[UINib nibWithNibName:@"CGCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"CGCommonTableViewCell1"];
+    [_tableView registerNib:[UINib nibWithNibName:@"ZDCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"ZDCommonTableViewCell1"];
     [self.view addSubview:_tableView];
     
     
@@ -148,7 +148,7 @@ static CGFloat const kNavigationBarShowAtOffsetY = 64;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"CGCommonTableViewCell1" forIndexPath:indexPath];
+    ZDCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDCommonTableViewCell1" forIndexPath:indexPath];
     return cell;
 }
 

@@ -41,9 +41,9 @@
     _tableView.rowHeight = 50;
     _tableView.sectionHeaderHeight = 50;
     _tableView.backgroundColor = [UIColor clearColor];
-    _tableView.separatorColor = [UIColor zd_separatorColor];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.tableFooterView = [UIView new];
-    [_tableView registerNib:[UINib nibWithNibName:@"CGCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"CGCommonTableViewCell1"];
+    [_tableView registerNib:[UINib nibWithNibName:@"ZDCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"ZDCommonTableViewCell1"];
     [_tableView registerClass:[FoldedTableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"FoldedTableViewHeaderFooterView"];
     [self.view addSubview:_tableView];
     
@@ -67,7 +67,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"CGCommonTableViewCell1" forIndexPath:indexPath];
+    ZDCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDCommonTableViewCell1" forIndexPath:indexPath];
     ZDQQFriendGroup *model = self.tableData[indexPath.section];
     ZDQQFriend *friend = model.friends[indexPath.row];
     cell.topLabel.text = friend.remark;

@@ -117,10 +117,10 @@
     _tableView.dataSource = self;
     _tableView.rowHeight = 70;
     _tableView.backgroundColor = [UIColor clearColor];
-    _tableView.separatorColor = [UIColor zd_separatorColor];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.sectionIndexColor = [UIColor zd_greenThemeColor];
     _tableView.sectionIndexBackgroundColor = [UIColor clearColor];
-    [_tableView registerNib:[UINib nibWithNibName:@"CGCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"CGCommonTableViewCell1"];
+    [_tableView registerNib:[UINib nibWithNibName:@"ZDCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"ZDCommonTableViewCell1"];
     [self.view addSubview:_tableView];
     
     
@@ -141,7 +141,7 @@
     _searchVC.placeholder = @"搜索联系人名字";
     _searchVC.tableView.tableFooterView = [UIView new];
     _searchVC.tableView.separatorColor = [UIColor zd_separatorColor];
-    [_searchVC.tableView registerNib:[UINib nibWithNibName:@"CGCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"CGCommonTableViewCell1Search"];
+    [_searchVC.tableView registerNib:[UINib nibWithNibName:@"ZDCommonTableViewCell1" bundle:nil] forCellReuseIdentifier:@"ZDCommonTableViewCell1Search"];
     [_searchVC.view addSubview:_searchVC.tableView];
 }
 
@@ -163,7 +163,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == _tableView) {
-        CGCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"CGCommonTableViewCell1" forIndexPath:indexPath];
+        ZDCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDCommonTableViewCell1" forIndexPath:indexPath];
         NSString *key = _indexs[indexPath.section];
         CNContact *contact = _tableData[key][indexPath.row];
         cell.topLabel.text = [NSString stringWithFormat:@"%@%@",contact.familyName,contact.givenName];
@@ -176,7 +176,7 @@
         cell.bottomLabel.text = contact.phoneNumbers.firstObject.value.stringValue;
         return cell;
     } else {
-        CGCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"CGCommonTableViewCell1Search" forIndexPath:indexPath];
+        ZDCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDCommonTableViewCell1Search" forIndexPath:indexPath];
         CNContact *contact = _searchData[indexPath.row];
         cell.topLabel.text = [NSString stringWithFormat:@"%@%@",contact.familyName,contact.givenName];
         if ([_images sa_objectForKey:contact.identifier]) {
