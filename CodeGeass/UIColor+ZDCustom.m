@@ -23,7 +23,7 @@
 }
 
 + (UIColor *)zd_mainTitleColor {
-    return [UIColor colorWithHexString:@"303642"];
+    return [UIColor blackColor];//[UIColor colorWithHexString:@"303642"];
 }
 
 + (UIColor *)zd_backgroundColor {

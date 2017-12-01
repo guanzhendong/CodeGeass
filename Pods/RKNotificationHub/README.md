@@ -11,12 +11,12 @@ Code:
   [hub increment]; // increments the count to 1, making the notification visible
 ```
 
-###Pod
+### Pod
 ```
     pod 'RKNotificationHub'
 ```
 
-###USAGE
+### USAGE
 ![increment](http://i.imgur.com/zpgkNtE.gif)
 ``` objc
   [hub increment];
@@ -37,7 +37,7 @@ __Combine Actions!__
   [hub pop];
 ```
 
-###CUSTOMIZE
+### CUSTOMIZE
 ![blink](http://i.imgur.com/Ftbrh87.gif)
 ``` objc
   //%%% COLOR
@@ -65,19 +65,19 @@ __Combine Actions!__
 ```
 
 
-###TROUBLESHOOTING
+### TROUBLESHOOTING
 **Notification isn't showing up!**
-* If the hub value is < 1, the circle hides.  Try calling [increment]
-* Make sure the view you set the hub to is visible (i.e. did you call [self.view addSubview: yourView]?)
-* Make sure you didn't call [hideCount] anywhere. Call [showCount] to counter this
+* If the hub value is < 1, the circle hides.  Try calling `[increment]`
+* Make sure the view you set the hub to is visible (i.e. did you call `[self.view addSubview: yourView]`?)
+* Make sure you didn't call `[hideCount]` anywhere. Call `[showCount]` to counter this
 
 **It isn't incrementing / decrementing properly!**
 * I've written it so that any count < 1 doesn't show up. If you need help customizing this, reach out to me
 
 **The circle is in a weird place**
-* If you want to resize the circle, use [scaleCircleSizeBy:]. 0.5 will give you half the size, 2 will give you double
-* If the circle is just a few pixels off, use [moveCircleByX: Y:]. This shifts the circle by the number of pixels given
-* If you want to manually set the circle, call [setCircleAtFrame:] and give it your own CGRect
+* If you want to resize the circle, use `[scaleCircleSizeBy:]`. 0.5 will give you half the size, 2 will give you double
+* If the circle is just a few pixels off, use `[moveCircleByX: Y:]`. This shifts the circle by the number of pixels given
+* If you want to manually set the circle, call `[setCircleAtFrame:]` and give it your own CGRect
 
 **Something else isn't working properly**
 * Send me a tweet @cwRichardKim with #RKNotificationHub so that other people can search these issues too

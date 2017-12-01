@@ -19,7 +19,7 @@
         @try {
             logString = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:nil] encoding:NSUTF8StringEncoding];
         } @catch (NSException *exception) {
-            logString = [NSString stringWithFormat:@"打印字典时转换失败：%@",exception.reason];
+            logString = [NSString stringWithFormat:@"打印数组时转换失败：%@",exception.reason];
         } @finally {
             return logString;
         }

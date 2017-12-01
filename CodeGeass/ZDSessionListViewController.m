@@ -93,7 +93,9 @@
     }
     cell.leftImageViewHeightConstraint.constant = 50;
     cell.topLabel.text = title;
+    cell.topLabel.font = [UIFont systemFontOfSize:18];
     cell.bottomLabel.text = content;
+    cell.bottomLabel.font = [UIFont systemFontOfSize:14];
     if (indexPath.row == _tableData.count - 1) {
         cell.showsSeparator = NO;
     } else {

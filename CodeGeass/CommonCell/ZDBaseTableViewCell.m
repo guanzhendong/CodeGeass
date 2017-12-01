@@ -11,7 +11,6 @@
 @interface ZDBaseTableViewCell ()
 
 @property (nonatomic, strong) CALayer *separatorLayer;
-@property (nonatomic, strong) CALayer *highlightedBackgroundView;
 
 @end
 
@@ -44,7 +43,7 @@
     _showsSeparator = YES;
     
     // 设置选中颜色
-    self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.frame];
+    self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
     self.selectedBackgroundView.backgroundColor = [UIColor zd_separatorColor];
     
     // 设置分隔线

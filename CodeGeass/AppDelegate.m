@@ -59,7 +59,7 @@
         [self setupOnboard];
     } else {
         // 设置广告页
-//        [self setupXHLaunchAd];
+        [self setupXHLaunchAd];
         
         NSString *account = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentAccount"];
         NSString *password = [YYKeychain getPasswordForService:[UIApplication sharedApplication].appBundleName
@@ -122,7 +122,7 @@
     XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
     //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
     imageAdconfiguration.imageNameOrURLString = @"image0.jpg";
-    imageAdconfiguration.openURLString = @"http://www.returnoc.com";
+    imageAdconfiguration.openURLString = @"https://www.baidu.com";
     imageAdconfiguration.duration = 3;
     //显示图片开屏广告
     [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
@@ -218,6 +218,11 @@
 #endif
 }
 
+- (void)xhLaunchAd:(XHLaunchAd *)launchAd clickAndOpenURLString:(NSString *)openURLString {
+    AXWebViewController *webVC = [[AXWebViewController alloc] initWithAddress:openURLString];
+    ZDBaseNavigationController *nav = [[ZDBaseNavigationController alloc] initWithRootViewController:webVC];
+    [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -52,7 +52,7 @@ PODS:
   - Onboard (2.3.1)
   - PNChart (0.8.9):
     - UICountingLabel (~> 1.2.0)
-  - RKNotificationHub (2.0.4)
+  - RKNotificationHub (2.0.5)
   - SDAutoLayout (2.2.0)
   - SDCycleScrollView (1.74):
     - SDWebImage (>= 4.0.0)
@@ -130,7 +130,7 @@ SPEC CHECKSUMS:
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   Onboard: b6871f25ac753175b2ab9a362fb2feb26a81a311
   PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
-  RKNotificationHub: 3765424499139c3d3885b681bb0837f072d12ae6
+  RKNotificationHub: e926748820d719f21ff374657a47fceefa1796b4
   SDAutoLayout: c5509e77ae75735d9a39f7bc83dba6d3f75d49d8
   SDCycleScrollView: f821215226f6146a35470721a9d6e83ec5cfb04b
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
@@ -144,6 +144,6 @@ SPEC CHECKSUMS:
   YTKKeyValueStore: 4d002941540dd5108fa23009b71e0f2f937f7a0f
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: d948cb201ba0e9c12fb6a3d9e87c836be1998833
+PODFILE CHECKSUM: 33718bd48b85bb305103edded0fbdb5b3b06f8b2
 
 COCOAPODS: 1.2.1

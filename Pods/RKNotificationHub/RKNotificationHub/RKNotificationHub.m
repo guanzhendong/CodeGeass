@@ -152,6 +152,11 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
     [countLabel setTextColor:labelColor];
 }
 
+- (void)setCircleBorderColor:(UIColor *)color borderWidth:(CGFloat)width {
+    redCircle.layer.borderColor = color.CGColor;
+    redCircle.layer.borderWidth = width;
+}
+
 - (void)hideCount
 {
     countLabel.hidden = YES;
@@ -206,7 +211,7 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 //%% set the font of the label
 - (void)setCountLabelFont:(UIFont *)font
 {
-    [countLabel setFont:[UIFont fontWithName:font.fontName size:redCircle.frame.size.width/2]];
+    [countLabel setFont:font];
 }
 
 - (UIFont *)countLabelFont
