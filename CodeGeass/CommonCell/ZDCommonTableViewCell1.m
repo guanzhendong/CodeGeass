@@ -18,9 +18,9 @@
     _bottomLabel.textColor = [UIColor zd_mainContentColor];
 }
 
-- (void)showRightArrow:(BOOL)show {
-    _rightArrowImageView.hidden = !show;
-    if (show) {
+- (void)setShowsIndicator:(BOOL)showsIndicator {
+    [super setShowsIndicator:showsIndicator];
+    if (showsIndicator) {
         _topLabelRightConstraint.constant = 35;
     } else {
         _topLabelRightConstraint.constant = 15;

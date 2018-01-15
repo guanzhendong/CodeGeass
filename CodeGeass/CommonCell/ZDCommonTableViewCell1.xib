@@ -37,13 +37,6 @@
                         <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_arrow_right_gray" translatesAutoresizingMaskIntoConstraints="NO" id="P1s-Py-QiA">
-                        <rect key="frame" x="295" y="22.5" width="15" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="OAn-9b-d4a"/>
-                            <constraint firstAttribute="width" constant="15" id="yfD-Jp-Ihq"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="JC2-yy-CqC" secondAttribute="trailing" constant="15" id="AkE-3P-oBq"/>
@@ -56,22 +49,16 @@
                     <constraint firstItem="S1p-WS-b4Z" firstAttribute="height" secondItem="JC2-yy-CqC" secondAttribute="height" id="j82-13-3Kl"/>
                     <constraint firstItem="S1p-WS-b4Z" firstAttribute="leading" secondItem="JC2-yy-CqC" secondAttribute="leading" id="jZk-jd-cea"/>
                     <constraint firstItem="bKu-tj-TFa" firstAttribute="leading" secondItem="HST-Lo-5hc" secondAttribute="leading" constant="15" id="mZL-bU-d9K"/>
-                    <constraint firstItem="P1s-Py-QiA" firstAttribute="centerY" secondItem="HST-Lo-5hc" secondAttribute="centerY" id="vGh-F6-6ri"/>
-                    <constraint firstAttribute="trailing" secondItem="P1s-Py-QiA" secondAttribute="trailing" constant="10" id="y6q-9u-zYf"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="bottomLabel" destination="S1p-WS-b4Z" id="e1g-hE-Aqa"/>
                 <outlet property="leftImageView" destination="bKu-tj-TFa" id="7eM-hY-jr3"/>
                 <outlet property="leftImageViewHeightConstraint" destination="L4V-c4-wgN" id="9E5-Dy-cCL"/>
-                <outlet property="rightArrowImageView" destination="P1s-Py-QiA" id="V1d-38-h5A"/>
                 <outlet property="topLabel" destination="JC2-yy-CqC" id="K6Y-G8-eB8"/>
                 <outlet property="topLabelRightConstraint" destination="AkE-3P-oBq" id="PwO-g9-iPq"/>
             </connections>
             <point key="canvasLocation" x="-157" y="-94"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="cell_arrow_right_gray" width="16" height="16"/>
-    </resources>
 </document>

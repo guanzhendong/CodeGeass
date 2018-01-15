@@ -120,10 +120,11 @@
         cell.leftImageView.clipsToBounds = YES;
         cell.leftImageView.layer.cornerRadius = 25;
         cell.bottomLabel.text = model.position;
+        cell.showsCheckmark = model.selected;
         return cell;
     } else {
         ZDCommonTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDCommonTableViewCell1Search" forIndexPath:indexPath];
-        ZDEmployeeModel *model = _searchData[indexPath.row];
+        ZDCrmModel *model = _searchData[indexPath.row];
         cell.topLabel.text = model.name;
         [cell.leftImageView setImageWithURL:[NSURL URLWithString:model.face]
                                 placeholder:[UIImage zd_middleImageWithText:model.name]
@@ -162,6 +163,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    ZDCrmModel *model = _tableData[indexPath.section][indexPath.row];
+    model.selected = !model.selected;
+    [tableView reloadRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {

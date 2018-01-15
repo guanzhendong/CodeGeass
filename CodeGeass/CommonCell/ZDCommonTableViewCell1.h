@@ -18,12 +18,4 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftImageViewHeightConstraint;///< 左图片高度约束
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLabelRightConstraint;///< 右三角隐藏时为15，显示时为35=10+15+10
 
-
-/**
- 显示或隐藏右三角
- 
- @param show 显示为YES
- */
-- (void)showRightArrow:(BOOL)show;
-
 @end

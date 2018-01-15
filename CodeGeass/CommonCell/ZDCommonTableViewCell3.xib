@@ -26,55 +26,36 @@
                             <constraint firstAttribute="height" constant="40" id="7Kb-wm-WKJ"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwG-1K-uvS">
-                        <rect key="frame" x="70" y="10" width="165" height="40"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwG-1K-uvS">
+                        <rect key="frame" x="70" y="21" width="32.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzL-nD-87A">
-                        <rect key="frame" x="245" y="10" width="60" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="60" id="zb9-NU-hR3"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzL-nD-87A">
+                        <rect key="frame" x="276" y="22" width="29" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_arrow_right_gray" translatesAutoresizingMaskIntoConstraints="NO" id="l9n-hl-S8M">
-                        <rect key="frame" x="295" y="22.5" width="15" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="DJ5-nm-Yus"/>
-                            <constraint firstAttribute="width" constant="15" id="dtX-3n-IJ0"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="l9n-hl-S8M" secondAttribute="trailing" constant="10" id="9it-8g-XYi"/>
-                    <constraint firstItem="xzL-nD-87A" firstAttribute="top" secondItem="fX6-qp-RJE" secondAttribute="top" id="J6e-Wa-KfF"/>
                     <constraint firstAttribute="trailing" secondItem="xzL-nD-87A" secondAttribute="trailing" constant="15" id="LFj-Oc-PbQ"/>
-                    <constraint firstItem="l9n-hl-S8M" firstAttribute="centerY" secondItem="0j3-Hf-O1Q" secondAttribute="centerY" id="LJi-lD-gqc"/>
-                    <constraint firstItem="iwG-1K-uvS" firstAttribute="bottom" secondItem="fX6-qp-RJE" secondAttribute="bottom" id="PBX-Hb-xbG"/>
                     <constraint firstItem="fX6-qp-RJE" firstAttribute="centerY" secondItem="0j3-Hf-O1Q" secondAttribute="centerY" id="SgN-Vt-jge"/>
-                    <constraint firstItem="xzL-nD-87A" firstAttribute="bottom" secondItem="fX6-qp-RJE" secondAttribute="bottom" id="U8c-zn-OQJ"/>
-                    <constraint firstItem="iwG-1K-uvS" firstAttribute="top" secondItem="fX6-qp-RJE" secondAttribute="top" id="cI4-Rs-oo2"/>
+                    <constraint firstItem="iwG-1K-uvS" firstAttribute="centerY" secondItem="0j3-Hf-O1Q" secondAttribute="centerY" id="eyN-Wy-qyx"/>
                     <constraint firstItem="fX6-qp-RJE" firstAttribute="leading" secondItem="0j3-Hf-O1Q" secondAttribute="leading" constant="15" id="ffx-qk-NRM"/>
+                    <constraint firstItem="xzL-nD-87A" firstAttribute="centerY" secondItem="0j3-Hf-O1Q" secondAttribute="centerY" id="kbV-H2-8GF"/>
                     <constraint firstItem="iwG-1K-uvS" firstAttribute="leading" secondItem="fX6-qp-RJE" secondAttribute="trailing" constant="15" id="ltk-5Z-Smq"/>
-                    <constraint firstItem="xzL-nD-87A" firstAttribute="leading" secondItem="iwG-1K-uvS" secondAttribute="trailing" constant="10" id="vFC-Js-lk6"/>
+                    <constraint firstItem="xzL-nD-87A" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iwG-1K-uvS" secondAttribute="trailing" constant="10" id="vFC-Js-lk6"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="leftImageView" destination="fX6-qp-RJE" id="FRq-zz-e8O"/>
                 <outlet property="leftImageViewHeightConstraint" destination="7Kb-wm-WKJ" id="4Jw-5R-vxs"/>
                 <outlet property="leftLabel" destination="iwG-1K-uvS" id="d3o-qY-4Cq"/>
-                <outlet property="rightArrowImageView" destination="l9n-hl-S8M" id="v5S-Dk-tkq"/>
                 <outlet property="rightLabel" destination="xzL-nD-87A" id="L3K-g0-iOJ"/>
                 <outlet property="rightLabelRightConstraint" destination="LFj-Oc-PbQ" id="SQv-iq-r0X"/>
-                <outlet property="rightLabelWidthConstraint" destination="zb9-NU-hR3" id="7Eh-Yn-BKX"/>
             </connections>
             <point key="canvasLocation" x="413" y="219"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="cell_arrow_right_gray" width="16" height="16"/>
-    </resources>
 </document>

@@ -12,7 +12,7 @@
 #import "ZDCorpInfoViewController.h"
 #import "ZDQQFriendViewController.h"
 
-@interface ZDToolViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, ZDSearchViewControllerDelegate>
+@interface ZDToolViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, ZDSearchViewControllerDelegate, UIViewControllerPreviewingDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *tableData;
 @property (nonatomic, strong) ZDSearchViewController *searchVC;
@@ -45,6 +45,9 @@
     
     [self initData];
     [self initUI];
+    if (IOS_9 && self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        [self registerForPreviewingWithDelegate:self sourceView:_tableView];
+    }
 }
 
 - (void)initData {
@@ -144,7 +147,8 @@
             cell.leftImageView.image = [UIImage zd_middleImageWithText:employee.name];
             cell.leftImageViewHeightConstraint.constant = 50;
             cell.rightLabel.text = [NSString stringWithFormat:@"%lu",employee.number];
-            [cell showRightArrow:YES];
+            cell.showsIndicator = YES;
+            NSLog(@"%d",cell.showsIndicator);
             return cell;
         }
     } else {
@@ -204,6 +208,41 @@
 - (void)searchVC:(ZDSearchViewController *)searchVC textDidChange:(NSString *)searchText {
     _searchData = [[ZDCorpManager sharedManager] employeesWithSearchText:searchText].mutableCopy;
     [_searchVC.tableView reloadData];
+}
+
+#pragma mark - 3D Touch
+- (nullable UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    NSLog(@"Peek");
+    NSIndexPath *indexPath = [_tableView indexPathForRowAtPoint:location];
+    ZDCommonTableViewCell1 *cell = [_tableView cellForRowAtIndexPath:indexPath];
+    previewingContext.sourceRect = cell.frame;
+    
+    ZDEmployeeModel *model = _tableData[indexPath.row];
+    UIViewController *vc;
+    if (model.type == ZDEmployeeTypeCorp) {
+        vc = [[ZDToolViewController alloc] initWithParentId:model.Id];
+    } else if (model.type == ZDEmployeeTypeUser) {
+        vc = [[ZDCorpInfoViewController alloc] initWithEmployeeId:model.Id];
+    }
+    return vc;
+}
+
+- (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    NSLog(@"pop");
+    [self.navigationController pushViewController:viewControllerToCommit animated:NO];
+}
+
+- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
+    UIPreviewAction *p1 = [UIPreviewAction actionWithTitle:@"选项1" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        
+    }];
+    UIPreviewAction *p2 = [UIPreviewAction actionWithTitle:@"选项2" style:UIPreviewActionStyleSelected handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        
+    }];
+    UIPreviewAction *p3 = [UIPreviewAction actionWithTitle:@"选项3" style:UIPreviewActionStyleDestructive handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        
+    }];
+    return @[p1,p2,p3];
 }
 
 @end

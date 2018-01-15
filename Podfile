@@ -36,6 +36,6 @@ target "CodeGeass" do
     pod 'SDCycleScrollView'
     pod 'HMSegmentedControl'
     pod 'FCAlertView'
-    
+    pod 'TTTAttributedLabel'
     
 end

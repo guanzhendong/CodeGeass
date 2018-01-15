@@ -26,41 +26,27 @@
                             <constraint firstAttribute="width" secondItem="dBY-Am-TeA" secondAttribute="height" multiplier="1:1" id="YOi-mf-iQw"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vc1-Cy-6v1">
-                        <rect key="frame" x="70" y="10" width="235" height="40"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vc1-Cy-6v1">
+                        <rect key="frame" x="70" y="21" width="32.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_arrow_right_gray" translatesAutoresizingMaskIntoConstraints="NO" id="uAo-IT-wgb">
-                        <rect key="frame" x="295" y="22" width="15" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="15" id="kMa-Kq-Tnd"/>
-                            <constraint firstAttribute="height" constant="15" id="xCy-Yw-s74"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="dBY-Am-TeA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="0qc-7M-5BK"/>
-                    <constraint firstItem="Vc1-Cy-6v1" firstAttribute="top" secondItem="dBY-Am-TeA" secondAttribute="top" id="4eD-Nf-vsR"/>
-                    <constraint firstAttribute="trailing" secondItem="Vc1-Cy-6v1" secondAttribute="trailing" constant="15" id="6Qx-Rf-NCh"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vc1-Cy-6v1" secondAttribute="trailing" constant="15" id="6Qx-Rf-NCh"/>
                     <constraint firstItem="dBY-Am-TeA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JLZ-S0-HW5"/>
-                    <constraint firstItem="uAo-IT-wgb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ldp-co-0Fk"/>
-                    <constraint firstItem="Vc1-Cy-6v1" firstAttribute="bottom" secondItem="dBY-Am-TeA" secondAttribute="bottom" id="m3z-WL-0kh"/>
-                    <constraint firstAttribute="trailing" secondItem="uAo-IT-wgb" secondAttribute="trailing" constant="10" id="mGB-ci-rZt"/>
+                    <constraint firstItem="Vc1-Cy-6v1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VfG-66-vZj"/>
                     <constraint firstItem="Vc1-Cy-6v1" firstAttribute="leading" secondItem="dBY-Am-TeA" secondAttribute="trailing" constant="15" id="zxB-RE-ozl"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="leftImageView" destination="dBY-Am-TeA" id="YdE-LD-5sk"/>
                 <outlet property="leftImageViewHeightConstraint" destination="WC9-IC-0Id" id="7oz-yh-LPY"/>
-                <outlet property="rightArrowImageView" destination="uAo-IT-wgb" id="lfv-LS-X4p"/>
                 <outlet property="rightLabel" destination="Vc1-Cy-6v1" id="5fL-oH-LTg"/>
                 <outlet property="rightLabelRightConstraint" destination="6Qx-Rf-NCh" id="3p8-rh-dFm"/>
             </connections>
             <point key="canvasLocation" x="-160" y="-188"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="cell_arrow_right_gray" width="16" height="16"/>
-    </resources>
 </document>

@@ -594,6 +594,7 @@
 		44D19B8D1E83A732001072DA /* TZVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZVideoPlayerController.m; sourceTree = "<group>"; };
 		44D19B8E1E83A732001072DA /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		44D19B8F1E83A732001072DA /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		44D2DF782005C3B800B5DD33 /* ZDTableViewCellAccessoryProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDTableViewCellAccessoryProtocol.h; sourceTree = "<group>"; };
 		44D52E4D1E345A5400DA321C /* NSString+XHLaunchAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XHLaunchAd.h"; sourceTree = "<group>"; };
 		44D52E4E1E345A5400DA321C /* NSString+XHLaunchAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XHLaunchAd.m"; sourceTree = "<group>"; };
 		44D52E4F1E345A5400DA321C /* UIImage+XHLaunchAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XHLaunchAd.h"; sourceTree = "<group>"; };
@@ -1155,6 +1156,7 @@
 				4461470C1E8CAD0B003EF473 /* ZDCommonCollectionViewCell1.xib */,
 				44750EDC1FCBB66600E6432C /* ZDBaseTableViewCell.h */,
 				44750EDD1FCBB66600E6432C /* ZDBaseTableViewCell.m */,
+				44D2DF782005C3B800B5DD33 /* ZDTableViewCellAccessoryProtocol.h */,
 			);
 			path = CommonCell;
 			sourceTree = "<group>";

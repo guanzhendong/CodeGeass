@@ -11,6 +11,7 @@
 @interface ZDBaseTableViewCell ()
 
 @property (nonatomic, strong) CALayer *separatorLayer;
+@property (nonatomic, strong) UIImageView *customAccessoryView;
 
 @end
 
@@ -52,9 +53,30 @@
     [self.layer addSublayer:_separatorLayer];
 }
 
+- (UIImageView *)customAccessoryView {
+    if (!_customAccessoryView) {
+        _customAccessoryView = [[UIImageView alloc] init];
+        [self.contentView addSubview:_customAccessoryView];
+    }
+    return _customAccessoryView;
+}
+
 - (void)setShowsSeparator:(BOOL)showsSeparator {
     _showsSeparator = showsSeparator;
     _separatorLayer.hidden = !showsSeparator;
+}
+
+- (void)setShowsIndicator:(BOOL)showsIndicator {
+    self.customAccessoryView.hidden = !showsIndicator;
+    UIImage *image = [UIImage imageNamed:@"cell_arrow_right_gray"];
+    self.customAccessoryView.image = image;
+    self.customAccessoryView.frame = CGRectMake(CGRectGetWidth(self.bounds) - 10 - image.size.width, (CGRectGetHeight(self.bounds) - image.size.height) / 2, image.size.width, image.size.height);
+}
+
+- (void)setShowsCheckmark:(BOOL)showsCheckmark {
+    UIImage *image = showsCheckmark ? [UIImage imageNamed:@"cell_mark_select"] : [UIImage imageNamed:@"cell_mark_normal"];
+    self.customAccessoryView.image = image;
+    self.customAccessoryView.frame = CGRectMake(CGRectGetWidth(self.bounds) - 10 - image.size.width, (CGRectGetHeight(self.bounds) - image.size.height) / 2, image.size.width, image.size.height);
 }
 
 - (void)layoutSubviews {

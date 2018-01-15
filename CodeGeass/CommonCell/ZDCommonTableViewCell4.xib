@@ -18,39 +18,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYo-j4-Ebt">
-                        <rect key="frame" x="15" y="22" width="0.0" height="0.0"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYo-j4-Ebt">
+                        <rect key="frame" x="15" y="12.5" width="34.5" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3g-ao-OTZ">
-                        <rect key="frame" x="100" y="22" width="205" height="0.0"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3g-ao-OTZ">
+                        <rect key="frame" x="100" y="12.5" width="205" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_arrow_right_gray" translatesAutoresizingMaskIntoConstraints="NO" id="M3M-Is-9J5">
-                        <rect key="frame" x="295" y="14.5" width="15" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="Sl6-lE-zIE"/>
-                            <constraint firstAttribute="width" constant="15" id="tia-3D-dgk"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="y3g-ao-OTZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VYo-j4-Ebt" secondAttribute="trailing" constant="10" id="6ka-LE-cQm"/>
                     <constraint firstItem="y3g-ao-OTZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Efb-St-Oxf"/>
-                    <constraint firstAttribute="trailing" secondItem="M3M-Is-9J5" secondAttribute="trailing" constant="10" id="IDx-9A-iE4"/>
                     <constraint firstItem="VYo-j4-Ebt" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LCO-S0-mCk"/>
                     <constraint firstItem="VYo-j4-Ebt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Pf3-UY-Rbf"/>
                     <constraint firstAttribute="trailing" secondItem="y3g-ao-OTZ" secondAttribute="trailing" constant="15" id="e0O-mv-daP"/>
                     <constraint firstItem="y3g-ao-OTZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="100" id="tUa-cg-f8e"/>
-                    <constraint firstItem="M3M-Is-9J5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="uvN-Hr-1dy"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="leftLabel" destination="VYo-j4-Ebt" id="mpL-gm-F0c"/>
-                <outlet property="rightArrowImageView" destination="M3M-Is-9J5" id="8sj-AJ-Xv2"/>
                 <outlet property="rightLabel" destination="y3g-ao-OTZ" id="4A5-bg-Wmh"/>
                 <outlet property="rightLabelLeftConstraint" destination="tUa-cg-f8e" id="Yha-fh-GdT"/>
                 <outlet property="rightLabelRightConstraint" destination="e0O-mv-daP" id="Whp-Nm-Iwx"/>
@@ -58,7 +49,4 @@
             <point key="canvasLocation" x="-591" y="-223"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="cell_arrow_right_gray" width="16" height="16"/>
-    </resources>
 </document>

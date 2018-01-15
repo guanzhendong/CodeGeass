@@ -67,5 +67,6 @@ typedef NS_ENUM(NSUInteger, ZDCrmType) {
 @property (nonatomic, strong) NSDate *createTime;
 @property (nonatomic, assign) NSTimeInterval modifyTime;
 
+@property (nonatomic, assign) BOOL selected;
 
 @end

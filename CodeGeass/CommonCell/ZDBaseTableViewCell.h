@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZDTableViewCellAccessoryProtocol.h"
 
-@interface ZDBaseTableViewCell : UITableViewCell
+@interface ZDBaseTableViewCell : UITableViewCell <ZDTableViewCellAccessoryProtocol>
 
 @property (nonatomic, assign) BOOL showsSeparator;// default is YES
 @property (nonatomic, assign) CGFloat separatorLeading;// default is 15.f
