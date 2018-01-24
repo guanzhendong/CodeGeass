@@ -148,7 +148,7 @@
             cell.leftImageViewHeightConstraint.constant = 50;
             cell.rightLabel.text = [NSString stringWithFormat:@"%lu",employee.number];
             cell.showsIndicator = YES;
-            NSLog(@"%d",cell.showsIndicator);
+//            NSLog(@"%d",cell.showsIndicator);
             return cell;
         }
     } else {

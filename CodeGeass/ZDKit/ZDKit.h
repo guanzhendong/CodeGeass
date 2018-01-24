@@ -9,7 +9,7 @@
 #ifndef ZDKit_h
 #define ZDKit_h
 
-
+    // 宏、工具
     #import "Macros.h"
     #import "ZDConsts.h"
     #import "UICreator.h"
@@ -20,15 +20,17 @@
     #import "ZDBaseNavigationController.h"
 
 
-
+    // cell
     #import "ZDCommonTableViewCell1.h"
     #import "ZDCommonTableViewCell2.h"
     #import "ZDCommonTableViewCell3.h"
     #import "ZDCommonTableViewCell4.h"
     #import "ZDMassContentTableViewCell.h"
     #import "ZDCommonCollectionViewCell1.h"
+    #import "ZDTableViewCellAccessoryProtocol.h"
 
 
+    // category UI
     #import "UITextView+Placeholder.h"
     #import "UITextView+ZDKeyboard.h"
     #import "UIImage+ZDExtension.h"
@@ -44,6 +46,7 @@
     #import "UIImageView+ZDAddForSDWebImage.h"
     #import "UIImageView+ZDRoundCorner.h"
 
+    // category NS
     #import "NSDate+TimeAgo.h"
     #import "NSDate+Extension.h"
     #import "NSDate+Utilities.h"

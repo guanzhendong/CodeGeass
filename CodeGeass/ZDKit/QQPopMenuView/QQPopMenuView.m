@@ -7,15 +7,25 @@
 //
 
 #import "QQPopMenuView.h"
-#import "PopMenuTableViewCell.h"
 
 #ifndef SCREEN_WIDTH
-#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+    #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #endif
 
-static CGFloat const kCellHeight = 44;
+#define COLOR_HEXA(hexValue) [UIColor colorWithRed:((hexValue & 0xFF0000) >> 16) / 255.0 \
+                                             green:((hexValue & 0xFF00) >> 8) / 255.0    \
+                                              blue:(hexValue & 0xFF) / 255.0             \
+                                             alpha:1.0]
 
-@interface QQPopMenuView ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
+static CGFloat const kCellHeight = 44;
+static CGFloat const kTitleLabelLeading = 50;
+
+@interface PopMenuTableViewCell : UITableViewCell
+@property (nonatomic, strong) UIImageView *leftImageView;
+@property (nonatomic, strong) UILabel *titleLabel;
+@end
+
+@interface QQPopMenuView ()<UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *tableData;
 @property (nonatomic, assign) CGPoint trianglePoint;
@@ -29,10 +39,7 @@ static CGFloat const kCellHeight = 44;
              triangleLocation:(CGPoint)point
                        action:(void(^)(NSInteger index))action
 {
-    if (array.count == 0) {
-        return nil;
-    }
-    
+    if (array.count == 0) return nil;
     if (self = [super init]) {
         self.frame = [UIScreen mainScreen].bounds;
         self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
@@ -56,7 +63,8 @@ static CGFloat const kCellHeight = 44;
         _tableView.layer.cornerRadius = 5;
         _tableView.scrollEnabled = NO;
         _tableView.rowHeight = kCellHeight;
-        [_tableView registerNib:[UINib nibWithNibName:@"PopMenuTableViewCell" bundle:nil] forCellReuseIdentifier:@"PopMenuTableViewCell"];
+        [_tableView registerClass:[PopMenuTableViewCell class] forCellReuseIdentifier:@"PopMenuTableViewCell"];
+        _tableView.separatorColor = COLOR_HEXA(0xD5DBE1);// [UIColor colorSeparatorColor];
         [self addSubview:_tableView];
     
     }
@@ -84,7 +92,7 @@ static CGFloat const kCellHeight = 44;
     return YES;
 }
 
-#pragma mark - Show or Hide
+#pragma mark - show or hide
 - (void)show {
     [[UIApplication sharedApplication].keyWindow addSubview:self];
     // 设置右上角为transform的起点（默认是中心点）
@@ -142,8 +150,10 @@ static CGFloat const kCellHeight = 44;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PopMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PopMenuTableViewCell" forIndexPath:indexPath];
     NSDictionary *dic = _tableData[indexPath.row];
-    cell.leftImageView.image = [UIImage imageNamed:dic[@"imageName"]];
+    cell.leftImageView.image = [UIImage imageNamed:dic[@"image"]];
+    [cell.leftImageView sizeToFit];
     cell.titleLabel.text = dic[@"title"];
+    [cell.titleLabel sizeToFit];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.layoutMargins = UIEdgeInsetsZero;
     cell.separatorInset = UIEdgeInsetsZero;
@@ -154,6 +164,45 @@ static CGFloat const kCellHeight = 44;
     [self hide];
     if (_action) {
         _action(indexPath.row);
+    }
+}
+
+@end
+
+
+
+
+
+
+@implementation PopMenuTableViewCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        _leftImageView = [[UIImageView alloc] init];
+        [self.contentView addSubview:_leftImageView];
+        
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.font = [UIFont systemFontOfSize:15];
+        [self.contentView addSubview:_titleLabel];
+    }
+    return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    _leftImageView.frame = CGRectMake((kTitleLabelLeading - CGRectGetWidth(_leftImageView.bounds)) / 2, (CGRectGetHeight(self.bounds) - CGRectGetHeight(_leftImageView.bounds)) / 2, CGRectGetWidth(_leftImageView.bounds), CGRectGetHeight(_leftImageView.bounds));
+    _titleLabel.frame = CGRectMake(kTitleLabelLeading, (CGRectGetHeight(self.bounds) - CGRectGetHeight(_titleLabel.frame)) / 2, CGRectGetWidth(_titleLabel.frame), CGRectGetHeight(_titleLabel.frame));
+}
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+    
+    if (highlighted) {
+        self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
+    } else {
+        self.backgroundColor = [UIColor whiteColor];
     }
 }
 

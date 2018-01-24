@@ -43,6 +43,18 @@
     [SVProgressHUD dismiss];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    // 解决peek出来的VC“返回”按钮为系统蓝色的问题
+    if (self.navigationController.viewControllers.count > 1) {
+        NSUInteger index = [self.navigationController.viewControllers indexOfObject:self];
+        // 上一个VC
+        UIViewController *preVC = [self.navigationController.viewControllers sa_objectAtIndex:index - 1];
+        [self createBackButtonWithTitle:preVC.title ? : @"返回"];
+    }
+}
+
 - (void)dealloc {
     NSLog(@"释放:%@",NSStringFromClass([self class]));
 }

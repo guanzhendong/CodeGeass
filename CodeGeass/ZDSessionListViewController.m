@@ -143,10 +143,10 @@
 }
 
 - (void)presentMenu {
-    [QQPopMenuView showWithItems:@[@{@"title":@"发起讨论",@"imageName":@"popMenu_createChat"},
-                                   @{@"title":@"扫描名片",@"imageName":@"popMenu_scanCard"},
-                                   @{@"title":@"写日报",@"imageName":@"popMenu_writeReport"},
-                                   @{@"title":@"外勤签到",@"imageName":@"popMenu_signIn"}]
+    [QQPopMenuView showWithItems:@[@{@"title":@"发起讨论",@"image":@"popMenu_createChat"},
+                                   @{@"title":@"扫描名片",@"image":@"popMenu_scanCard"},
+                                   @{@"title":@"写日报",@"image":@"popMenu_writeReport"},
+                                   @{@"title":@"外勤签到",@"image":@"popMenu_signIn"}]
                            width:130
                 triangleLocation:CGPointMake(SCREEN_WIDTH - 30, STATUS_AND_NAVIGATION_HEIGHT + 5)
                           action:^(NSInteger index) {
