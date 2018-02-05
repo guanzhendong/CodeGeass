@@ -14,6 +14,8 @@
 #import "ZDMeViewController.h"
 #import "ZDTranslucentViewController.h"
 #import "ZDTranslucentNavigationController.h"
+#import "ZDTestViewController.h"
+#import "ZDContactViewController.h"
 
 @interface ZDTabBarController ()<UITabBarControllerDelegate>
 
@@ -32,6 +34,8 @@
     
     // 设为NO可以关闭毛玻璃效果
 //    self.tabBar.translucent = NO;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handle3DTouch:) name:@"3DTouch" object:nil];
 }
 
 - (void)setupItems {
@@ -89,6 +93,18 @@
         return;
     }
     nav.tabBarItem.badgeValue = badgeValue;
+}
+
+- (void)handle3DTouch:(NSNotification *)noti {
+    NSLog(@"##############################3DTouch进入APP##############################");
+    UIApplicationShortcutItem *item = noti.object;
+    if ([item.localizedTitle isEqualToString:@"爱情"]) {
+        [self setSelectedIndex:0];
+        [self.selectedViewController native_pushViewController:[ZDTestViewController new] animated:YES];
+    } else if ([item.localizedTitle isEqualToString:@"好友"]) {
+        [self setSelectedIndex:1];
+        [self.selectedViewController native_pushViewController:[ZDContactViewController new] animated:YES];
+    }
 }
 
 @end

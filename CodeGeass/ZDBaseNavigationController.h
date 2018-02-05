@@ -10,4 +10,6 @@
 
 @interface ZDBaseNavigationController : UINavigationController
 
+- (void)native_pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
+
 @end

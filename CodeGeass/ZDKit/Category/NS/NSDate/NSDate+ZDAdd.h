@@ -13,6 +13,31 @@
 @interface NSDate (ZDAdd)
 
 /**
+ 格式化字符串：yyyy-MM-dd
+ */
+- (NSString *)zd_stringWithFormat_yMd;
+- (NSString *)zd_stringWithFormat_yMdH;
+- (NSString *)zd_stringWithFormat_yMdHm;
+- (NSString *)zd_stringWithFormat_yMdHms;
+
+
+/**
+ 标准时间->中国时间
+ */
+- (NSDate *)zd_ChinaDate;
+
+/**
+ 当前中国时间
+ */
++ (NSDate *)zd_ChinaDateNow;
+
+/**
+ 标准时间->手机系统时间
+ */
+- (NSDate *)zd_systemDate;
+
+
+/**
  QQ会话列表时间格式
  例如  今天显示：13:23(区分12或24小时制)
       昨天显示：昨天

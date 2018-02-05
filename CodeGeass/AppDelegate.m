@@ -252,5 +252,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - 3DTouch
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void(^)(BOOL succeeded))completionHandler {
+    if ([self.window.rootViewController isKindOfClass:[UITabBarController class]]) {
+        [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:@"3DTouch" object:shortcutItem];
+    }
+}
 
 @end

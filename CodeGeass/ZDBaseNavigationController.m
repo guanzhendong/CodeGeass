@@ -119,6 +119,13 @@
     [super pushViewController:viewController animated:animated];
 }
 
+- (void)native_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.viewControllers.count == 1 && !self.tabBarController.tabBar.isHidden) {
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    [super pushViewController:viewController animated:animated];
+}
+
 - (void)navigationController:(UINavigationController *)navigationController
        didShowViewController:(UIViewController *)viewController
                     animated:(BOOL)animated

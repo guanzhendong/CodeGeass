@@ -10,6 +10,67 @@
 
 @implementation NSDate (ZDAdd)
 
+- (NSString *)zd_stringWithFormat_yMd {
+    static NSDateFormatter *formatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"yyyy-MM-dd";
+    });
+    return [formatter stringFromDate:self];
+}
+
+- (NSString *)zd_stringWithFormat_yMdH {
+    static NSDateFormatter *formatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"yyyy-MM-dd HH";
+    });
+    return [formatter stringFromDate:self];
+}
+- (NSString *)zd_stringWithFormat_yMdHm {
+    static NSDateFormatter *formatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"yyyy-MM-dd HH:mm";
+    });
+    return [formatter stringFromDate:self];
+}
+
+- (NSString *)zd_stringWithFormat_yMdHms {
+    static NSDateFormatter *formatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    });
+    return [formatter stringFromDate:self];
+}
+
+- (NSDate *)zd_ChinaDate {
+    // GMT 格林尼治标准时间，GMT+0800、GMT-0800(+：东区 -：西区 08：小时数 00：分钟数)，中国在东八区
+    NSTimeZone *zone = [NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"];
+    NSInteger seconds = [zone secondsFromGMTForDate:self];
+    NSDate *date = [self dateByAddingTimeInterval:seconds];
+    return date;
+}
+
++ (NSDate *)zd_ChinaDateNow {
+    return [[NSDate date] zd_ChinaDate];
+}
+
+- (NSDate *)zd_systemDate {
+    // 当前手机的系统时区
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+//    NSLocale *loc = [NSLocale currentLocale];
+//    NSLocale *locale = [NSLocale localeWithLocaleIdentifier:@"en_CN"];
+    NSInteger seconds = [zone secondsFromGMTForDate:self];
+    NSDate *date = [self dateByAddingTimeInterval:seconds];
+    return date;
+}
+
 - (NSString *)sessionDateFormatStringLikeQQ {
     NSString *dateStr = @"";
     @try {
