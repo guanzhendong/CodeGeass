@@ -9,8 +9,6 @@
 #import "AvoidCrash.h"
 
 
-#define AvoidCrashSeparator         @"================================================================"
-#define AvoidCrashSeparatorWithFlag @"========================AvoidCrash Log=========================="
 
 
 #define key_errorName        @"errorName"
@@ -53,6 +51,16 @@
     });
 }
 
++ (void)setupNoneSelClassStringsArr:(NSArray<NSString *> *)classStrings {
+    [NSObject setupNoneSelClassStringsArr:classStrings];
+}
+
+/**
+ *  初始化一个需要防止”unrecognized selector sent to instance”的崩溃的类名前缀的数组
+ */
++ (void)setupNoneSelClassStringPrefixsArr:(NSArray<NSString *> *)classStringPrefixs {
+    [NSObject setupNoneSelClassStringPrefixsArr:classStringPrefixs];
+}
 
 
 /**

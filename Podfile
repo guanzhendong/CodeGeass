@@ -26,6 +26,7 @@ target "CodeGeass" do
     #pod 'ZFPlayer'
     pod 'VTMagic'
     pod 'AXWebViewController' ## 比较好，但是依赖了Aspects,AXIndicatorView,AXNavigationBackItemInjection,AXPracticalHUD,NJKWebViewProgress 共5个库
+    pod 'AXPracticalHUD', '1.2.0'
     #pod 'ReactiveCocoa'
     pod 'TSMessages'
     #pod 'BGFMDB'

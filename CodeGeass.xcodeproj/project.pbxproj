@@ -12,6 +12,7 @@
 		44010F241EB97D5700093E54 /* StickCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 44010F231EB97D5700093E54 /* StickCollectionViewFlowLayout.m */; };
 		44010F271EB98D1900093E54 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44010F261EB98D1900093E54 /* CoreGraphics.framework */; };
 		44010F291EB98D2900093E54 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44010F281EB98D2900093E54 /* QuartzCore.framework */; };
+		4403E2C5202FE3D800BE6F15 /* UIButton+ZDAddForTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 4403E2C4202FE3D800BE6F15 /* UIButton+ZDAddForTouchArea.m */; };
 		440AEECE1EE797DD006D66A1 /* ZDQQFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440AEECD1EE797DD006D66A1 /* ZDQQFriendViewController.m */; };
 		440AEED31EE79871006D66A1 /* ZDQQFriendManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 440AEED21EE79871006D66A1 /* ZDQQFriendManager.m */; };
 		440AEED61EE79894006D66A1 /* ZDQQFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 440AEED51EE79894006D66A1 /* ZDQQFriend.m */; };
@@ -241,6 +242,8 @@
 		44010F231EB97D5700093E54 /* StickCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StickCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		44010F261EB98D1900093E54 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		44010F281EB98D2900093E54 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4403E2C3202FE3D800BE6F15 /* UIButton+ZDAddForTouchArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ZDAddForTouchArea.h"; sourceTree = "<group>"; };
+		4403E2C4202FE3D800BE6F15 /* UIButton+ZDAddForTouchArea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ZDAddForTouchArea.m"; sourceTree = "<group>"; };
 		440AEECC1EE797DD006D66A1 /* ZDQQFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDQQFriendViewController.h; sourceTree = "<group>"; };
 		440AEECD1EE797DD006D66A1 /* ZDQQFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDQQFriendViewController.m; sourceTree = "<group>"; };
 		440AEED11EE79871006D66A1 /* ZDQQFriendManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDQQFriendManager.h; sourceTree = "<group>"; };
@@ -891,6 +894,8 @@
 			children = (
 				4429033720188368002FBB69 /* UIButton+LXMImagePosition.h */,
 				4429033820188368002FBB69 /* UIButton+LXMImagePosition.m */,
+				4403E2C3202FE3D800BE6F15 /* UIButton+ZDAddForTouchArea.h */,
+				4403E2C4202FE3D800BE6F15 /* UIButton+ZDAddForTouchArea.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -1949,6 +1954,7 @@
 				449913A71E1BAEC50080D75F /* YTKRequest.m in Sources */,
 				44D52E671E345A5400DA321C /* UIImageView+XHLaunchAdCache.m in Sources */,
 				44534B231EA85B5700159852 /* ZDGroupIconDownloader.m in Sources */,
+				4403E2C5202FE3D800BE6F15 /* UIButton+ZDAddForTouchArea.m in Sources */,
 				442903A120188368002FBB69 /* ZDCommonTableViewCell3.m in Sources */,
 				44D19B641E83A6CB001072DA /* DACircularProgressView.m in Sources */,
 				443DDEE01E139BA2007A9096 /* main.m in Sources */,

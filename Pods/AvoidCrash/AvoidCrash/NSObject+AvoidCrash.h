@@ -17,7 +17,9 @@
 + (void)avoidCrashExchangeMethodIfDealWithNoneSel:(BOOL)ifDealWithNoneSel;
 
 
++ (void)setupNoneSelClassStringsArr:(NSArray<NSString *> *)classStrings;
 
++ (void)setupNoneSelClassStringPrefixsArr:(NSArray<NSString *> *)classStringPrefixs;
 
 @end
 
