@@ -36,7 +36,7 @@ SINGLETON_IMPLEMENTATION(Manager)
                                                  pushType:0
                                                  timeFlag:timestamp
                                                      type:6
-                                                  version:6300];
+                                                  version:7100];
     [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         ZDHTTPResponse *model = [ZDHTTPResponse modelWithDictionary:request.responseObject];
         if (model.ret == 100) {
