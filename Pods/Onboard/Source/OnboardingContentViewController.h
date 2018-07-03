@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@import AVKit;
+//@import AVKit;
+#import <AVKit/AVKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

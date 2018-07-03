@@ -1,1 +1,1 @@
-../../../LCActionSheet/Sources/LCActionSheetConfig.h
+../../../LCActionSheet/Source/LCActionSheetConfig.h

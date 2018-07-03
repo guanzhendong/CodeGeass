@@ -91,6 +91,10 @@
 		443DDEF91E139C7B007A9096 /* ZDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 443DDEF81E139C7B007A9096 /* ZDBaseViewController.m */; };
 		443DDEFC1E139F90007A9096 /* ZDBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 443DDEFB1E139F90007A9096 /* ZDBaseNavigationController.m */; };
 		4442F43F1EC06142001186A4 /* ZDCorpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4442F43E1EC06142001186A4 /* ZDCorpInfoViewController.m */; };
+		44451F9120C11D6C008A034E /* CodeGeassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44451F9020C11D6C008A034E /* CodeGeassTests.m */; };
+		44451F9920C11DA9008A034E /* ZDNotificationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 44451F9820C11DA9008A034E /* ZDNotificationTest.m */; };
+		44451F9B20C135D3008A034E /* ZDAtomicTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 44451F9A20C135D3008A034E /* ZDAtomicTest.m */; };
+		44451F9D20C14943008A034E /* ZDBlockTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 44451F9C20C14943008A034E /* ZDBlockTest.m */; };
 		444662971EBC765800E25627 /* TLSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 444662961EBC765800E25627 /* TLSpringFlowLayout.m */; };
 		4447D56E1EC2E48F00787A22 /* YYPhotoGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4447D56D1EC2E48F00787A22 /* YYPhotoGroupView.m */; };
 		4447D57C1EC2EA1900787A22 /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4447D5711EC2EA1900787A22 /* JTSAnimatedGIFUtility.m */; };
@@ -219,6 +223,16 @@
 		44FAAF0E1E30A7680022475F /* ZDHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FAAF0D1E30A7680022475F /* ZDHTTPResponse.m */; };
 		509D2FB9E752B175D26C4178 /* libPods-CodeGeass.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A3A247351B399405174F7C /* libPods-CodeGeass.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		44451F9320C11D6C008A034E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 443DDED31E139BA2007A9096 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 443DDEDA1E139BA2007A9096;
+			remoteInfo = CodeGeass;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4446CB0E1F15F5CB00A77764 /* Embed App Extensions */ = {
@@ -390,6 +404,12 @@
 		443DDEFB1E139F90007A9096 /* ZDBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBaseNavigationController.m; sourceTree = "<group>"; };
 		4442F43D1EC06142001186A4 /* ZDCorpInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCorpInfoViewController.h; sourceTree = "<group>"; };
 		4442F43E1EC06142001186A4 /* ZDCorpInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCorpInfoViewController.m; sourceTree = "<group>"; };
+		44451F8E20C11D6B008A034E /* CodeGeassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeGeassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		44451F9020C11D6C008A034E /* CodeGeassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeGeassTests.m; sourceTree = "<group>"; };
+		44451F9220C11D6C008A034E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44451F9820C11DA9008A034E /* ZDNotificationTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDNotificationTest.m; sourceTree = "<group>"; };
+		44451F9A20C135D3008A034E /* ZDAtomicTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDAtomicTest.m; sourceTree = "<group>"; };
+		44451F9C20C14943008A034E /* ZDBlockTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDBlockTest.m; sourceTree = "<group>"; };
 		444662951EBC765800E25627 /* TLSpringFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSpringFlowLayout.h; sourceTree = "<group>"; };
 		444662961EBC765800E25627 /* TLSpringFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSpringFlowLayout.m; sourceTree = "<group>"; };
 		4446CAFE1F15F5CB00A77764 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -519,6 +539,8 @@
 		44AAA04D1E24C19300A51331 /* ZDUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDUserModel.m; sourceTree = "<group>"; };
 		44BEE6A41E496D4500B896AD /* ZDRLMMigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDRLMMigrationManager.h; sourceTree = "<group>"; };
 		44BEE6A51E496D4500B896AD /* ZDRLMMigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDRLMMigrationManager.m; sourceTree = "<group>"; };
+		44C7531820D26B5300A28CD2 /* libWCDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libWCDB.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		44C7531B20D26C3700A28CD2 /* libYYKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYYKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D19AF31E83A6CB001072DA /* MLImagePickerHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLImagePickerHUD.h; sourceTree = "<group>"; };
 		44D19AF41E83A6CB001072DA /* MLImagePickerHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLImagePickerHUD.m; sourceTree = "<group>"; };
 		44D19AF51E83A6CB001072DA /* MLNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNavigationViewController.h; sourceTree = "<group>"; };
@@ -656,12 +678,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		44451F8B20C11D6B008A034E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		02D89A8B3EC8C13C8BC74491 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				44C7531B20D26C3700A28CD2 /* libYYKit.a */,
+				44C7531820D26B5300A28CD2 /* libWCDB.a */,
 				44010F281EB98D2900093E54 /* QuartzCore.framework */,
 				44010F261EB98D1900093E54 /* CoreGraphics.framework */,
 				44618E071E8A618700CEB5E4 /* libsqlite3.tbd */,
@@ -1007,6 +1038,7 @@
 			isa = PBXGroup;
 			children = (
 				443DDEDD1E139BA2007A9096 /* CodeGeass */,
+				44451F8F20C11D6C008A034E /* CodeGeassTests */,
 				443DDEDC1E139BA2007A9096 /* Products */,
 				92B439BC5E2FA25EE4042ED8 /* Pods */,
 				02D89A8B3EC8C13C8BC74491 /* Frameworks */,
@@ -1017,6 +1049,7 @@
 			isa = PBXGroup;
 			children = (
 				443DDEDB1E139BA2007A9096 /* CodeGeass.app */,
+				44451F8E20C11D6B008A034E /* CodeGeassTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1068,6 +1101,18 @@
 				44516AD41E13C1F7001711BC /* ZDTabBarController.m */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		44451F8F20C11D6C008A034E /* CodeGeassTests */ = {
+			isa = PBXGroup;
+			children = (
+				44451F9020C11D6C008A034E /* CodeGeassTests.m */,
+				44451F9820C11DA9008A034E /* ZDNotificationTest.m */,
+				44451F9A20C135D3008A034E /* ZDAtomicTest.m */,
+				44451F9C20C14943008A034E /* ZDBlockTest.m */,
+				44451F9220C11D6C008A034E /* Info.plist */,
+			);
+			path = CodeGeassTests;
 			sourceTree = "<group>";
 		};
 		4447D56F1EC2EA1900787A22 /* JTSImageViewController */ = {
@@ -1733,6 +1778,24 @@
 			productReference = 443DDEDB1E139BA2007A9096 /* CodeGeass.app */;
 			productType = "com.apple.product-type.application";
 		};
+		44451F8D20C11D6B008A034E /* CodeGeassTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44451F9720C11D6C008A034E /* Build configuration list for PBXNativeTarget "CodeGeassTests" */;
+			buildPhases = (
+				44451F8A20C11D6B008A034E /* Sources */,
+				44451F8B20C11D6B008A034E /* Frameworks */,
+				44451F8C20C11D6B008A034E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44451F9420C11D6C008A034E /* PBXTargetDependency */,
+			);
+			name = CodeGeassTests;
+			productName = CodeGeassTests;
+			productReference = 44451F8E20C11D6B008A034E /* CodeGeassTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1757,6 +1820,11 @@
 							};
 						};
 					};
+					44451F8D20C11D6B008A034E = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = N2PG2S36J2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 443DDED61E139BA2007A9096 /* Build configuration list for PBXProject "CodeGeass" */;
@@ -1773,6 +1841,7 @@
 			projectRoot = "";
 			targets = (
 				443DDEDA1E139BA2007A9096 /* CodeGeass */,
+				44451F8D20C11D6B008A034E /* CodeGeassTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1802,6 +1871,13 @@
 				442903A020188368002FBB69 /* ZDCommonTableViewCell2.xib in Resources */,
 				447BF6E01F9EE6EB006660C1 /* TestTableViewCell.xib in Resources */,
 				44D19B5C1E83A6CB001072DA /* MLImagePickerCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44451F8C20C11D6B008A034E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2046,7 +2122,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		44451F8A20C11D6B008A034E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44451F9920C11DA9008A034E /* ZDNotificationTest.m in Sources */,
+				44451F9D20C14943008A034E /* ZDBlockTest.m in Sources */,
+				44451F9120C11D6C008A034E /* CodeGeassTests.m in Sources */,
+				44451F9B20C135D3008A034E /* ZDAtomicTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		44451F9420C11D6C008A034E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 443DDEDA1E139BA2007A9096 /* CodeGeass */;
+			targetProxy = 44451F9320C11D6C008A034E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		443DDEEC1E139BA2007A9096 /* LaunchScreen.storyboard */ = {
@@ -2171,7 +2266,7 @@
 				INFOPLIST_FILE = CodeGeass/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ec.CodeGeass;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gzd.CodeGeass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CodeGeass/CodeGeass-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2194,10 +2289,66 @@
 				INFOPLIST_FILE = CodeGeass/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ec.CodeGeass;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gzd.CodeGeass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CodeGeass/CodeGeass-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		44451F9520C11D6C008A034E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2PG2S36J2;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = CodeGeassTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gzd.CodeGeassTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		44451F9620C11D6C008A034E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2PG2S36J2;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = CodeGeassTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gzd.CodeGeassTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -2218,6 +2369,15 @@
 			buildConfigurations = (
 				443DDEF31E139BA2007A9096 /* Debug */,
 				443DDEF41E139BA2007A9096 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44451F9720C11D6C008A034E /* Build configuration list for PBXNativeTarget "CodeGeassTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44451F9520C11D6C008A034E /* Debug */,
+				44451F9620C11D6C008A034E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

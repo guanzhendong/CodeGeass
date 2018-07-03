@@ -7,6 +7,10 @@
 //
 
 #import "AXPracticalHUD.h"
+#import "AXBarProgressView.h"
+#import "AXCircleProgressView.h"
+#import "AXGradientProgressView.h"
+#import "AXPracticalHUDAnimator.h"
 #import <AXIndicatorView/AXIndicatorView.h>
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_8_0
@@ -67,6 +71,8 @@ if ([NSThread isMainThread]) {\
 // Motions:
 @property(strong, nonatomic) UIInterpolatingMotionEffect *xMotionEffect;
 @property(strong, nonatomic) UIInterpolatingMotionEffect *yMotionEffect;
+/// Is the hud is animating.
+@property(assign, nonatomic) BOOL forbidsLayoutSubviews;
 @end
 
 @implementation AXPracticalHUD
@@ -102,13 +108,12 @@ if ([NSThread isMainThread]) {\
     _offsets = CGPointZero;
     _minimumSize = CGSizeZero;
     _grace = 0.0f;
-    _animation = AXPracticalHUDAnimationFade;
     _threshold = 0.5f;
     _dimBackground = NO;
     _contentInsets = UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f);
     _progressing = NO;
     
-    _mode = AXPracticalHUDModeIndeterminate;
+    _mode = AXPracticalHUDModeNormal;
     _position = AXPracticalHUDPositionCenter;
     _progress = 0.0f;
     _removeFromSuperViewOnHide = YES;
@@ -122,31 +127,40 @@ if ([NSThread isMainThread]) {\
     self.opaque = NO;
     self.contentMode = UIViewContentModeCenter;
     self.backgroundColor = [UIColor clearColor];
-    self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+    
+    self.autoresizingMask =
+    UIViewAutoresizingFlexibleTopMargin |
+    UIViewAutoresizingFlexibleBottomMargin |
+    UIViewAutoresizingFlexibleLeftMargin |
+    UIViewAutoresizingFlexibleRightMargin;
+    
     [self addSubview:self.contentView];
     [_contentView addSubview:self.label];
     [_contentView addSubview:self.detailLabel];
     [self setupIndicators];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarOrientationDidChange:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(statusBarOrientationDidChange:)
+                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
+                                               object:nil];
 }
+
 #pragma mark - Override
-- (void)willMoveToSuperview:(UIView *)newSuperview {
-    [super willMoveToSuperview:newSuperview];
-    if (newSuperview) {
-        // Lauout subviews.
-        [self layoutSubviews];
-        
-        if ([_indicator isKindOfClass:[AXGradientProgressView class]] && [_indicator respondsToSelector:@selector(beginAnimating)]) {
-            [_indicator performSelector:@selector(beginAnimating)];
-        }
-    }
-}
 
 - (void)didMoveToSuperview {
     [super didMoveToSuperview];
     
     if (self.superview) {
+        // Layout subviews.
+        [self setNeedsLayout];
+        [self layoutIfNeeded];
+        
+        if ([_indicator isKindOfClass:[AXGradientProgressView class]] &&
+            [_indicator respondsToSelector:@selector(beginAnimating)])
+        {
+            [_indicator performSelector:@selector(beginAnimating)];
+        }
+        
         if (_position == AXPracticalHUDPositionCenter) {
             _contentView.motionEffects = @[self.xMotionEffect, self.yMotionEffect];
         } else {
@@ -201,6 +215,10 @@ if ([NSThread isMainThread]) {\
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    if (_forbidsLayoutSubviews) {
+        return;
+    }
+    
     if (self.superview) {
         self.frame = self.superview.bounds;
     }
@@ -214,10 +232,16 @@ if ([NSThread isMainThread]) {\
         rect_indicator = _indicator.frame;
     }
     
-    CGSize size = [_label.text boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : _label.font} context:nil].size;
+    CGSize size = [_label.text boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX)
+                                            options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
+                                         attributes:@{NSFontAttributeName : _label.font}
+                                            context:nil].size;
     CGRect rect_label = CGRectMake(0, 0, ceil(size.width), ceil(size.height));
     
-    size = [_detailLabel.text boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : _detailLabel.font} context:nil].size;
+    size = [_detailLabel.text boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX)
+                                           options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
+                                        attributes:@{NSFontAttributeName : _detailLabel.font}
+                                           context:nil].size;
     CGRect rect_detail = CGRectMake(0, 0, ceil(size.width), ceil(size.height));
     
     CGFloat height_content = rect_indicator.size.height + rect_label.size.height + rect_detail.size.height;
@@ -273,6 +297,7 @@ if ([NSThread isMainThread]) {\
     rect_detail.origin.x = round((_size.width - rect_detail.size.width) / 2) + _contentInsets.left - _contentInsets.right;
     _detailLabel.frame = rect_detail;
     
+    // Set the frame by applying the transform of the contview.
     _contentView.frame = self.contentFrame;
 }
 
@@ -331,7 +356,7 @@ if ([NSThread isMainThread]) {\
     [self show:YES];
 }
 
-- (void)hide:(BOOL)animated afterDelay:(NSTimeInterval)delay completion:(void (^)())completion
+- (void)hide:(BOOL)animated afterDelay:(NSTimeInterval)delay completion:(void (^)(void))completion
 {
     _animated = animated;
     _completion = [completion copy];
@@ -377,8 +402,13 @@ if ([NSThread isMainThread]) {\
 
 - (void)setProgress:(CGFloat)progress {
     _progress = progress;
-    if ([_indicator isKindOfClass:[AXBarProgressView class]] || [_indicator isKindOfClass:[AXCircleProgressView class]] || [_indicator isKindOfClass:[AXGradientProgressView class]]) {
-        [_indicator setValue:@(_progress) forKey:@"progress"];
+    if ([_indicator isKindOfClass:[AXBarProgressView class]] ||
+        [_indicator isKindOfClass:[AXCircleProgressView class]] ||
+        [_indicator isKindOfClass:[AXGradientProgressView class]])
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_indicator setValue:@(_progress) forKey:@"progress"];
+        });
     }
 }
 
@@ -398,23 +428,27 @@ if ([NSThread isMainThread]) {\
 }
 #pragma mark - Getters
 - (CGRect)contentFrame {
+    CGSize size = _size;
     switch (_position) {
-        case AXPracticalHUDPositionTop:
-            return CGRectMake(round((self.bounds.size.width - _size.width) / 2) + _offsets.x, 0 + _offsets.y, _size.width, _size.height);
-            break;
-        case AXPracticalHUDPositionCenter:
-            return CGRectMake(round((self.bounds.size.width - _size.width) / 2) + _offsets.x, round((self.bounds.size.height - _size.height) / 2) + _offsets.y, _size.width, _size.height);
-            break;
-        case AXPracticalHUDPositionBottom:
+        case AXPracticalHUDPositionTop: {
+            CGPoint origin = CGPointMake(round((self.bounds.size.width - size.width) / 2) + _offsets.x, 0 + _offsets.y);
+            return CGRectMake(origin.x, origin.y, size.width, size.height);
+        }
+        case AXPracticalHUDPositionCenter: {
+            CGPoint origin = CGPointMake(round((self.bounds.size.width - size.width) / 2) + _offsets.x, round((self.bounds.size.height - size.height) / 2) + _offsets.y);
+            return  CGRectMake(origin.x, origin.y, size.width, size.height);
+        }
+        case AXPracticalHUDPositionBottom: {
+            CGPoint origin;
             if (self.superview) {
-                return CGRectMake(round((self.bounds.size.width - _size.width) / 2) + _offsets.x, self.superview.bounds.size.height - _size.height + _offsets.y, _size.width, _size.height);
+                origin = CGPointMake(round((self.bounds.size.width - size.width) / 2) + _offsets.x, self.superview.bounds.size.height - size.height + _offsets.y);
             } else {
-                return CGRectMake(round((self.bounds.size.width - _size.width) / 2) + _offsets.x, round((self.bounds.size.height - _size.height) / 2) + _offsets.y, _size.width, _size.height);
+                origin = CGPointMake(round((self.bounds.size.width - size.width) / 2) + _offsets.x, round((self.bounds.size.height - size.height) / 2) + _offsets.y);
             }
-            break;
+            return CGRectMake(origin.x, origin.y, size.width, size.height);
+        }
         default:
             return CGRectZero;
-            break;
     }
 }
 
@@ -469,33 +503,32 @@ if ([NSThread isMainThread]) {\
 
 #pragma mark - Private helper
 - (void)showingAnimated:(BOOL)animated {
+    if (_delegate && [_delegate respondsToSelector:@selector(HUDWillShow:)]) {
+        [_delegate HUDWillShow:self];
+    }
     // Cancel any scheduled hideDelayed: calls
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
-    [self performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:YES];
-    [self performSelectorOnMainThread:@selector(setNeedsLayout) withObject:nil waitUntilDone:YES];
+    [self performSelectorOnMainThread:@selector(setNeedsDisplay)
+                           withObject:nil
+                        waitUntilDone:YES];
+    [self performSelectorOnMainThread:@selector(setNeedsLayout)
+                           withObject:nil
+                        waitUntilDone:YES];
+    [self performSelectorOnMainThread:@selector(layoutIfNeeded)
+                           withObject:nil
+                        waitUntilDone:YES];
+    
+    id<AXPracticalHUDAnimator> animator = _animator?:AXPracticalHUDFadeAnimator();
     _showStarted = [NSDate date];
+    [self setForbidsLayoutSubviews:!animator.allowsLayoutSubviewsDuringAnimation];
     // Animating
+    [animator hud:self animate:animated isHidden:NO];
     if (animated) {
-        if (_animation == AXPracticalHUDAnimationFlipIn) {
-            [UIView animateWithDuration:0.25 animations:^{
-                self.alpha = 1.0;
-            }];
-            CGRect rect = self.contentFrame;
-            
-            CGFloat translation = (_position == AXPracticalHUDPositionBottom || _position == AXPracticalHUDPositionCenter) ? self.bounds.size.height : -rect.size.height;
-            rect.origin.y = translation;
-            _contentView.frame = rect;
-            [UIView animateWithDuration:0.5 delay:0.15 usingSpringWithDamping:1.0 initialSpringVelocity:0.9 options:7
-                             animations:^{
-                                 _contentView.frame = self.contentFrame;
-                             } completion:nil];
-        } else {
-            [UIView animateWithDuration:0.25 delay:0.15 options:7 animations:^{
-                                 self.alpha = 1.0;
-                             } completion:nil];
-        }
+        [self performSelector:@selector(setForbidsLayoutSubviews:)
+                   withObject:@(NO)
+                   afterDelay:[animator durationForTransition:NO]];
     } else {
-        self.alpha = 1.0;
+        [self setForbidsLayoutSubviews:NO];
     }
 }
 
@@ -508,37 +541,22 @@ if ([NSThread isMainThread]) {\
 }
 
 - (void)hidingAnimated:(BOOL)animated {
-    // Animating
-    if (animated && _showStarted) {
-        if (_animation == AXPracticalHUDAnimationFlipIn) {
-            CGRect rect = self.contentFrame;
-            CGFloat translation = (_position == AXPracticalHUDPositionBottom || _position == AXPracticalHUDPositionCenter) ? self.bounds.size.height : -rect.size.height;
-            rect.origin.y = translation;
-            [UIView animateWithDuration:0.5
-                                  delay:0.0
-                 usingSpringWithDamping:1.0
-                  initialSpringVelocity:0.9
-                                options:7
-                             animations:^{
-                                 _contentView.frame = rect;
-                             } completion:^(BOOL finished) {
-                                 if (finished) {
-                                     _contentView.frame = self.contentFrame;
-                                     [self completed];
-                                 }
-                             }];
-        } else {
-            [UIView animateWithDuration:0.25 animations:^{
-                self.alpha = .0f;
-            } completion:^(BOOL finished) {
-                if (finished) {
-                    [self completed];
-                }
-            }];
-        }
-        _showStarted = nil;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    id<AXPracticalHUDAnimator> animator = _animator?:AXPracticalHUDFadeAnimator();
+    [self setForbidsLayoutSubviews:YES];
+    [animator hud:self
+          animate:animated
+         isHidden:YES];
+    
+    if (animated) {
+        [self performSelector:@selector(setForbidsLayoutSubviews:)
+                   withObject:@(NO)
+                   afterDelay:[animator durationForTransition:YES]];
+        [self performSelector:@selector(completed)
+                   withObject:nil
+                   afterDelay:[animator durationForTransition:YES]];
     } else {
-        self.alpha = .0f;
+        [self setForbidsLayoutSubviews:NO];
         [self completed];
     }
 }
@@ -553,7 +571,7 @@ if ([NSThread isMainThread]) {\
 
 - (void)setupIndicators {
     switch (_mode) {
-        case AXPracticalHUDModeIndeterminate:
+        case AXPracticalHUDModeNormal:
             if (![_indicator isKindOfClass:[AXActivityIndicatorView class]]) {
                 [_indicator removeFromSuperview];
                 _indicator = [[AXActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 37, 37)];
@@ -566,7 +584,7 @@ if ([NSThread isMainThread]) {\
             [(AXActivityIndicatorView *)_indicator setAnimating:YES];
             [_contentView addSubview:_indicator];
             break;
-        case AXPracticalHUDModeBreachedAnnularIndeterminate: {
+        case AXPracticalHUDModeBreachedRing: {
             if (![_indicator isKindOfClass:[AXBreachedAnnulusIndicatorView class]]) {
                 [_indicator removeFromSuperview];
                 _indicator = [[AXBreachedAnnulusIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 37, 37)];
@@ -577,22 +595,22 @@ if ([NSThread isMainThread]) {\
             [(AXBreachedAnnulusIndicatorView *)_indicator setAnimating:YES];
         }
             break;
-        case AXPracticalHUDModeDeterminateHorizontalBar:
+        case AXPracticalHUDModeProgressBar:
             [_indicator removeFromSuperview];
             _indicator = [[AXBarProgressView alloc] init];
             [_indicator setValue:self.tintColor forKey:@"lineColor"];
             [_indicator setValue:self.tintColor forKey:@"progressColor"];
             [_contentView addSubview:_indicator];
             break;
-        case AXPracticalHUDModeDeterminate:
-        case AXPracticalHUDModeDeterminateAnnularEnabled:
+        case AXPracticalHUDModeProgress:
+        case AXPracticalHUDModeProgressRing:
             if (![_indicator isKindOfClass:[AXCircleProgressView class]]) {
                 [_indicator removeFromSuperview];
                 _indicator = [[AXCircleProgressView alloc] init];
                 [_indicator setValue:self.tintColor forKey:@"progressColor"];
                 [_contentView addSubview:_indicator];
             }
-            if (_mode == AXPracticalHUDModeDeterminateAnnularEnabled) {
+            if (_mode == AXPracticalHUDModeProgressRing) {
                 [_indicator setValue:@(YES) forKey:@"annularEnabled"];
             }
             break;
@@ -601,7 +619,7 @@ if ([NSThread isMainThread]) {\
             _indicator = _customView;
             if (_indicator) [_contentView addSubview:_indicator];
             break;
-        case AXPracticalHUDModeDeterminateColorfulHorizontalBar:
+        case AXPracticalHUDModeColourfulProgressBar:
             [_indicator removeFromSuperview];
             _indicator = [[AXGradientProgressView alloc] init];
             [_indicator setValue:@(2.0) forKey:@"progressHeight"];
@@ -685,7 +703,9 @@ if ([NSThread isMainThread]) {\
     // Stay in sync with the superview in any case
     if (self.superview) {
         self.bounds = self.superview.bounds;
-        [self performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:YES];
+        [self performSelectorOnMainThread:@selector(setNeedsDisplay)
+                               withObject:nil
+                            waitUntilDone:YES];
     }
     
     // Not needed on iOS 8+, compile out when the deployment target allows,
@@ -730,47 +750,96 @@ if ([NSThread isMainThread]) {\
     return _sharedInstance;
 }
 
-- (void)showPieInView:(UIView *)view {
-    [self showPieInView:view text:nil detail:nil configuration:nil];
-}
 - (void)showProgressInView:(UIView *)view {
-    [self showProgressInView:view text:nil detail:nil configuration:nil];
+    [self showProgressInView:view
+                        text:nil
+                      detail:nil
+               configuration:nil];
 }
-- (void)showColorfulProgressInView:(UIView *)view; {
-    [self showColorfulProgressInView:view text:nil detail:nil configuration:nil];
+- (void)showProgressBarInView:(UIView *)view {
+    [self showProgressInView:view
+                        text:nil
+                      detail:nil
+               configuration:nil];
+}
+- (void)showColorfulProgressBarInView:(UIView *)view; {
+    [self showColorfulProgressBarInView:view
+                                   text:nil
+                                 detail:nil
+                          configuration:nil];
 }
 - (void)showTextInView:(UIView *)view {
-    [self showTextInView:view text:nil detail:nil configuration:nil];
+    [self showTextInView:view
+                    text:nil
+                  detail:nil
+           configuration:nil];
 }
-- (void)showSimpleInView:(UIView *)view {
-    [self showSimpleInView:view text:nil detail:nil configuration:nil];
+- (void)showNormalInView:(UIView *)view {
+    [self showNormalInView:view
+                      text:nil
+                    detail:nil
+             configuration:nil];
 }
 - (void)showErrorInView:(UIView *)view {
-    [self showErrorInView:view text:nil detail:nil configuration:nil];
+    [self showErrorInView:view
+                     text:nil
+                   detail:nil
+            configuration:nil];
 }
 - (void)showSuccessInView:(UIView *)view {
-    [self showSuccessInView:view text:nil detail:nil configuration:nil];
+    [self showSuccessInView:view
+                       text:nil
+                     detail:nil
+              configuration:nil];
 }
 
-- (void)showPieInView:(UIView *)view text:(NSString *)text detail:(NSString *)detail configuration:(void(^)(AXPracticalHUD *HUD))configuration
-{
-    [self _showInView:view animated:YES mode:AXPracticalHUDModeDeterminate text:text detail:detail customView:nil configuration:configuration];
-}
 - (void)showProgressInView:(UIView *)view text:(NSString *)text detail:(NSString *)detail configuration:(void(^)(AXPracticalHUD *HUD))configuration
 {
-    [self _showInView:view animated:YES mode:AXPracticalHUDModeDeterminateHorizontalBar text:text detail:detail customView:nil configuration:configuration];
+    [self _showInView:view
+             animated:YES
+                 mode:AXPracticalHUDModeProgress
+                 text:text
+               detail:detail customView:nil configuration:configuration];
 }
-- (void)showColorfulProgressInView:(UIView *)view text:(NSString *)text detail:(NSString *)detail configuration:(void(^)(AXPracticalHUD *HUD))configuration
+- (void)showProgressBarInView:(UIView *)view text:(NSString *)text detail:(NSString *)detail configuration:(void(^)(AXPracticalHUD *HUD))configuration
 {
-    [self _showInView:view animated:YES mode:AXPracticalHUDModeDeterminateColorfulHorizontalBar text:text detail:detail customView:nil configuration:configuration];
+    [self _showInView:view
+             animated:YES
+                 mode:AXPracticalHUDModeProgressBar
+                 text:text
+               detail:detail
+           customView:nil
+        configuration:configuration];
+}
+- (void)showColorfulProgressBarInView:(UIView *)view text:(NSString *)text detail:(NSString *)detail configuration:(void(^)(AXPracticalHUD *HUD))configuration
+{
+    [self _showInView:view
+             animated:YES
+                 mode:AXPracticalHUDModeColourfulProgressBar
+                 text:text
+               detail:detail
+           customView:nil
+        configuration:configuration];
 }
 - (void)showTextInView:(UIView *)view text:(NSString *)text detail:(NSString *)detail configuration:(void(^)(AXPracticalHUD *HUD))configuration
 {
-    [self _showInView:view animated:YES mode:AXPracticalHUDModeText text:text detail:detail customView:nil configuration:configuration];
+    [self _showInView:view
+             animated:YES
+                 mode:AXPracticalHUDModeText
+                 text:text
+               detail:detail
+           customView:nil
+        configuration:configuration];
 }
-- (void)showSimpleInView:(UIView *)view text:(NSString *)text detail:(NSString *)detail configuration:(void(^)(AXPracticalHUD *HUD))configuration
+- (void)showNormalInView:(UIView *)view text:(NSString *)text detail:(NSString *)detail configuration:(void(^)(AXPracticalHUD *HUD))configuration
 {
-    [self _showInView:view animated:YES mode:AXPracticalHUDModeIndeterminate text:text detail:detail customView:nil configuration:configuration];
+    [self _showInView:view
+             animated:YES
+                 mode:AXPracticalHUDModeNormal
+                 text:text
+               detail:detail
+           customView:nil
+        configuration:configuration];
 }
 - (void)showErrorInView:(UIView *)view text:(NSString *)text detail:(NSString *)detail configuration:(void(^)(AXPracticalHUD *HUD))configuration
 {

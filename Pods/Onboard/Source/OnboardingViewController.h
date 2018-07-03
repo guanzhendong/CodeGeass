@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "OnboardingContentViewController.h"
-@import AVKit;
+//@import AVKit;
+#import <AVKit/AVKit.h>
 
 @interface OnboardingViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, OnboardingContentViewControllerDelegate>
 

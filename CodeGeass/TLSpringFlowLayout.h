@@ -11,7 +11,7 @@
     // Objective-C Modules are recommended over traditional import statements for numerous benefits
     #import <UIKit/UIKit.h>
 #else
-    @import UIKit;
+//    @import UIKit;
 #endif
 
 #ifndef __IPHONE_7_0

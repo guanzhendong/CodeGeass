@@ -1,1 +1,1 @@
-../../../AXPracticalHUD/AXPracticalHUD/AXPracticalHUD/AXGradientProgressView.h
+../../../AXPracticalHUD/AXPracticalHUD/AXPracticalHUD/ProgressViews/AXGradientProgressView.h
