@@ -8,6 +8,7 @@
 
 #import "ZDMeViewController.h"
 #import "ZDLoginViewController.h"
+#import "DKNightVersion.h"
 
 @interface ZDMeViewController ()
 
@@ -19,6 +20,11 @@
     [super viewDidLoad];
 
     [self createRightButtonWithTitle:@"退出登录" action:@selector(logout)];
+    
+    UISwitch *sw = [[UISwitch alloc] initWithFrame:CGRectMake(100, 100, 0, 0)];
+    sw.on = [self.dk_manager.themeVersion isEqualToString:DKThemeVersionNight];
+    [self.view addSubview:sw];
+    [sw addTarget:self action:@selector(night:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)logout {
@@ -29,6 +35,14 @@
     
     
     [ZDAppDelegate changeRootViewController:[ZDLoginViewController new]];
+}
+
+- (void)night:(UISwitch *)sw {
+    if (sw.isOn) {// 夜间模式
+        [self.dk_manager nightFalling];
+    } else {
+        [self.dk_manager dawnComing];
+    }
 }
 
 @end

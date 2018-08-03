@@ -7,6 +7,7 @@
 //
 
 #import "ZDBaseTableViewCell.h"
+#import "DKNightVersion.h"
 
 @interface ZDBaseTableViewCell ()
 
@@ -50,6 +51,7 @@
     // 设置分隔线
     _separatorLayer = [[CALayer alloc] init];
     _separatorLayer.backgroundColor = [UIColor zd_separatorColor].CGColor;
+    _separatorLayer.dk_backgroundColorPicker = DKColorPickerWithRGB(0xD5DBE1, 0x505050);
     [self.layer addSublayer:_separatorLayer];
 }
 
@@ -70,12 +72,14 @@
     self.customAccessoryView.hidden = !showsIndicator;
     UIImage *image = [UIImage imageNamed:@"cell_arrow_right_gray"];
     self.customAccessoryView.image = image;
+    self.customAccessoryView.dk_imagePicker = DKImagePickerWithImages(image, [image imageByTintColor:[UIColor colorWithHexString:@"#505050"]], image);
     self.customAccessoryView.frame = CGRectMake(CGRectGetWidth(self.bounds) - 10 - image.size.width, (CGRectGetHeight(self.bounds) - image.size.height) / 2, image.size.width, image.size.height);
 }
 
 - (void)setShowsCheckmark:(BOOL)showsCheckmark {
     UIImage *image = showsCheckmark ? [UIImage imageNamed:@"cell_mark_select"] : [UIImage imageNamed:@"cell_mark_normal"];
     self.customAccessoryView.image = image;
+    self.customAccessoryView.dk_imagePicker = DKImagePickerWithImages(image, [image imageByTintColor:[UIColor colorWithHexString:@"#505050"]], image);
     self.customAccessoryView.frame = CGRectMake(CGRectGetWidth(self.bounds) - 10 - image.size.width, (CGRectGetHeight(self.bounds) - image.size.height) / 2, image.size.width, image.size.height);
 }
 

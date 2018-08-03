@@ -21,6 +21,7 @@
 #import "ZDTabBarController.h"
 #import "ZDLoginViewController.h"
 #import "ZDRLMMigrationManager.h"
+#import "DKNightVersion.h"
 
 @interface AppDelegate ()
 
@@ -33,6 +34,10 @@
     
     // 延长LaunchImage显示时间
 //    sleep(2);
+    
+    
+    
+    
     
     
     // 初始化window
@@ -94,6 +99,75 @@
     [UIViewController aspect_hookSelector:@selector(didReceiveMemoryWarning) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
         NSLog(@"******************%@ didReceiveMemoryWarning******************", aspectInfo.instance);
     } error:NULL];
+    
+    
+//    [UIView aspect_hookSelector:@selector(initWithFrame:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+//        ((UIView *)aspectInfo.instance).dk_backgroundColorPicker = DKColorPickerWithKey(BG);
+//    } error:NULL];
+//    [UIView aspect_hookSelector:@selector(initWithCoder:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+//        ((UIView *)aspectInfo.instance).dk_backgroundColorPicker = DKColorPickerWithKey(BG);
+//    } error:NULL];
+//    [UIView aspect_hookSelector:@selector(backgroundColor) withOptions:AspectPositionInstead usingBlock:^(id<AspectInfo> aspectInfo) {
+//        ((UIView *)aspectInfo.instance).dk_backgroundColorPicker = DKColorPickerWithKey(BG);
+//    } error:NULL];
+    
+    [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+        if ([aspectInfo.instance isKindOfClass:[ZDBaseViewController class]]) {
+            ((UIViewController *)aspectInfo.instance).view.dk_backgroundColorPicker = DKColorPickerWithColors([UIColor zd_backgroundColor], [UIColor colorWithRGB:0x343434], [UIColor zd_backgroundColor]);
+        }
+    } error:NULL];
+    
+    [UIBarButtonItem aspect_hookSelector:@selector(setCustomView:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+        UIBarButtonItem *item = aspectInfo.instance;
+        if ([item.customView isKindOfClass:[UIButton class]]) {
+            UIButton *btn = item.customView;
+            [btn dk_setTitleColorPicker:DKColorPickerWithColors([UIColor whiteColor], [UIColor colorWithWhite:1 alpha:0.5], [UIColor whiteColor]) forState:UIControlStateNormal];
+//            [btn dk_setImage:DKImagePickerWithImages(btn.currentImage, [btn.currentImage imageByTintColor:[UIColor colorWithWhite:1 alpha:0.5]], btn.currentImage) forState:UIControlStateNormal];
+        }
+    } error:NULL];
+    
+    [UITableView aspect_hookSelector:@selector(setTableHeaderView:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+        UIView *header = ((UITableView *)aspectInfo.instance).tableHeaderView;
+        if ([header isKindOfClass:[UISearchBar class]]) {
+            header.dk_backgroundColorPicker = DKColorPickerWithColors([UIColor zd_backgroundColor], [UIColor colorWithRGB:0x343434], [UIColor zd_backgroundColor]);
+        }
+    } error:NULL];
+    
+    [UITableViewCell aspect_hookSelector:@selector(layoutSubviews) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+        ((UITableViewCell *)aspectInfo.instance).dk_backgroundColorPicker = DKColorPickerWithKey(BG);
+        ((UITableViewCell *)aspectInfo.instance).selectedBackgroundView.dk_backgroundColorPicker = DKColorPickerWithRGB(0xD5DBE1, 0x505050);
+    } error:NULL];
+    
+    [UITableViewHeaderFooterView aspect_hookSelector:@selector(initWithReuseIdentifier:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+        ((UITableViewHeaderFooterView *)aspectInfo.instance).contentView.dk_backgroundColorPicker = DKColorPickerWithRGB(0xD5DBE1, 0x404040);
+    } error:NULL];
+    
+    [UILabel aspect_hookSelector:@selector(setText:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+        UILabel *label = (UILabel *)aspectInfo.instance;
+        if ([label.superview.superview isKindOfClass:[UITableViewCell class]]) {
+            if (label.font.pointSize > 14) {
+                label.dk_textColorPicker = DKColorPickerWithColors([UIColor zd_mainTitleColor], [UIColor lightGrayColor], [UIColor zd_mainTitleColor]);
+            } else if (label.font.pointSize > 12) {
+                label.dk_textColorPicker = DKColorPickerWithColors([UIColor zd_mainContentColor], [UIColor lightGrayColor], [UIColor zd_mainContentColor]);
+            } else {
+                label.dk_textColorPicker = DKColorPickerWithColors([UIColor zd_secondaryContentColor], [UIColor darkGrayColor], [UIColor zd_secondaryContentColor]);
+            }
+        }
+    } error:NULL];
+    [UIImageView aspect_hookSelector:@selector(setImage:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+        UIImageView *imageView = (UIImageView *)aspectInfo.instance;
+        if ([imageView.superview.superview isKindOfClass:[UITableViewCell class]]) {
+            imageView.dk_alphaPicker = DKAlphaPickerWithAlphas(1, 0.5, 1);
+        }
+    } error:NULL];
+
+    [UITabBar aspect_hookSelector:@selector(initWithFrame:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+        ((UITabBar *)aspectInfo.instance).dk_tintColorPicker = DKColorPickerWithKey(TINT);
+        ((UITabBar *)aspectInfo.instance).dk_barTintColorPicker = DKColorPickerWithKey(BAR);
+    } error:NULL];
+//    [UISearchBar aspect_hookSelector:@selector(setBackgroundColor:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+//        ((UISearchBar *)aspectInfo.instance).dk_backgroundColorPicker = DKColorPickerWithKey(BG);
+//    } error:NULL];
 }
 
 - (void)setup3DTouch {

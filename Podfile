@@ -39,5 +39,6 @@ target "CodeGeass" do
     pod 'FCAlertView'
     pod 'TTTAttributedLabel'
     pod 'WCDB'
+    pod 'DKNightVersion'
     
 end

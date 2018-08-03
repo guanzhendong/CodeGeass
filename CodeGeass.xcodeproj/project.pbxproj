@@ -36,6 +36,7 @@
 		4422E0541E1CEC9C00682164 /* ZDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4422E0521E1CEC9C00682164 /* ZDLoginViewController.m */; };
 		4422E0551E1CEC9C00682164 /* ZDLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4422E0531E1CEC9C00682164 /* ZDLoginViewController.xib */; };
 		4422E0571E1CF05800682164 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4422E0561E1CF05800682164 /* Security.framework */; };
+		4426158921106B3800D994E3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4426158821106B3800D994E3 /* Social.framework */; };
 		4429038020188368002FBB69 /* NSArray+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429031C20188368002FBB69 /* NSArray+SafeAccess.m */; };
 		4429038120188368002FBB69 /* NSArray+ZDLogHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429031E20188368002FBB69 /* NSArray+ZDLogHelper.m */; };
 		4429038220188368002FBB69 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429032120188368002FBB69 /* NSDate+Extension.m */; };
@@ -139,6 +140,7 @@
 		4469B83A1E9483CC00FFAE68 /* ZDCrmModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4469B8391E9483CC00FFAE68 /* ZDCrmModel.m */; };
 		4469B83E1E94842300FFAE68 /* ZDCrmTotalNumberApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4469B83D1E94842300FFAE68 /* ZDCrmTotalNumberApi.m */; };
 		4469B8411E94843900FFAE68 /* ZDCrmListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4469B8401E94843900FFAE68 /* ZDCrmListApi.m */; };
+		446A32C820FDD2050047BD3A /* ZDMouseDrinkTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 446A32C720FDD2050047BD3A /* ZDMouseDrinkTest.m */; };
 		446C55471E8B8CDB00615297 /* ZDSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 446C55461E8B8CDB00615297 /* ZDSessionModel.m */; };
 		446C554C1E8BB81900615297 /* ZDGroupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 446C554B1E8BB81900615297 /* ZDGroupManager.m */; };
 		446C554F1E8BBA3400615297 /* ZDGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 446C554E1E8BBA3400615297 /* ZDGroupModel.m */; };
@@ -300,6 +302,7 @@
 		4422E0521E1CEC9C00682164 /* ZDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLoginViewController.m; sourceTree = "<group>"; };
 		4422E0531E1CEC9C00682164 /* ZDLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDLoginViewController.xib; sourceTree = "<group>"; };
 		4422E0561E1CF05800682164 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4426158821106B3800D994E3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4429031B20188368002FBB69 /* NSArray+SafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SafeAccess.h"; sourceTree = "<group>"; };
 		4429031C20188368002FBB69 /* NSArray+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SafeAccess.m"; sourceTree = "<group>"; };
 		4429031D20188368002FBB69 /* NSArray+ZDLogHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ZDLogHelper.h"; sourceTree = "<group>"; };
@@ -497,6 +500,7 @@
 		4469B83D1E94842300FFAE68 /* ZDCrmTotalNumberApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCrmTotalNumberApi.m; sourceTree = "<group>"; };
 		4469B83F1E94843900FFAE68 /* ZDCrmListApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCrmListApi.h; sourceTree = "<group>"; };
 		4469B8401E94843900FFAE68 /* ZDCrmListApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCrmListApi.m; sourceTree = "<group>"; };
+		446A32C720FDD2050047BD3A /* ZDMouseDrinkTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDMouseDrinkTest.m; sourceTree = "<group>"; };
 		446C55451E8B8CDB00615297 /* ZDSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSessionModel.h; sourceTree = "<group>"; };
 		446C55461E8B8CDB00615297 /* ZDSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSessionModel.m; sourceTree = "<group>"; };
 		446C554A1E8BB81900615297 /* ZDGroupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGroupManager.h; sourceTree = "<group>"; };
@@ -667,6 +671,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4426158921106B3800D994E3 /* Social.framework in Frameworks */,
 				44010F291EB98D2900093E54 /* QuartzCore.framework in Frameworks */,
 				44010F271EB98D1900093E54 /* CoreGraphics.framework in Frameworks */,
 				44618E081E8A618700CEB5E4 /* libsqlite3.tbd in Frameworks */,
@@ -691,6 +696,7 @@
 		02D89A8B3EC8C13C8BC74491 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4426158821106B3800D994E3 /* Social.framework */,
 				44C7531B20D26C3700A28CD2 /* libYYKit.a */,
 				44C7531820D26B5300A28CD2 /* libWCDB.a */,
 				44010F281EB98D2900093E54 /* QuartzCore.framework */,
@@ -1106,10 +1112,11 @@
 		44451F8F20C11D6C008A034E /* CodeGeassTests */ = {
 			isa = PBXGroup;
 			children = (
-				44451F9020C11D6C008A034E /* CodeGeassTests.m */,
+				446A32C720FDD2050047BD3A /* ZDMouseDrinkTest.m */,
 				44451F9820C11DA9008A034E /* ZDNotificationTest.m */,
 				44451F9A20C135D3008A034E /* ZDAtomicTest.m */,
 				44451F9C20C14943008A034E /* ZDBlockTest.m */,
+				44451F9020C11D6C008A034E /* CodeGeassTests.m */,
 				44451F9220C11D6C008A034E /* Info.plist */,
 			);
 			path = CodeGeassTests;
@@ -1765,7 +1772,6 @@
 				443DDED71E139BA2007A9096 /* Sources */,
 				443DDED81E139BA2007A9096 /* Frameworks */,
 				443DDED91E139BA2007A9096 /* Resources */,
-				805167185A4F7C696CA2CF96 /* [CP] Embed Pods Frameworks */,
 				A0022ED8483C28BDBE21BCF9 /* [CP] Copy Pods Resources */,
 				4446CB0E1F15F5CB00A77764 /* Embed App Extensions */,
 			);
@@ -1890,28 +1896,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CodeGeass-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		805167185A4F7C696CA2CF96 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeGeass/Pods-CodeGeass-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A0022ED8483C28BDBE21BCF9 /* [CP] Copy Pods Resources */ = {
@@ -1920,9 +1914,64 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CodeGeass/Pods-CodeGeass-resources.sh",
+				"${PODS_ROOT}/AXIndicatorView/AXIndicatorView/Classes/AXIndicatorView.bundle",
+				"${PODS_ROOT}/AXPracticalHUD/AXPracticalHUD/AXPracticalHUD/AXPracticalHUD.bundle",
+				"${PODS_ROOT}/AXWebViewController/AXWebViewController/AXWebViewController/AXWebViewController.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Appirater/Appirater.bundle",
+				"${PODS_ROOT}/DKNightVersion/DKNightVersion/ColorTable/DKColorTable.txt",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FCAlertView/FCAlertView.bundle",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundError.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundError@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundErrorIcon.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundErrorIcon@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundMessage.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundMessage@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundSuccess.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundSuccess@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundSuccessIcon.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundSuccessIcon@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundWarning.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundWarning@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundWarningIcon.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundWarningIcon@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationButtonBackground.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationButtonBackground@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/TSMessagesDefaultDesign.json",
+				"${PODS_ROOT}/XLForm/XLForm/XLForm.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXIndicatorView.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXPracticalHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXWebViewController.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Appirater.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DKColorTable.txt",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FCAlertView.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundError.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundError@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundErrorIcon.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundErrorIcon@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundMessage.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundMessage@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundSuccess.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundSuccess@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundSuccessIcon.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundSuccessIcon@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundWarning.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundWarning@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundWarningIcon.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundWarningIcon@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationButtonBackground.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationButtonBackground@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TSMessagesDefaultDesign.json",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/XLForm.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2126,6 +2175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				446A32C820FDD2050047BD3A /* ZDMouseDrinkTest.m in Sources */,
 				44451F9920C11DA9008A034E /* ZDNotificationTest.m in Sources */,
 				44451F9D20C14943008A034E /* ZDBlockTest.m in Sources */,
 				44451F9120C11D6C008A034E /* CodeGeassTests.m in Sources */,
