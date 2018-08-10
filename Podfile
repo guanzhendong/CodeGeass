@@ -40,5 +40,6 @@ target "CodeGeass" do
     pod 'TTTAttributedLabel'
     pod 'WCDB'
     pod 'DKNightVersion'
+    pod 'OpenShare'
     
 end

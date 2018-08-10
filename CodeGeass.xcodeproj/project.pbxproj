@@ -76,7 +76,6 @@
 		442903A420188368002FBB69 /* ZDCommonTableViewCell4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4429036920188368002FBB69 /* ZDCommonTableViewCell4.xib */; };
 		442903A520188368002FBB69 /* ZDMassContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429036B20188368002FBB69 /* ZDMassContentTableViewCell.m */; };
 		442903A620188368002FBB69 /* ZDMassContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4429036C20188368002FBB69 /* ZDMassContentTableViewCell.xib */; };
-		442903AA20188368002FBB69 /* UICreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429037620188368002FBB69 /* UICreator.m */; };
 		442903AB20188368002FBB69 /* ZDCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429037820188368002FBB69 /* ZDCommonTool.m */; };
 		442903AC20188368002FBB69 /* ZDConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429037A20188368002FBB69 /* ZDConsts.m */; };
 		442903AD20188368002FBB69 /* ZDNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429037D20188368002FBB69 /* ZDNetworking.m */; };
@@ -108,6 +107,7 @@
 		4449EF041E35F2300015037B /* ZDSessionListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4449EF031E35F2300015037B /* ZDSessionListApi.m */; };
 		4449EF071E35F4370015037B /* ZDSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4449EF061E35F4370015037B /* ZDSessionManager.m */; };
 		4449EF0A1E35FA000015037B /* ZDHTTPResponse2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4449EF091E35FA000015037B /* ZDHTTPResponse2.m */; };
+		444DC590211D781B0008DA8A /* UICreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 444DC58F211D781B0008DA8A /* UICreator.m */; };
 		44516AD51E13C1F7001711BC /* ZDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44516AD41E13C1F7001711BC /* ZDTabBarController.m */; };
 		44534B1A1EA8535100159852 /* ZDContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44534B191EA8535100159852 /* ZDContactModel.m */; };
 		44534B1D1EA854BF00159852 /* GroupMemberListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 44534B1C1EA854BF00159852 /* GroupMemberListApi.m */; };
@@ -376,8 +376,6 @@
 		4429036C20188368002FBB69 /* ZDMassContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDMassContentTableViewCell.xib; sourceTree = "<group>"; };
 		4429036D20188368002FBB69 /* ZDTableViewCellAccessoryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTableViewCellAccessoryProtocol.h; sourceTree = "<group>"; };
 		4429036E20188368002FBB69 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
-		4429037520188368002FBB69 /* UICreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICreator.h; sourceTree = "<group>"; };
-		4429037620188368002FBB69 /* UICreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICreator.m; sourceTree = "<group>"; };
 		4429037720188368002FBB69 /* ZDCommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommonTool.h; sourceTree = "<group>"; };
 		4429037820188368002FBB69 /* ZDCommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonTool.m; sourceTree = "<group>"; };
 		4429037920188368002FBB69 /* ZDConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDConsts.h; sourceTree = "<group>"; };
@@ -438,6 +436,8 @@
 		4449EF061E35F4370015037B /* ZDSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSessionManager.m; sourceTree = "<group>"; };
 		4449EF081E35FA000015037B /* ZDHTTPResponse2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDHTTPResponse2.h; sourceTree = "<group>"; };
 		4449EF091E35FA000015037B /* ZDHTTPResponse2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDHTTPResponse2.m; sourceTree = "<group>"; };
+		444DC58E211D781B0008DA8A /* UICreator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICreator.h; sourceTree = "<group>"; };
+		444DC58F211D781B0008DA8A /* UICreator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICreator.m; sourceTree = "<group>"; };
 		44516AD31E13C1F7001711BC /* ZDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTabBarController.h; sourceTree = "<group>"; };
 		44516AD41E13C1F7001711BC /* ZDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTabBarController.m; sourceTree = "<group>"; };
 		44534B181EA8535100159852 /* ZDContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDContactModel.h; sourceTree = "<group>"; };
@@ -824,8 +824,8 @@
 				4429036E20188368002FBB69 /* Macros.h */,
 				4429037920188368002FBB69 /* ZDConsts.h */,
 				4429037A20188368002FBB69 /* ZDConsts.m */,
-				4429037520188368002FBB69 /* UICreator.h */,
-				4429037620188368002FBB69 /* UICreator.m */,
+				444DC58E211D781B0008DA8A /* UICreator.h */,
+				444DC58F211D781B0008DA8A /* UICreator.m */,
 				4429037720188368002FBB69 /* ZDCommonTool.h */,
 				4429037820188368002FBB69 /* ZDCommonTool.m */,
 				4429037C20188368002FBB69 /* ZDNetworking.h */,
@@ -2047,7 +2047,6 @@
 				44D19B9A1E83A732001072DA /* TZPhotoPreviewController.m in Sources */,
 				448949B31E2DCB1C00A69848 /* YYFPSLabel.m in Sources */,
 				44D19B911E83A732001072DA /* TZAssetCell.m in Sources */,
-				442903AA20188368002FBB69 /* UICreator.m in Sources */,
 				44534B1D1EA854BF00159852 /* GroupMemberListApi.m in Sources */,
 				4469B83A1E9483CC00FFAE68 /* ZDCrmModel.m in Sources */,
 				4429038C20188368002FBB69 /* UIButton+LXMImagePosition.m in Sources */,
@@ -2117,6 +2116,7 @@
 				44D52E701E345A5400DA321C /* XHLaunchImageView.m in Sources */,
 				4416F9101E8E618700AAA580 /* TYAlertDropDownAnimation.m in Sources */,
 				4429039720188368002FBB69 /* UITableView+ZDPlaceholder.m in Sources */,
+				444DC590211D781B0008DA8A /* UICreator.m in Sources */,
 				442903AE20188368002FBB69 /* ZDSearchViewController.m in Sources */,
 				44D19B4E1E83A6CB001072DA /* MLPhotoAsset.m in Sources */,
 				4461473D1E8CEF7C003EF473 /* UIView+PYSearchExtension.m in Sources */,

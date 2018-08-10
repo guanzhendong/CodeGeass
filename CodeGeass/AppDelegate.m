@@ -64,7 +64,7 @@
         [self setupOnboard];
     } else {
         // 设置广告页
-        [self setupXHLaunchAd];
+//        [self setupXHLaunchAd];
         
         NSString *account = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentAccount"];
         NSString *password = [YYKeychain getPasswordForService:[UIApplication sharedApplication].appBundleName

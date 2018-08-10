@@ -1,9 +1,9 @@
 //
-//  UICretator.m
-//  FastApp
+//  UICreator.m
+//  CodeGeass
 //
-//  Created by tangkunyin on 16/3/7.
-//  Copyright © 2016年 www.shuoit.net. All rights reserved.
+//  Created by ec on 2018/8/10.
+//  Copyright © 2018年 Code Geass. All rights reserved.
 //
 
 #import "UICreator.h"
@@ -13,55 +13,133 @@
 @implementation UICreator
 
 #pragma mark - For UIView
-+ (UIView *)createUIViewWithFrame:(CGRect)frame
-                          bgColor:(UIColor *)bgColor
++ (UIView *)createViewWithFrame:(CGRect)frame
+                        bgColor:(UIColor *)bgColor
+{
+    return [self createViewWithFrame:frame bgColor:bgColor cornerRadius:0 actionGesture:NULL];
+}
+
++ (UIView *)createViewWithFrame:(CGRect)frame
+                        bgColor:(UIColor *)bgColor
+                   cornerRadius:(CGFloat)cornerRadius
+{
+    return [self createViewWithFrame:frame bgColor:bgColor cornerRadius:cornerRadius actionGesture:NULL];
+}
+
++ (UIView *)createViewWithFrame:(CGRect)frame
+                        bgColor:(UIColor *)bgColor
+                   cornerRadius:(CGFloat)cornerRadius
+                  actionGesture:(UIGestureRecognizer *)gesture
 {
     UIView *view = [[UIView alloc] initWithFrame:frame];
     view.backgroundColor = bgColor;
-    return view;
-}
-
-+ (UIView *)createUIViewWithFrame:(CGRect)frame
-                          bgColor:(UIColor *)bgColor
-                     cornerRadius:(CGFloat)cornerRadius
-{
-    UIView *view = [self createUIViewWithFrame:frame bgColor:bgColor];
-    if (cornerRadius > 0) {
-        view.clipsToBounds = YES;
-        view.layer.cornerRadius = cornerRadius;
-    }
-    return view;
-}
-
-+ (UIView *)createUIViewWithFrame:(CGRect)frame
-                          bgColor:(UIColor *)bgColor
-                     cornerRadius:(CGFloat)cornerRadius
-                    actionGesture:(UIGestureRecognizer *)gesture
-{
-    UIView *view = [self createUIViewWithFrame:frame bgColor:bgColor cornerRadius:cornerRadius];
+    view.clipsToBounds = YES;// view一般会有子视图，所以需要设置此值
+    view.layer.cornerRadius = cornerRadius;
     [view addGestureRecognizer:gesture];
     return view;
 }
 
-+ (UIView *)createUIViewWithFrame:(CGRect)frame
-                          bgColor:(UIColor *)bgColor
-                     cornerRadius:(CGFloat)cornerRadius
-                        tapAction:(void(^)())tapAction
++ (UIView *)createViewWithFrame:(CGRect)frame
+                        bgColor:(UIColor *)bgColor
+                   cornerRadius:(CGFloat)cornerRadius
+                      tapAction:(void(^)())tapAction
 {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id sender) {
         if (tapAction) {
             tapAction();
         }
     }];
-    UIView *view = [self createUIViewWithFrame:frame bgColor:bgColor cornerRadius:cornerRadius actionGesture:tap];
-    return view;
+    return [self createViewWithFrame:frame bgColor:bgColor cornerRadius:cornerRadius actionGesture:tap];
 }
 
 #pragma mark - For UILabel
 + (UILabel *)createLabelWithFrame:(CGRect)frame
                              text:(NSString *)text
+{
+    return [self createLabelWithFrame:frame
+                                 text:text
+                        textAlignment:0
+                             fontSize:0
+                            textColor:nil
+                              bgColor:nil
+                         cornerRadius:0
+                            tapAction:nil];
+}
+
++ (UILabel *)createLabelWithFrame:(CGRect)frame
+                             text:(NSString *)text
                     textAlignment:(NSTextAlignment)textAlignment
                          fontSize:(CGFloat)fontSize
+{
+    return [self createLabelWithFrame:frame
+                                 text:text
+                        textAlignment:textAlignment
+                             fontSize:fontSize
+                            textColor:nil
+                              bgColor:nil
+                         cornerRadius:0
+                            tapAction:nil];
+}
+
++ (UILabel *)createLabelWithFrame:(CGRect)frame
+                             text:(NSString *)text
+                    textAlignment:(NSTextAlignment)textAlignment
+                         fontSize:(CGFloat)fontSize
+                        textColor:(UIColor *)textColor
+{
+    return [self createLabelWithFrame:frame
+                                 text:text
+                        textAlignment:textAlignment
+                             fontSize:fontSize
+                            textColor:textColor
+                              bgColor:nil
+                         cornerRadius:0
+                            tapAction:nil];
+}
+
++ (UILabel *)createLabelWithFrame:(CGRect)frame
+                             text:(NSString *)text
+                    textAlignment:(NSTextAlignment)textAlignment
+                         fontSize:(CGFloat)fontSize
+                        textColor:(UIColor *)textColor
+                          bgColor:(UIColor *)bgColor
+{
+    return [self createLabelWithFrame:frame
+                                 text:text
+                        textAlignment:textAlignment
+                             fontSize:fontSize
+                            textColor:textColor
+                              bgColor:bgColor
+                         cornerRadius:0
+                            tapAction:nil];
+}
+
++ (UILabel *)createLabelWithFrame:(CGRect)frame
+                             text:(NSString *)text
+                    textAlignment:(NSTextAlignment)textAlignment
+                         fontSize:(CGFloat)fontSize
+                        textColor:(UIColor *)textColor
+                          bgColor:(UIColor *)bgColor
+                     cornerRadius:(CGFloat)cornerRadius
+{
+    return [self createLabelWithFrame:frame
+                                 text:text
+                        textAlignment:textAlignment
+                             fontSize:fontSize
+                            textColor:textColor
+                              bgColor:bgColor
+                         cornerRadius:cornerRadius
+                            tapAction:nil];
+}
+
++ (UILabel *)createLabelWithFrame:(CGRect)frame
+                             text:(NSString *)text
+                    textAlignment:(NSTextAlignment)textAlignment
+                         fontSize:(CGFloat)fontSize
+                        textColor:(UIColor *)textColor
+                          bgColor:(UIColor *)bgColor
+                     cornerRadius:(CGFloat)cornerRadius
+                        tapAction:(void(^)())tapAction
 {
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     label.text = text;
@@ -69,58 +147,9 @@
     if (fontSize > 0) {
         label.font = [UIFont systemFontOfSize:fontSize];
     }
-    return label;
-}
-
-+ (UILabel *)createLabelWithFrame:(CGRect)frame
-                             text:(NSString *)text
-                    textAlignment:(NSTextAlignment)textAlignment
-                         fontSize:(CGFloat)fontSize
-                        textColor:(UIColor *)textColor
-{
-    UILabel *label = [self createLabelWithFrame:frame text:text textAlignment:textAlignment fontSize:fontSize];
     label.textColor = textColor;
-    return label;
-}
-
-+ (UILabel *)createLabelWithFrame:(CGRect)frame
-                             text:(NSString *)text
-                    textAlignment:(NSTextAlignment)textAlignment
-                         fontSize:(CGFloat)fontSize
-                        textColor:(UIColor *)textColor
-                          bgColor:(UIColor *)bgColor
-{
-    UILabel *label = [self createLabelWithFrame:frame text:text textAlignment:textAlignment fontSize:fontSize textColor:textColor];
     label.backgroundColor = bgColor;
-    return label;
-}
-
-+ (UILabel *)createLabelWithFrame:(CGRect)frame
-                             text:(NSString *)text
-                    textAlignment:(NSTextAlignment)textAlignment
-                         fontSize:(CGFloat)fontSize
-                        textColor:(UIColor *)textColor
-                          bgColor:(UIColor *)bgColor
-                     cornerRadius:(CGFloat)cornerRadius
-{
-    UILabel *label = [self createLabelWithFrame:frame text:text textAlignment:textAlignment fontSize:fontSize textColor:textColor bgColor:bgColor];
-    if (cornerRadius > 0) {
-        label.clipsToBounds = YES;
-        label.layer.cornerRadius = cornerRadius;
-    }
-    return label;
-}
-
-+ (UILabel *)createLabelWithFrame:(CGRect)frame
-                             text:(NSString *)text
-                    textAlignment:(NSTextAlignment)textAlignment
-                         fontSize:(CGFloat)fontSize
-                        textColor:(UIColor *)textColor
-                          bgColor:(UIColor *)bgColor
-                     cornerRadius:(CGFloat)cornerRadius
-                        tapAction:(void(^)())tapAction
-{
-    UILabel *label = [self createLabelWithFrame:frame text:text textAlignment:textAlignment fontSize:fontSize textColor:textColor bgColor:bgColor cornerRadius:cornerRadius];
+    label.layer.cornerRadius = cornerRadius;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id sender) {
         if (tapAction) {
             tapAction();
@@ -134,21 +163,29 @@
 #pragma mark - For UIButton
 + (UIButton *)createButtonWithFrame:(CGRect)frame
                               title:(NSString *)title
+                             action:(void(^)())action
+{
+    return [self createButtonWithFrame:frame
+                                 title:title
+                              fontSize:0
+                            titleColor:nil
+                               bgColor:nil
+                          cornerRadius:0
+                                action:action];
+}
+
++ (UIButton *)createButtonWithFrame:(CGRect)frame
+                              title:(NSString *)title
                            fontSize:(CGFloat)fontSize
                              action:(void(^)())action
 {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = frame;
-    [button setTitle:title forState:UIControlStateNormal];
-    if (fontSize > 0) {
-        button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
-    }
-    [button addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
-        if (action) {
-            action();
-        }
-    }];
-    return button;
+    return [self createButtonWithFrame:frame
+                                 title:title
+                              fontSize:fontSize
+                            titleColor:nil
+                               bgColor:nil
+                          cornerRadius:0
+                                action:action];
 }
 
 + (UIButton *)createButtonWithFrame:(CGRect)frame
@@ -158,10 +195,13 @@
                             bgColor:(UIColor *)bgColor
                              action:(void(^)())action
 {
-    UIButton *button = [self createButtonWithFrame:frame title:title fontSize:fontSize action:action];
-    [button setTitleColor:titleColor forState:UIControlStateNormal];
-    button.backgroundColor = bgColor;
-    return button;
+    return [self createButtonWithFrame:frame
+                                 title:title
+                              fontSize:fontSize
+                            titleColor:titleColor
+                               bgColor:bgColor
+                          cornerRadius:0
+                                action:nil];
 }
 
 + (UIButton *)createButtonWithFrame:(CGRect)frame
@@ -172,11 +212,20 @@
                        cornerRadius:(CGFloat)cornerRadius
                              action:(void(^)())action
 {
-    UIButton *button = [self createButtonWithFrame:frame title:title fontSize:fontSize titleColor:titleColor bgColor:bgColor action:action];
-    if (cornerRadius > 0) {
-        button.clipsToBounds = YES;
-        button.layer.cornerRadius = cornerRadius;
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.frame = frame;
+    [button setTitle:title forState:UIControlStateNormal];
+    if (fontSize > 0) {
+        button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
     }
+    [button setTitleColor:titleColor forState:UIControlStateNormal];
+    button.backgroundColor = bgColor;
+    button.layer.cornerRadius = cornerRadius;
+    [button addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
+        if (action) {
+            action();
+        }
+    }];
     return button;
 }
 
@@ -184,32 +233,19 @@
 + (UIImageView *)createImageViewWithFrame:(CGRect)frame
                                 imageName:(NSString *)imageName
 {
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    imageView.image = [UIImage imageNamed:imageName];
-    return imageView;
+    return [self createImageViewWithFrame:frame
+                                imageName:imageName
+                             cornerRadius:0
+                            actionGesture:nil];
 }
 
 + (UIImageView *)createImageViewWithFrame:(CGRect)frame
                              cornerRadius:(CGFloat)cornerRadius
 {
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    if (cornerRadius > 0) {
-        imageView.clipsToBounds = YES;
-        imageView.layer.cornerRadius = cornerRadius;
-        imageView.layer.masksToBounds = YES;
-    }
-    return imageView;
-}
-
-+ (UIImageView *)createImageViewWithFrame:(CGRect)frame
-                                imageName:(NSString *)imageName
-                             cornerRadius:(CGFloat)cornerRadius
-{
-    UIImageView *imageView = [self createImageViewWithFrame:frame cornerRadius:cornerRadius];
-    imageView.image = [UIImage imageNamed:imageName];
-    return imageView;
+    return [self createImageViewWithFrame:frame
+                                imageName:nil
+                             cornerRadius:cornerRadius
+                            actionGesture:nil];
 }
 
 + (UIImageView *)createImageViewWithFrame:(CGRect)frame
@@ -217,7 +253,10 @@
                              cornerRadius:(CGFloat)cornerRadius
                             actionGesture:(UIGestureRecognizer *)gesture
 {
-    UIImageView *imageView = [self createImageViewWithFrame:frame imageName:imageName cornerRadius:cornerRadius];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.image = [UIImage imageNamed:imageName];
+    imageView.layer.cornerRadius = cornerRadius;
     imageView.userInteractionEnabled = YES;
     [imageView addGestureRecognizer:gesture];
     return imageView;
@@ -233,8 +272,10 @@
             tapAction();
         }
     }];
-    UIImageView *imageView = [self createImageViewWithFrame:frame imageName:imageName cornerRadius:cornerRadius actionGesture:tap];
-    return imageView;
+    return [self createImageViewWithFrame:frame
+                                imageName:imageName
+                             cornerRadius:cornerRadius
+                            actionGesture:tap];
 }
 
 + (UIImageView *)createImageViewWithFrame:(CGRect)frame
@@ -244,9 +285,12 @@
 {
     CGFloat cornerRadius = 0;
     if (roundCorner) {
-        cornerRadius = frame.size.width / 2;
+        cornerRadius = MIN(frame.size.width, frame.size.height) / 2;
     }
-    return [self createImageViewWithFrame:frame imageName:imageName cornerRadius:cornerRadius tapAction:tapAction];
+    return [self createImageViewWithFrame:frame
+                                imageName:imageName
+                             cornerRadius:cornerRadius
+                                tapAction:tapAction];
 }
 
 #pragma mark ----------------------------------以上已重写，添加frame----------------------------------
@@ -339,17 +383,17 @@
 //                                              font:font
 //                                            target:target
 //                                            action:action];
-//    
+//
 //    [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
 //    button.contentHorizontalAlignment = hAlign;
 //    button.contentVerticalAlignment = vAlign;
 //    button.contentEdgeInsets = contentEdge;
-//    
+//
 //    CGSize imageSize = button.imageView.frame.size;
 //    CGSize titleSize = button.titleLabel.frame.size;
 //    CGFloat totalWidth = (imageSize.width + titleSize.width) + span;
 //    CGFloat totalHeight = (imageSize.height + titleSize.height) + span;
-//    
+//
 //    switch (type) {
 //        case BtnImgDirectionDefault:
 //        {
@@ -412,17 +456,17 @@
 //                                                  delegate:delegate];
 //    textField.keyboardType = keyboardType;
 //    textField.returnKeyType = returnKeyType;
-//    
+//
 //    UILabel *label = [[UILabel alloc] init];
 //    label.attributedText = aTitle;
-//    
+//
 //    textField.leftView = label;
 //    textField.leftViewMode = UITextFieldViewModeAlways;
-//    
+//
 //    textField.enablesReturnKeyAutomatically = YES;
 //    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 //    textField.autocorrectionType = UITextAutocorrectionTypeNo;
-//    
+//
 //    return textField;
 //}
 //
@@ -487,12 +531,13 @@
 //        NSURLRequest *request = [CommonNetTools getRequestWithURLString:webUrl method:@"GET" timeOut:45];
 //        [webView loadRequest:request];
 //    }
-//    
+//
 //    if (![StringTools isEmpty:htmlString]) {
 //        [webView loadHTMLString:htmlString baseURL:baseUrl];
 //    }
-//    
+//
 //    return webView;
 //}
 
 @end
+

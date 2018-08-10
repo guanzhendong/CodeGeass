@@ -1,46 +1,55 @@
 //
-//  UICretator.h
-//  FastApp
+//  UICreator.h
+//  CodeGeass
 //
-//  Created by tangkunyin on 16/3/7.
-//  Copyright © 2016年 www.shuoit.net. All rights reserved.
+//  Created by ec on 2018/8/10.
+//  Copyright © 2018年 Code Geass. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 @interface UICreator : NSObject
 
 #pragma mark - For UIView
-+ (UIView *)createUIViewWithFrame:(CGRect)frame
-                          bgColor:(UIColor *)bgColor;
-+ (UIView *)createUIViewWithFrame:(CGRect)frame
-                          bgColor:(UIColor *)bgColor
-                     cornerRadius:(CGFloat)cornerRadius;
-+ (UIView *)createUIViewWithFrame:(CGRect)frame
-                          bgColor:(UIColor *)bgColor
-                     cornerRadius:(CGFloat)cornerRadius
-                    actionGesture:(UIGestureRecognizer *)gesture;
-+ (UIView *)createUIViewWithFrame:(CGRect)frame
-                          bgColor:(UIColor *)bgColor
-                     cornerRadius:(CGFloat)cornerRadius
-                        tapAction:(void(^)())tapAction;
++ (UIView *)createViewWithFrame:(CGRect)frame
+                        bgColor:(UIColor *)bgColor;
+
++ (UIView *)createViewWithFrame:(CGRect)frame
+                        bgColor:(UIColor *)bgColor
+                   cornerRadius:(CGFloat)cornerRadius;
+
++ (UIView *)createViewWithFrame:(CGRect)frame
+                        bgColor:(UIColor *)bgColor
+                   cornerRadius:(CGFloat)cornerRadius
+                  actionGesture:(UIGestureRecognizer *)gesture;
+
++ (UIView *)createViewWithFrame:(CGRect)frame
+                        bgColor:(UIColor *)bgColor
+                   cornerRadius:(CGFloat)cornerRadius
+                      tapAction:(void(^)())tapAction;
 
 #pragma mark - For UILabel
++ (UILabel *)createLabelWithFrame:(CGRect)frame
+                             text:(NSString *)text;
+
 + (UILabel *)createLabelWithFrame:(CGRect)frame
                              text:(NSString *)text
                     textAlignment:(NSTextAlignment)textAlignment
                          fontSize:(CGFloat)fontSize;
+
 + (UILabel *)createLabelWithFrame:(CGRect)frame
                              text:(NSString *)text
                     textAlignment:(NSTextAlignment)textAlignment
                          fontSize:(CGFloat)fontSize
                         textColor:(UIColor *)textColor;
+
 + (UILabel *)createLabelWithFrame:(CGRect)frame
                              text:(NSString *)text
                     textAlignment:(NSTextAlignment)textAlignment
                          fontSize:(CGFloat)fontSize
                         textColor:(UIColor *)textColor
                           bgColor:(UIColor *)bgColor;
+
 + (UILabel *)createLabelWithFrame:(CGRect)frame
                              text:(NSString *)text
                     textAlignment:(NSTextAlignment)textAlignment
@@ -48,6 +57,7 @@
                         textColor:(UIColor *)textColor
                           bgColor:(UIColor *)bgColor
                      cornerRadius:(CGFloat)cornerRadius;
+
 + (UILabel *)createLabelWithFrame:(CGRect)frame
                              text:(NSString *)text
                     textAlignment:(NSTextAlignment)textAlignment
@@ -60,14 +70,20 @@
 #pragma mark - For UIButton
 + (UIButton *)createButtonWithFrame:(CGRect)frame
                               title:(NSString *)title
+                             action:(void(^)())action;
+
++ (UIButton *)createButtonWithFrame:(CGRect)frame
+                              title:(NSString *)title
                            fontSize:(CGFloat)fontSize
                              action:(void(^)())action;
+
 + (UIButton *)createButtonWithFrame:(CGRect)frame
                               title:(NSString *)title
                            fontSize:(CGFloat)fontSize
                          titleColor:(UIColor *)titleColor
                             bgColor:(UIColor *)bgColor
                              action:(void(^)())action;
+
 + (UIButton *)createButtonWithFrame:(CGRect)frame
                               title:(NSString *)title
                            fontSize:(CGFloat)fontSize
@@ -79,26 +95,27 @@
 #pragma mark - For UIImageView
 + (UIImageView *)createImageViewWithFrame:(CGRect)frame
                                 imageName:(NSString *)imageName;
+
 + (UIImageView *)createImageViewWithFrame:(CGRect)frame
                              cornerRadius:(CGFloat)cornerRadius;
-+ (UIImageView *)createImageViewWithFrame:(CGRect)frame
-                                imageName:(NSString *)imageName
-                             cornerRadius:(CGFloat)cornerRadius;
+
 + (UIImageView *)createImageViewWithFrame:(CGRect)frame
                                 imageName:(NSString *)imageName
                              cornerRadius:(CGFloat)cornerRadius
                             actionGesture:(UIGestureRecognizer *)gesture;
+
 + (UIImageView *)createImageViewWithFrame:(CGRect)frame
                                 imageName:(NSString *)imageName
                              cornerRadius:(CGFloat)cornerRadius
                                 tapAction:(void(^)())tapAction;
+
 + (UIImageView *)createImageViewWithFrame:(CGRect)frame
                                 imageName:(NSString *)imageName
                               roundCorner:(BOOL)roundCorner
                                 tapAction:(void(^)())tapAction;
 
 #pragma mark ----------------------------------以上已重写，添加frame----------------------------------
-#pragma mark - 
+#pragma mark -
 
 //+ (UIButton *)createButtonWithTitle:(NSString *)title
 //                         titleColor:(UIColor *)titleColor
