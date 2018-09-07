@@ -14,6 +14,7 @@
 #import "YYImageCache+ZDGroupIconCache.h"
 #import "QQPopMenuView.h"
 #import "ODRefreshControl.h"
+#import "ZDMediator+CorpModule.h"
 
 @interface ZDSessionListViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -68,7 +69,8 @@
     NSString *title;
     NSString *content;
     if (model.type == ZDSessionDataTypeSingle) {
-        ZDEmployeeModel *employee = [[ZDCorpManager sharedManager] employeeWithId:model.Id];
+//        ZDEmployeeModel *employee = [[ZDCorpManager sharedManager] employeeWithId:model.Id];
+        ZDEmployeeModel *employee = [[ZDMediator sharedInstance] employeeWithId:model.Id];
         title = employee.name;
         content = model.content;
         [cell.leftImageView setImageWithURL:[NSURL URLWithString:employee.face]

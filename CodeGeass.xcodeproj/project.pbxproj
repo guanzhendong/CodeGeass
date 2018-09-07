@@ -220,6 +220,10 @@
 		44E91CB21E1B824B0068BF70 /* ZDCrmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E91CB11E1B824B0068BF70 /* ZDCrmViewController.m */; };
 		44E91CB51E1B82650068BF70 /* ZDToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E91CB41E1B82650068BF70 /* ZDToolViewController.m */; };
 		44E91CB81E1B82750068BF70 /* ZDMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E91CB71E1B82750068BF70 /* ZDMeViewController.m */; };
+		44F43908213D2ECC00A0624B /* ZDMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F43907213D2ECC00A0624B /* ZDMediator.m */; };
+		44F4390B213D2FF300A0624B /* ZDMediator+CorpModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F4390A213D2FF300A0624B /* ZDMediator+CorpModule.m */; };
+		44F4390E213D325B00A0624B /* Target_CorpModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F4390D213D325B00A0624B /* Target_CorpModule.m */; };
+		44F4391321425EF900A0624B /* ZDEXCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F4391221425EF900A0624B /* ZDEXCTest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		44FAAF081E30A2060022475F /* ZDUserAuthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FAAF071E30A2060022475F /* ZDUserAuthApi.m */; };
 		44FAAF0B1E30A4190022475F /* ZDUserAuthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FAAF0A1E30A4190022475F /* ZDUserAuthModel.m */; };
 		44FAAF0E1E30A7680022475F /* ZDHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FAAF0D1E30A7680022475F /* ZDHTTPResponse.m */; };
@@ -655,6 +659,13 @@
 		44E91CB41E1B82650068BF70 /* ZDToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDToolViewController.m; sourceTree = "<group>"; };
 		44E91CB61E1B82750068BF70 /* ZDMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDMeViewController.h; sourceTree = "<group>"; };
 		44E91CB71E1B82750068BF70 /* ZDMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDMeViewController.m; sourceTree = "<group>"; };
+		44F43906213D2ECC00A0624B /* ZDMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDMediator.h; sourceTree = "<group>"; };
+		44F43907213D2ECC00A0624B /* ZDMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDMediator.m; sourceTree = "<group>"; };
+		44F43909213D2FF300A0624B /* ZDMediator+CorpModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZDMediator+CorpModule.h"; sourceTree = "<group>"; };
+		44F4390A213D2FF300A0624B /* ZDMediator+CorpModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ZDMediator+CorpModule.m"; sourceTree = "<group>"; };
+		44F4390C213D325B00A0624B /* Target_CorpModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_CorpModule.h; sourceTree = "<group>"; };
+		44F4390D213D325B00A0624B /* Target_CorpModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_CorpModule.m; sourceTree = "<group>"; };
+		44F4391221425EF900A0624B /* ZDEXCTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDEXCTest.m; sourceTree = "<group>"; };
 		44FAAF061E30A2060022475F /* ZDUserAuthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDUserAuthApi.h; sourceTree = "<group>"; };
 		44FAAF071E30A2060022475F /* ZDUserAuthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDUserAuthApi.m; sourceTree = "<group>"; };
 		44FAAF091E30A4190022475F /* ZDUserAuthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDUserAuthModel.h; sourceTree = "<group>"; };
@@ -1065,6 +1076,7 @@
 			children = (
 				443DDEE11E139BA2007A9096 /* AppDelegate.h */,
 				443DDEE21E139BA2007A9096 /* AppDelegate.m */,
+				44F43905213D2EA800A0624B /* Mediator */,
 				445E773C1ED951FF0040E0E5 /* RAC */,
 				446C55491E8BB7F200615297 /* Group */,
 				445922481E36E9A7003CC4B6 /* Corp */,
@@ -1112,6 +1124,7 @@
 		44451F8F20C11D6C008A034E /* CodeGeassTests */ = {
 			isa = PBXGroup;
 			children = (
+				44F4391221425EF900A0624B /* ZDEXCTest.m */,
 				446A32C720FDD2050047BD3A /* ZDMouseDrinkTest.m */,
 				44451F9820C11DA9008A034E /* ZDNotificationTest.m */,
 				44451F9A20C135D3008A034E /* ZDAtomicTest.m */,
@@ -1741,6 +1754,19 @@
 			name = Tool;
 			sourceTree = "<group>";
 		};
+		44F43905213D2EA800A0624B /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				44F43906213D2ECC00A0624B /* ZDMediator.h */,
+				44F43907213D2ECC00A0624B /* ZDMediator.m */,
+				44F43909213D2FF300A0624B /* ZDMediator+CorpModule.h */,
+				44F4390A213D2FF300A0624B /* ZDMediator+CorpModule.m */,
+				44F4390C213D325B00A0624B /* Target_CorpModule.h */,
+				44F4390D213D325B00A0624B /* Target_CorpModule.m */,
+			);
+			path = Mediator;
+			sourceTree = "<group>";
+		};
 		44FAAF0F1E30BC500022475F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2017,6 +2043,7 @@
 				44FAAF0E1E30A7680022475F /* ZDHTTPResponse.m in Sources */,
 				4429038720188368002FBB69 /* NSDictionary+SafeAccess.m in Sources */,
 				449913A51E1BAEC50080D75F /* YTKNetworkConfig.m in Sources */,
+				44F4390E213D325B00A0624B /* Target_CorpModule.m in Sources */,
 				4447D56E1EC2E48F00787A22 /* YYPhotoGroupView.m in Sources */,
 				44618E131E8A671C00CEB5E4 /* LKDB+Mapping.m in Sources */,
 				4429039B20188368002FBB69 /* ZDCommonCollectionViewCell1.m in Sources */,
@@ -2111,6 +2138,7 @@
 				4461473A1E8CEF7C003EF473 /* PYSearchSuggestionViewController.m in Sources */,
 				44D19B501E83A6CB001072DA /* MLPhotoPickerManager.m in Sources */,
 				4429039920188368002FBB69 /* UITextView+ZDKeyboard.m in Sources */,
+				44F4390B213D2FF300A0624B /* ZDMediator+CorpModule.m in Sources */,
 				449913A21E1BAEC50080D75F /* YTKChainRequest.m in Sources */,
 				4474386C1EC16BBC00B69765 /* ZDTranslucentViewController.m in Sources */,
 				44D52E701E345A5400DA321C /* XHLaunchImageView.m in Sources */,
@@ -2155,6 +2183,7 @@
 				4429038E20188368002FBB69 /* UIImage+ZDCompress.m in Sources */,
 				44D19B601E83A6CB001072DA /* UIButton+Animation.m in Sources */,
 				44010F211EB97CA600093E54 /* UICollectionViewLeftAlignedLayout.m in Sources */,
+				44F43908213D2ECC00A0624B /* ZDMediator.m in Sources */,
 				44E91CB51E1B82650068BF70 /* ZDToolViewController.m in Sources */,
 				447BF6DF1F9EE6EB006660C1 /* TestTableViewCell.m in Sources */,
 				4461473B1E8CEF7C003EF473 /* PYSearchViewController.m in Sources */,
@@ -2179,6 +2208,7 @@
 				44451F9920C11DA9008A034E /* ZDNotificationTest.m in Sources */,
 				44451F9D20C14943008A034E /* ZDBlockTest.m in Sources */,
 				44451F9120C11D6C008A034E /* CodeGeassTests.m in Sources */,
+				44F4391321425EF900A0624B /* ZDEXCTest.m in Sources */,
 				44451F9B20C135D3008A034E /* ZDAtomicTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

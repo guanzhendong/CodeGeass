@@ -11,6 +11,7 @@
 #import "ZDSearchViewController.h"
 #import "ZDCorpInfoViewController.h"
 #import "ZDQQFriendViewController.h"
+#import "ZDMediator+CorpModule.h"
 
 @interface ZDToolViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, ZDSearchViewControllerDelegate, UIViewControllerPreviewingDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -181,8 +182,9 @@
         ZDToolViewController *vc = [[ZDToolViewController alloc] initWithParentId:model.Id];
         [self.navigationController pushViewController:vc animated:YES];
     } else if (model.type == ZDEmployeeTypeUser) {
-        ZDCorpInfoViewController *infoVC = [[ZDCorpInfoViewController alloc] initWithEmployeeId:model.Id];
-        infoVC.showNavigationBarWhenFromSearch = tableView == _searchVC.tableView;
+//        ZDCorpInfoViewController *infoVC = [[ZDCorpInfoViewController alloc] initWithEmployeeId:model.Id];
+//        infoVC.showNavigationBarWhenFromSearch = tableView == _searchVC.tableView;
+        UIViewController *infoVC = [[ZDMediator sharedInstance] corpInfoViewControllerWithParams:@{@"employeeId":model.Id}];
         [self.navigationController pushViewController:infoVC animated:YES];
     }
 }
