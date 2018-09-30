@@ -171,14 +171,12 @@
 }
 
 - (void)setup3DTouch {
-    if ([UIApplication sharedApplication].shortcutItems.count == 0) {
-        NSString *type = [NSString stringWithFormat:@"%@.shortcut",[[NSBundle mainBundle] bundleIdentifier]];
-        UIApplicationShortcutItem *item1 = [[UIApplicationShortcutItem alloc] initWithType:[NSString stringWithFormat:@"%@.1",type] localizedTitle:@"好友" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeContact] userInfo:nil];
-        UIApplicationShortcutItem *item2 = [[UIApplicationShortcutItem alloc] initWithType:[NSString stringWithFormat:@"%@.2",type] localizedTitle:@"工作" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeTask] userInfo:nil];
-        UIApplicationShortcutItem *item3 = [[UIApplicationShortcutItem alloc] initWithType:[NSString stringWithFormat:@"%@.3",type] localizedTitle:@"家庭" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeHome] userInfo:nil];
-        UIApplicationShortcutItem *item4 = [[UIApplicationShortcutItem alloc] initWithType:[NSString stringWithFormat:@"%@.4",type] localizedTitle:@"爱情" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeLove] userInfo:nil];
-        [UIApplication sharedApplication].shortcutItems = @[item1,item2,item3,item4];
-    }
+    NSString *type = [NSString stringWithFormat:@"%@.shortcut",[[NSBundle mainBundle] bundleIdentifier]];
+    UIApplicationShortcutItem *item1 = [[UIApplicationShortcutItem alloc] initWithType:[NSString stringWithFormat:@"%@.1",type] localizedTitle:@"好友" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeContact] userInfo:nil];
+    UIApplicationShortcutItem *item2 = [[UIApplicationShortcutItem alloc] initWithType:[NSString stringWithFormat:@"%@.2",type] localizedTitle:@"工作" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeTask] userInfo:nil];
+    UIApplicationShortcutItem *item3 = [[UIApplicationShortcutItem alloc] initWithType:[NSString stringWithFormat:@"%@.3",type] localizedTitle:@"家庭" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeHome] userInfo:nil];
+    UIApplicationShortcutItem *item4 = [[UIApplicationShortcutItem alloc] initWithType:[NSString stringWithFormat:@"%@.4",type] localizedTitle:@"爱情" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeLove] userInfo:nil];
+    [UIApplication sharedApplication].shortcutItems = @[item1,item2,item3,item4];
 }
 
 - (void)setupIQKeyboardManager {

@@ -161,6 +161,7 @@
 		449913A61E1BAEC50080D75F /* YTKNetworkPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4499139C1E1BAEC50080D75F /* YTKNetworkPrivate.m */; };
 		449913A71E1BAEC50080D75F /* YTKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4499139E1E1BAEC50080D75F /* YTKRequest.m */; };
 		44AAA04E1E24C19300A51331 /* ZDUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AAA04D1E24C19300A51331 /* ZDUserModel.m */; };
+		44BAAE47214A62BA000BA6BB /* ZDExchangeMethodTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BAAE46214A62BA000BA6BB /* ZDExchangeMethodTest.m */; };
 		44BEE6A61E496D4500B896AD /* ZDRLMMigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BEE6A51E496D4500B896AD /* ZDRLMMigrationManager.m */; };
 		44D19B4C1E83A6CB001072DA /* MLImagePickerHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D19AF41E83A6CB001072DA /* MLImagePickerHUD.m */; };
 		44D19B4D1E83A6CB001072DA /* MLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D19AF61E83A6CB001072DA /* MLNavigationViewController.m */; };
@@ -545,6 +546,7 @@
 		4499139E1E1BAEC50080D75F /* YTKRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKRequest.m; sourceTree = "<group>"; };
 		44AAA04C1E24C19300A51331 /* ZDUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDUserModel.h; sourceTree = "<group>"; };
 		44AAA04D1E24C19300A51331 /* ZDUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDUserModel.m; sourceTree = "<group>"; };
+		44BAAE46214A62BA000BA6BB /* ZDExchangeMethodTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDExchangeMethodTest.m; sourceTree = "<group>"; };
 		44BEE6A41E496D4500B896AD /* ZDRLMMigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDRLMMigrationManager.h; sourceTree = "<group>"; };
 		44BEE6A51E496D4500B896AD /* ZDRLMMigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDRLMMigrationManager.m; sourceTree = "<group>"; };
 		44C7531820D26B5300A28CD2 /* libWCDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libWCDB.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1124,6 +1126,7 @@
 		44451F8F20C11D6C008A034E /* CodeGeassTests */ = {
 			isa = PBXGroup;
 			children = (
+				44BAAE46214A62BA000BA6BB /* ZDExchangeMethodTest.m */,
 				44F4391221425EF900A0624B /* ZDEXCTest.m */,
 				446A32C720FDD2050047BD3A /* ZDMouseDrinkTest.m */,
 				44451F9820C11DA9008A034E /* ZDNotificationTest.m */,
@@ -2206,6 +2209,7 @@
 			files = (
 				446A32C820FDD2050047BD3A /* ZDMouseDrinkTest.m in Sources */,
 				44451F9920C11DA9008A034E /* ZDNotificationTest.m in Sources */,
+				44BAAE47214A62BA000BA6BB /* ZDExchangeMethodTest.m in Sources */,
 				44451F9D20C14943008A034E /* ZDBlockTest.m in Sources */,
 				44451F9120C11D6C008A034E /* CodeGeassTests.m in Sources */,
 				44F4391321425EF900A0624B /* ZDEXCTest.m in Sources */,
