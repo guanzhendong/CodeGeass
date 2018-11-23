@@ -53,6 +53,26 @@
  }
  */
 
+/*
+ {
+ "TimKey" : "eJx10EFPgzAYBuA7v4Jw1UhbWkdNdugciSIqMGIWLwShZVVktdSNafzvm2yJXPyu75O8eb9vy7ZtJ4sWF0VZrj9bk5ud4o59ZTsQIM93zv*AUrLKC5N7ujoCDMDBUExGivdKap4XwnA9KEQoAmAkZMVbI4U85ZDiie*jEeiqt3wo*7*lk-UQ3gfJ9S17xmFcFsH8ibapepj0cLnJzpYuY7OvbdqLZEFMKNjNSx0xOQuEq7F7Rz-aeF6XKniMYh2Qy4SEfPVa7lYmi5OmSxu3YdPpqNLI99NfCIYQEQ-QUbrhupPr9rgYQAKRB37PsX6sPcCbXkA_",
+ "Userid" : 1947882,
+ "TimeStamp" : 1541128657,
+ "ActionStatus" : "OK",
+ "ErrorInfo" : "",
+ "XiaoMi" : 0,
+ "SecreKey" : "MTk0Nzg4Ml8xNTQxMTI4NjU3X1s1MyA3MSAxMDIgMTAyIDU3IDgxIDQ5IDY4XQ==",
+ "AccountType" : "10238",
+ "Corpid" : 21299,
+ "DataKey" : "AAAAAOq4HQDRwdtbAQBTUVpVYlRBZFdiSE1ZTGFk",
+ "Type" : 0,
+ "SdkAppid" : "1400023945",
+ "HuaWei" : 0,
+ "PvKey" : "4bjo18SmGcFodWBrk\/CiI\/Wl355jJIivXlli\/7Cd3OE=@@",
+ "ErrorCode" : 200
+ }
+ */
+
 @property (nonatomic, copy) NSString *Id;
 @property (nonatomic, copy) NSString *ssl;
 @property (nonatomic, copy) NSString *smtp;

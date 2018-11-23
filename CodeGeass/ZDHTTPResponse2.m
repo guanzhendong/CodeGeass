@@ -14,6 +14,7 @@
     return @{
              @"ret"  : @"ErrorCode",
              @"msg"  : @"ErrorInfo",
+             @"time" : @"TimeStamp",
              @"data" : @"MsgBody"
              };
 }

@@ -44,6 +44,8 @@
 - (void)logout {
     [YYKeychain deletePasswordForService:[UIApplication sharedApplication].appBundleName
                                  account:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentAccount"]];
+    [YYKeychain deletePasswordForService:[[UIApplication sharedApplication].appBundleName stringByAppendingString:@"_SecreKey"]
+                                 account:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentAccount"]];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"currentAccount"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     

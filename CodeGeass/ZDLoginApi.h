@@ -11,14 +11,7 @@
 @interface ZDLoginApi : YTKRequest
 
 - (instancetype)initWithAccount:(NSString *)account
-                            key:(NSString *)key
-                          token:(NSString *)token
-                      loginType:(NSInteger)loginType
-                         lsPush:(NSInteger)lsPush
-                       pushType:(NSInteger)pushType
-                       timeFlag:(NSInteger)timeFlag
-                           type:(NSInteger)type
-                        version:(NSInteger)version;
+                       password:(NSString *)password;
 
 
 @end

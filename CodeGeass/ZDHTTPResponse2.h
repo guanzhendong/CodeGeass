@@ -27,6 +27,7 @@
 
 @property (nonatomic, assign) NSInteger ret;///< 返回码
 @property (nonatomic, copy)   NSString *msg;///< 信息
+@property (nonatomic, assign) NSInteger time;///< 时间戳
 @property (nonatomic, assign) id data;///< 数据
 
 @end

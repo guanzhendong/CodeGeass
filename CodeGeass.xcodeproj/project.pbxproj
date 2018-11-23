@@ -160,6 +160,8 @@
 		449913A51E1BAEC50080D75F /* YTKNetworkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4499139A1E1BAEC50080D75F /* YTKNetworkConfig.m */; };
 		449913A61E1BAEC50080D75F /* YTKNetworkPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4499139C1E1BAEC50080D75F /* YTKNetworkPrivate.m */; };
 		449913A71E1BAEC50080D75F /* YTKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4499139E1E1BAEC50080D75F /* YTKRequest.m */; };
+		44A30C7A218B050800E2EB9A /* ZDGetSMSVerificationCodeApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A30C79218B050800E2EB9A /* ZDGetSMSVerificationCodeApi.m */; };
+		44A30C7D218B06C400E2EB9A /* ZDVerifySMSCodeApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A30C7C218B06C400E2EB9A /* ZDVerifySMSCodeApi.m */; };
 		44AAA04E1E24C19300A51331 /* ZDUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AAA04D1E24C19300A51331 /* ZDUserModel.m */; };
 		44BAAE47214A62BA000BA6BB /* ZDExchangeMethodTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BAAE46214A62BA000BA6BB /* ZDExchangeMethodTest.m */; };
 		44BEE6A61E496D4500B896AD /* ZDRLMMigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BEE6A51E496D4500B896AD /* ZDRLMMigrationManager.m */; };
@@ -544,6 +546,10 @@
 		4499139C1E1BAEC50080D75F /* YTKNetworkPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKNetworkPrivate.m; sourceTree = "<group>"; };
 		4499139D1E1BAEC50080D75F /* YTKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKRequest.h; sourceTree = "<group>"; };
 		4499139E1E1BAEC50080D75F /* YTKRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKRequest.m; sourceTree = "<group>"; };
+		44A30C78218B050800E2EB9A /* ZDGetSMSVerificationCodeApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDGetSMSVerificationCodeApi.h; sourceTree = "<group>"; };
+		44A30C79218B050800E2EB9A /* ZDGetSMSVerificationCodeApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDGetSMSVerificationCodeApi.m; sourceTree = "<group>"; };
+		44A30C7B218B06C400E2EB9A /* ZDVerifySMSCodeApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDVerifySMSCodeApi.h; sourceTree = "<group>"; };
+		44A30C7C218B06C400E2EB9A /* ZDVerifySMSCodeApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDVerifySMSCodeApi.m; sourceTree = "<group>"; };
 		44AAA04C1E24C19300A51331 /* ZDUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDUserModel.h; sourceTree = "<group>"; };
 		44AAA04D1E24C19300A51331 /* ZDUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDUserModel.m; sourceTree = "<group>"; };
 		44BAAE46214A62BA000BA6BB /* ZDExchangeMethodTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDExchangeMethodTest.m; sourceTree = "<group>"; };
@@ -1186,6 +1192,10 @@
 				4449C7001E2C78C600C48943 /* ZDUserInfoApi.m */,
 				44FAAF061E30A2060022475F /* ZDUserAuthApi.h */,
 				44FAAF071E30A2060022475F /* ZDUserAuthApi.m */,
+				44A30C78218B050800E2EB9A /* ZDGetSMSVerificationCodeApi.h */,
+				44A30C79218B050800E2EB9A /* ZDGetSMSVerificationCodeApi.m */,
+				44A30C7B218B06C400E2EB9A /* ZDVerifySMSCodeApi.h */,
+				44A30C7C218B06C400E2EB9A /* ZDVerifySMSCodeApi.m */,
 			);
 			name = Api;
 			sourceTree = "<group>";
@@ -2022,6 +2032,7 @@
 				44D19B651E83A6CB001072DA /* DALabeledCircularProgressView.m in Sources */,
 				4429038120188368002FBB69 /* NSArray+ZDLogHelper.m in Sources */,
 				44E91CB81E1B82750068BF70 /* ZDMeViewController.m in Sources */,
+				44A30C7A218B050800E2EB9A /* ZDGetSMSVerificationCodeApi.m in Sources */,
 				443DDEF91E139C7B007A9096 /* ZDBaseViewController.m in Sources */,
 				443DDEE31E139BA2007A9096 /* AppDelegate.m in Sources */,
 				4447D57E1EC2EA1900787A22 /* JTSImageViewController.m in Sources */,
@@ -2123,6 +2134,7 @@
 				4416F9161E8E618700AAA580 /* UIView+TYAlertView.m in Sources */,
 				44D19B5F1E83A6CB001072DA /* MLPhotoPickerCollectionView.m in Sources */,
 				4416F9111E8E618700AAA580 /* TYAlertFadeAnimation.m in Sources */,
+				44A30C7D218B06C400E2EB9A /* ZDVerifySMSCodeApi.m in Sources */,
 				440AEEED1EE7CDDD006D66A1 /* FoldedTableViewHeaderFooterView.m in Sources */,
 				44BEE6A61E496D4500B896AD /* ZDRLMMigrationManager.m in Sources */,
 				44D19B981E83A732001072DA /* TZPhotoPickerController.m in Sources */,

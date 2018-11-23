@@ -34,4 +34,13 @@ SINGLETON_INTERFACE(Manager)
 - (YTKRequest *)userAuthWithSuccess:(HttpRequestSuccessBlock)success
                             failure:(HttpRequestFailureBlock)failure;
 
+- (YTKRequest *)requestSMSCodeWithAccount:(NSString *)account
+                                  success:(HttpRequestSuccessBlock)success
+                                  failure:(HttpRequestFailureBlock)failure;
+
+- (YTKRequest *)requestVerifySMSCodeWithAccount:(NSString *)account
+                               verificationCode:(NSString *)verificationCode
+                                        success:(HttpRequestSuccessBlock)success
+                                        failure:(HttpRequestFailureBlock)failure;
+
 @end

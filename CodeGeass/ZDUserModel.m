@@ -12,7 +12,7 @@
 
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
-             @"Id"            : @"uid",
+             @"Id"            : @[@"uid", @"Userid"],
              @"ssl"           : @"f_ssl",
              @"smtp"          : @"f_smtp",
              @"corpName"      : @"f_corpsname",
@@ -22,7 +22,7 @@
              @"token"         : @"f_token",
              @"pwd"           : @"f_pwd",
              @"port"          : @"f_port",
-             @"corpId"        : @"f_corp_id",
+             @"corpId"        : @[@"f_corp_id", @"Corpid"],
              @"account"       : @"f_account"
              };
 }

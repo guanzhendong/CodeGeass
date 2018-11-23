@@ -9,6 +9,7 @@
 #import "ZDLoginViewController.h"
 #import "ZDTabBarController.h"
 #import "ZDUserManager.h"
+#import "FCAlertView.h"
 
 @interface ZDLoginViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
@@ -23,6 +24,7 @@
     [super viewDidLoad];
     
     [self initUI];
+//    [self requestVerifySMSCode:@"520248"];
 }
 
 - (void)initUI {
@@ -50,20 +52,60 @@
     
     
     [SVProgressHUD showWithStatus:@"登录中..."];
-    [[ZDUserManager sharedManager] loginWithAccount:_accountTF.text
-                                           password:_passwordTF.text
-                                            success:^(NSInteger returnCode, NSString *returnMsg, id data, NSTimeInterval time) {
-                                                if (returnCode == 100) {
-                                                    [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-                                                    
-                                                    [YYKeychain setPassword:self.passwordTF.text forService:[UIApplication sharedApplication].appBundleName account:self.accountTF.text];
-                                                    
-                                                    [ZDAppDelegate changeRootViewController:[ZDTabBarController new]];
-                                                    
-                                                }
-                                          } failure:^(NSInteger errorCode, NSString *errorMsg) {
-                                              [SVProgressHUD showErrorWithStatus:@"登录失败"];
-                                          }];
+    [[ZDUserManager sharedManager] loginWithAccount:_accountTF.text password:_passwordTF.text success:^(NSInteger returnCode, NSString *returnMsg, id data, NSTimeInterval time) {
+        if (returnCode == 200) {
+            [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+            
+            [YYKeychain setPassword:self.passwordTF.text forService:[UIApplication sharedApplication].appBundleName account:self.accountTF.text];
+            
+            [ZDAppDelegate changeRootViewController:[ZDTabBarController new]];
+            
+        } else if (returnCode == 1010) {
+            [SVProgressHUD dismiss];
+            FCAlertView *alert = [FCAlertView new];
+            alert.titleFont = [UIFont boldSystemFontOfSize:18];
+            alert.colorScheme = [UIColor randomFlatColor];
+            [alert showAlertWithTitle:returnMsg withSubtitle:nil withCustomImage:nil withDoneButtonTitle:@"好的" andButtons:@[@"取消"]];
+            [alert doneActionBlock:^{
+                [self requestGetSMSCode];
+            }];
+        }
+    } failure:^(NSInteger errorCode, NSString *errorMsg) {
+        [SVProgressHUD showErrorWithStatus:@"登录失败"];
+    }];
+}
+
+- (void)requestGetSMSCode {
+    [[ZDUserManager sharedManager] requestSMSCodeWithAccount:_accountTF.text success:^(NSInteger returnCode, NSString *returnMsg, id data, NSTimeInterval timestamp) {
+        if (returnCode == 200) {
+            FCAlertView *alert = [FCAlertView new];
+            alert.titleFont = [UIFont boldSystemFontOfSize:18];
+            alert.colorScheme = [UIColor randomFlatColor];
+            [alert addTextFieldWithPlaceholder:@"请输入验证码" andTextReturnBlock:^(NSString *text) {
+                [self requestVerifySMSCode:text];
+            }];
+            [alert showAlertWithTitle:returnMsg withSubtitle:nil withCustomImage:nil withDoneButtonTitle:@"好的" andButtons:@[@"取消"]];
+            [alert doneActionBlock:^{
+//                [self requestVerifySMSCode:alert.textField.text];
+            }];
+        }
+    } failure:^(NSInteger errorCode, NSString *errorMsg) {
+        
+    }];
+}
+
+- (void)requestVerifySMSCode:(NSString *)code {
+    [[ZDUserManager sharedManager] requestVerifySMSCodeWithAccount:@"15220099284" verificationCode:code success:^(NSInteger returnCode, NSString *returnMsg, id data, NSTimeInterval timestamp) {
+        if (returnCode == 200) {
+            [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+            
+            [YYKeychain setPassword:self.passwordTF.text forService:[UIApplication sharedApplication].appBundleName account:self.accountTF.text];
+            
+            [ZDAppDelegate changeRootViewController:[ZDTabBarController new]];
+        }
+    } failure:^(NSInteger errorCode, NSString *errorMsg) {
+        
+    }];
 }
 
 @end

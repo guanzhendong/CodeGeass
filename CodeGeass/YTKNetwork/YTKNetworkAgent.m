@@ -84,7 +84,7 @@
         
         // gzd add，对返回数据序列化添加text/html，也可以在AFNetworking里面直接修改
         NSMutableSet *mutableSet = [NSMutableSet setWithSet:_jsonResponseSerializer.acceptableContentTypes];
-        [mutableSet addObject:@"text/html"];
+        [mutableSet addObjectsFromArray:@[@"text/html", @"text/plain"]];
         _jsonResponseSerializer.acceptableContentTypes = mutableSet;
     }
     return _jsonResponseSerializer;
