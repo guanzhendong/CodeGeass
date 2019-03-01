@@ -148,6 +148,7 @@
 		4474386F1EC16C1C00B69765 /* ZDTranslucentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4474386E1EC16C1C00B69765 /* ZDTranslucentNavigationController.m */; };
 		447BF6DF1F9EE6EB006660C1 /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 447BF6DD1F9EE6EB006660C1 /* TestTableViewCell.m */; };
 		447BF6E01F9EE6EB006660C1 /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447BF6DE1F9EE6EB006660C1 /* TestTableViewCell.xib */; };
+		447FDA73221A449A00FEB0A2 /* ZDCopyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 447FDA72221A449A00FEB0A2 /* ZDCopyTest.m */; };
 		44860D9D1EC94B9000DC2458 /* ZDContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44860D9C1EC94B9000DC2458 /* ZDContactViewController.m */; };
 		448949B31E2DCB1C00A69848 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 448949B21E2DCB1C00A69848 /* YYFPSLabel.m */; };
 		449913851E1BA14B0080D75F /* DebugHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 449913811E1BA14B0080D75F /* DebugHelper.m */; };
@@ -521,6 +522,7 @@
 		447BF6DC1F9EE6EA006660C1 /* TestTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
 		447BF6DD1F9EE6EB006660C1 /* TestTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewCell.m; sourceTree = "<group>"; };
 		447BF6DE1F9EE6EB006660C1 /* TestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
+		447FDA72221A449A00FEB0A2 /* ZDCopyTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDCopyTest.m; sourceTree = "<group>"; };
 		44860D9B1EC94B9000DC2458 /* ZDContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDContactViewController.h; sourceTree = "<group>"; };
 		44860D9C1EC94B9000DC2458 /* ZDContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDContactViewController.m; sourceTree = "<group>"; };
 		448949B11E2DCB1C00A69848 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
@@ -1132,6 +1134,7 @@
 		44451F8F20C11D6C008A034E /* CodeGeassTests */ = {
 			isa = PBXGroup;
 			children = (
+				447FDA72221A449A00FEB0A2 /* ZDCopyTest.m */,
 				44BAAE46214A62BA000BA6BB /* ZDExchangeMethodTest.m */,
 				44F4391221425EF900A0624B /* ZDEXCTest.m */,
 				446A32C720FDD2050047BD3A /* ZDMouseDrinkTest.m */,
@@ -2219,6 +2222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				447FDA73221A449A00FEB0A2 /* ZDCopyTest.m in Sources */,
 				446A32C820FDD2050047BD3A /* ZDMouseDrinkTest.m in Sources */,
 				44451F9920C11DA9008A034E /* ZDNotificationTest.m in Sources */,
 				44BAAE47214A62BA000BA6BB /* ZDExchangeMethodTest.m in Sources */,
