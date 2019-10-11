@@ -30,6 +30,7 @@
 		4416F9151E8E618700AAA580 /* TYShowAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416F9091E8E618700AAA580 /* TYShowAlertView.m */; };
 		4416F9161E8E618700AAA580 /* UIView+TYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416F90B1E8E618700AAA580 /* UIView+TYAlertView.m */; };
 		4416F9171E8E618700AAA580 /* UIView+TYAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416F90D1E8E618700AAA580 /* UIView+TYAutoLayout.m */; };
+		441DB19822D58DD4002CFEF4 /* ZDArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 441DB19722D58DD4002CFEF4 /* ZDArrayTest.m */; };
 		441E95E81EBB039A007391A5 /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = 441E95E71EBB039A007391A5 /* video.mov */; };
 		44227FAA1EB2D7BF00A682C4 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 44227FA91EB2D7BF00A682C4 /* ODRefreshControl.m */; };
 		4422E0501E1CDE2A00682164 /* ZDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4422E04F1E1CDE2A00682164 /* ZDTestViewController.m */; };
@@ -301,6 +302,7 @@
 		4416F90B1E8E618700AAA580 /* UIView+TYAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TYAlertView.m"; sourceTree = "<group>"; };
 		4416F90C1E8E618700AAA580 /* UIView+TYAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TYAutoLayout.h"; sourceTree = "<group>"; };
 		4416F90D1E8E618700AAA580 /* UIView+TYAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TYAutoLayout.m"; sourceTree = "<group>"; };
+		441DB19722D58DD4002CFEF4 /* ZDArrayTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDArrayTest.m; sourceTree = "<group>"; };
 		441E95E71EBB039A007391A5 /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.mov; sourceTree = "<group>"; };
 		44227FA81EB2D7BF00A682C4 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		44227FA91EB2D7BF00A682C4 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
@@ -1134,6 +1136,7 @@
 		44451F8F20C11D6C008A034E /* CodeGeassTests */ = {
 			isa = PBXGroup;
 			children = (
+				441DB19722D58DD4002CFEF4 /* ZDArrayTest.m */,
 				447FDA72221A449A00FEB0A2 /* ZDCopyTest.m */,
 				44BAAE46214A62BA000BA6BB /* ZDExchangeMethodTest.m */,
 				44F4391221425EF900A0624B /* ZDEXCTest.m */,
@@ -1880,6 +1883,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1956,7 +1960,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CodeGeass/Pods-CodeGeass-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-CodeGeass/Pods-CodeGeass-resources.sh",
 				"${PODS_ROOT}/AXIndicatorView/AXIndicatorView/Classes/AXIndicatorView.bundle",
 				"${PODS_ROOT}/AXPracticalHUD/AXPracticalHUD/AXPracticalHUD/AXPracticalHUD.bundle",
 				"${PODS_ROOT}/AXWebViewController/AXWebViewController/AXWebViewController/AXWebViewController.bundle",
@@ -2017,7 +2021,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeGeass/Pods-CodeGeass-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CodeGeass/Pods-CodeGeass-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2230,6 +2234,7 @@
 				44451F9120C11D6C008A034E /* CodeGeassTests.m in Sources */,
 				44F4391321425EF900A0624B /* ZDEXCTest.m in Sources */,
 				44451F9B20C135D3008A034E /* ZDAtomicTest.m in Sources */,
+				441DB19822D58DD4002CFEF4 /* ZDArrayTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

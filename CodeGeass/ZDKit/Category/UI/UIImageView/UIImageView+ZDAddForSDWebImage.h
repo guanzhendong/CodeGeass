@@ -10,6 +10,7 @@
 
 #import <UIKit/UIKit.h>
 #import <UIImageView+WebCache.h>
+#import <SDWebImageDownloader.h>
 
 @interface UIImageView (ZDAddForSDWebImage)<SDWebImageManagerDelegate>
 

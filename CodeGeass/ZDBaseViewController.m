@@ -68,9 +68,13 @@
     if (self.navigationItem.rightBarButtonItem) {
         array = [self.navigationItem.rightBarButtonItems mutableCopy];
     }
-    UIBarButtonItem *item = [UIBarButtonItem itemWithTitle:title
-                                                    target:self
-                                                    action:action];
+//    UIBarButtonItem *item = [UIBarButtonItem itemWithTitle:title
+//                                                    target:self
+//                                                    action:action];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:action];
+    [item setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
+    [item setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateHighlighted];
+    [item setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor colorWithWhite:1 alpha:.3]} forState:UIControlStateDisabled];
     [array addObject:item];
     self.navigationItem.rightBarButtonItems = array;
 }
@@ -80,9 +84,10 @@
     if (self.navigationItem.rightBarButtonItem) {
         array = [self.navigationItem.rightBarButtonItems mutableCopy];
     }
-    UIBarButtonItem *item = [UIBarButtonItem itemWithImage:image
-                                                    target:self
-                                                    action:action];
+//    UIBarButtonItem *item = [UIBarButtonItem itemWithImage:image
+//                                                    target:self
+//                                                    action:action];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:action];
     [array addObject:item];
     self.navigationItem.rightBarButtonItems = array;
 }
@@ -92,9 +97,13 @@
     if (self.navigationItem.rightBarButtonItem) {
         array = [self.navigationItem.rightBarButtonItems mutableCopy];
     }
-    UIBarButtonItem *item = [UIBarButtonItem itemWithTitle:title
-                                                    target:self
-                                                    action:action];
+//    UIBarButtonItem *item = [UIBarButtonItem itemWithTitle:title
+//                                                    target:self
+//                                                    action:action];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:action];
+    [item setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
+    [item setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateHighlighted];
+    [item setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor colorWithWhite:1 alpha:.3]} forState:UIControlStateDisabled];
     [array addObject:item];
     self.navigationItem.leftBarButtonItems = array;
 }
@@ -104,9 +113,10 @@
     if (self.navigationItem.rightBarButtonItem) {
         array = [self.navigationItem.rightBarButtonItems mutableCopy];
     }
-    UIBarButtonItem *item = [UIBarButtonItem itemWithImage:image
-                                                    target:self
-                                                    action:action];
+//    UIBarButtonItem *item = [UIBarButtonItem itemWithImage:image
+//                                                    target:self
+//                                                    action:action];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:action];
     [array addObject:item];
     self.navigationItem.leftBarButtonItems = array;
 }

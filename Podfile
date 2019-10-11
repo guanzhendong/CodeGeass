@@ -42,4 +42,7 @@ target "CodeGeass" do
     pod 'DKNightVersion'
     pod 'OpenShare'
     
+    pod 'BlocksKit'
+    pod 'JKCategories'
+    
 end
