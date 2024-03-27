@@ -1859,7 +1859,7 @@
 				TargetAttributes = {
 					443DDEDA1E139BA2007A9096 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = N2PG2S36J2;
+						DevelopmentTeam = PW9DMGQS3C;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1967,7 +1967,6 @@
 				"${PODS_CONFIGURATION_BUILD_DIR}/Appirater/Appirater.bundle",
 				"${PODS_ROOT}/DKNightVersion/DKNightVersion/ColorTable/DKColorTable.txt",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FCAlertView/FCAlertView.bundle",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundError.png",
@@ -1997,7 +1996,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Appirater.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DKColorTable.txt",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FCAlertView.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundError.png",
@@ -2363,15 +2361,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = N2PG2S36J2;
+				DEVELOPMENT_TEAM = PW9DMGQS3C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CodeGeass",
 				);
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/CodeGeass/CodeGeass.pch";
 				INFOPLIST_FILE = CodeGeass/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gzd.CodeGeass;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gzd.CodeGeass2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CodeGeass/CodeGeass-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2386,15 +2385,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = N2PG2S36J2;
+				DEVELOPMENT_TEAM = PW9DMGQS3C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CodeGeass",
 				);
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/CodeGeass/CodeGeass.pch";
 				INFOPLIST_FILE = CodeGeass/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gzd.CodeGeass;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gzd.CodeGeass2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CodeGeass/CodeGeass-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
